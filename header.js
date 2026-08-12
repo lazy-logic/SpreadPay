@@ -310,6 +310,25 @@ function injectChatWidget() {
   `;
 
   document.body.appendChild(widget);
+
+  // Auto-hide bubble after 4.5 seconds; show on hover
+  const bubble = widget.querySelector('#moovonChatBubble');
+  if (bubble) {
+    let hideTimer = setTimeout(() => {
+      bubble.classList.add('bubble-autohidden');
+    }, 4500);
+
+    widget.addEventListener('mouseenter', () => {
+      clearTimeout(hideTimer);
+      bubble.classList.remove('bubble-autohidden');
+    });
+
+    widget.addEventListener('mouseleave', () => {
+      hideTimer = setTimeout(() => {
+        bubble.classList.add('bubble-autohidden');
+      }, 3000);
+    });
+  }
 }
 
 // Auto-run on DOMContentLoaded or immediate if already loaded

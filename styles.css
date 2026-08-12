@@ -2097,13 +2097,36 @@ button, input, select, textarea {
   margin-bottom: 70px;
   animation: floatPureBubble 3.2s ease-in-out infinite alternate;
   transform-origin: bottom right;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+              visibility 0.4s ease, 
+              box-shadow 0.25s ease, 
+              border-color 0.25s ease;
   cursor: pointer;
   white-space: nowrap;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.moovon-pure-speech-bubble.bubble-autohidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateX(12px) scale(0.85);
+  animation-play-state: paused;
+}
+
+.moovon-pure-avatar-widget:hover .moovon-pure-speech-bubble {
+  opacity: 1 !important;
+  visibility: visible !important;
+  pointer-events: auto !important;
+  transform: translateX(0) scale(1) !important;
+  animation-play-state: running;
 }
 
 .moovon-pure-speech-bubble:hover {
-  transform: translateY(-4px) scale(1.04);
+  transform: translateY(-4px) scale(1.04) !important;
   border-color: rgba(37, 211, 102, 0.8);
   box-shadow: 0 18px 40px rgba(11, 34, 101, 0.25), 0 0 16px rgba(37, 211, 102, 0.3);
 }
