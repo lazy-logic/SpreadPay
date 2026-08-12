@@ -390,6 +390,20 @@ button, input, select, textarea {
   box-shadow: 0 12px 30px rgba(229, 25, 55, 0.35);
 }
 
+.btn-navy {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border: 1.5px solid var(--primary-navy);
+  box-shadow: 0 4px 14px rgba(11, 34, 101, 0.22);
+}
+
+.btn-navy:hover {
+  background: var(--primary-navy-light);
+  border-color: var(--primary-navy-light);
+  transform: translateY(-2px);
+  box-shadow: 0 10px 24px rgba(11, 34, 101, 0.32);
+}
+
 .btn-outline {
   background: #FFFFFF;
   color: var(--primary-navy);
