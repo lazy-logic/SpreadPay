@@ -149,7 +149,7 @@ function calculateSpreadPay(premium) {
     if (noteEl) {
       noteEl.textContent = needsRmApproval
         ? '⚠️ A financed balance above GH₵50,000 requires Insurance Partner Relationship Manager approval.'
-        : 'Predictable corporate financing. Fixed 3-month schedule. 4% monthly penalty applies if in default after Month 3.';
+        : 'Predictable corporate financing on a fixed 3-month schedule. No monthly penalty during those 3 repayments — a 4% flat monthly penalty applies only if the balance is still in default after Month 3.';
     }
   }
 }
@@ -465,6 +465,11 @@ function openPartnerModal(tier, premium) {
 
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
+
+  // The overlay is visibility:hidden until .active takes effect, and a hidden
+  // element cannot take focus. Force a style/layout flush so the class applies
+  // in this tick, then focus.
+  void modal.offsetHeight;
   const input = document.getElementById('partnerSearchInputModal');
   if (input) input.focus();
 }
