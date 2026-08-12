@@ -8,9 +8,9 @@ document.addEventListener('DOMContentLoaded', () => {
   initFAQAccordion();
   initFAQSearch();
   initContactForm();
+  initPortalAccessForm();
   initCopyButtons();
   initScrollAnimations();
-  initMobileDrawer();
   initModalListeners();
 });
 
@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
 // 1. Live Interactive SpreadPay Calculator Engine
 // ==========================================================================
 function initSpreadPayCalculator() {
-  const amountInputs = document.querySelectorAll('#calcPremiumInput, #calcSlider');
   const primaryInput = document.getElementById('calcPremiumInput');
   const sliderInput = document.getElementById('calcSlider');
   const presetBtns = document.querySelectorAll('.calc-preset-btn');
@@ -72,12 +71,26 @@ function calculateSpreadPay(premium) {
 
   if (premium <= 0) {
     tierBadge.textContent = 'Enter Premium Amount';
+    tierBadge.dataset.tier = 'none';
     depositEl.textContent = 'GH₵0';
     setupFeeEl.textContent = 'GH₵0';
     financedEl.textContent = 'GH₵0';
     monthlyEl.textContent = 'GH₵0 / mo';
     tenureEl.textContent = '0 Months';
     if (noteEl) noteEl.textContent = 'Please enter a valid motor insurance premium.';
+    return;
+  }
+
+  // Below the product floor — quote nothing rather than a misleading schedule.
+  if (premium < 330) {
+    tierBadge.textContent = 'Below SpreadPay Minimum';
+    tierBadge.dataset.tier = 'none';
+    depositEl.textContent = '—';
+    setupFeeEl.textContent = '—';
+    financedEl.textContent = '—';
+    monthlyEl.textContent = 'Enter GH₵330 or more';
+    tenureEl.textContent = '—';
+    if (noteEl) noteEl.textContent = 'SpreadPay starts at a GH₵330 annual premium. Premiums below this are payable directly to your insurer.';
     return;
   }
 
@@ -90,9 +103,8 @@ function calculateSpreadPay(premium) {
     const remainingMonth = (financed - month1) / 2;
 
     tierBadge.textContent = 'Essential Tier (GH₵330 – GH₵1,500)';
-    tierBadge.style.color = '#0B2265';
-    tierBadge.style.background = 'rgba(11, 34, 101, 0.08)';
-    depositEl.textContent = `GH₵${deposit.toLocaleString()}`;
+    tierBadge.dataset.tier = 'essential';
+    depositEl.textContent = `GH₵${deposit.toLocaleString()} min.`;
     setupFeeEl.textContent = `GH₵${setupFee.toLocaleString()}`;
     financedEl.textContent = `GH₵${financed.toLocaleString()}`;
     monthlyEl.textContent = `Month 1: GH₵${Math.round(month1)} (35%) • M2-M3: GH₵${Math.round(remainingMonth)}`;
@@ -107,36 +119,36 @@ function calculateSpreadPay(premium) {
     const monthly = financed / 6;
 
     tierBadge.textContent = 'Flex Tier (GH₵1,501 – GH₵15,000)';
-    tierBadge.style.color = '#E51937';
-    tierBadge.style.background = 'rgba(229, 25, 55, 0.08)';
+    tierBadge.dataset.tier = 'flex';
     depositEl.textContent = `GH₵${Math.round(deposit).toLocaleString()} (20%)`;
     setupFeeEl.textContent = `GH₵${Math.round(setupFee).toLocaleString()} (2%)`;
     financedEl.textContent = `GH₵${Math.round(financed).toLocaleString()}`;
     monthlyEl.textContent = `GH₵${Math.round(monthly).toLocaleString()} / month (6 equal repayments)`;
     tenureEl.textContent = 'Up to 6 Months';
-    if (noteEl) noteEl.textContent = 'Flexible repayments with early settlement benefits. 3.5% monthly penalty applies only for overdue months.';
+    if (noteEl) noteEl.textContent = 'Flexible repayments with early settlement benefits. If an installment is unpaid after 4 weeks, a 3.5% flat monthly penalty — calculated on the original financed amount — applies for that month.';
   }
-  // Tier 3: Fixed (GH₵15,000 - GH₵50,000+)
+  // Tier 3: Fixed (above GH₵15,000)
   else {
     const deposit = premium * 0.40;
     const setupFee = premium * 0.01;
     const facilityFee = 900;
     const financed = premium - deposit;
     const monthly = financed / 3;
+    // Ops guide §3: approval is triggered by the financed balance, not the premium.
+    const needsRmApproval = financed > 50000;
 
-    tierBadge.textContent = premium > 50000 
-      ? 'Fixed Tier • Requires RM Approval (>GH₵50,000)' 
-      : 'Fixed Tier (GH₵15,000 – GH₵50,000)';
-    tierBadge.style.color = '#7C3AED';
-    tierBadge.style.background = 'rgba(124, 58, 237, 0.08)';
+    tierBadge.textContent = needsRmApproval
+      ? 'Fixed Tier • Requires RM Approval (financed balance >GH₵50,000)'
+      : 'Fixed Tier (GH₵15,001 – GH₵50,000+)';
+    tierBadge.dataset.tier = 'fixed';
     depositEl.textContent = `GH₵${Math.round(deposit).toLocaleString()} (40%)`;
     setupFeeEl.textContent = `GH₵${Math.round(setupFee).toLocaleString()} (1%) + GH₵${facilityFee} Facility Fee`;
     financedEl.textContent = `GH₵${Math.round(financed).toLocaleString()}`;
     monthlyEl.textContent = `3 Fixed Repayments of GH₵${Math.round(monthly).toLocaleString()} / mo`;
     tenureEl.textContent = '3 Months Fixed';
     if (noteEl) {
-      noteEl.textContent = premium > 50000 
-        ? '⚠️ Requests above GH₵50,000 financed balance require Insurance Partner Relationship Manager approval.'
+      noteEl.textContent = needsRmApproval
+        ? '⚠️ A financed balance above GH₵50,000 requires Insurance Partner Relationship Manager approval.'
         : 'Predictable corporate financing. Fixed 3-month schedule. 4% monthly penalty applies if in default after Month 3.';
     }
   }
@@ -148,33 +160,72 @@ function calculateSpreadPay(premium) {
 function initPartnerSearch() {
   const searchInput = document.getElementById('partnerSearchInput');
   const catTabs = document.querySelectorAll('.partner-cat-tab');
-  const cards = document.querySelectorAll('.partner-dir-card, .partner-modal-item');
+  // Directory cards only — the modal keeps its own search so page filters
+  // can never empty the modal behind the overlay.
+  const cards = document.querySelectorAll('.partner-dir-card');
+  const countEl = document.getElementById('partnerResultCount');
+  const emptyEl = document.getElementById('partnerDirEmpty');
+
+  if (!cards.length) return;
+
+  let activeCategory = 'all';
+  let activeQuery = '';
+
+  function applyFilters() {
+    let visible = 0;
+    cards.forEach(card => {
+      const matchesQuery = !activeQuery || card.textContent.toLowerCase().includes(activeQuery);
+      const cardCats = card.getAttribute('data-categories') || '';
+      const matchesCat = activeCategory === 'all' || cardCats.includes(activeCategory);
+      const show = matchesQuery && matchesCat;
+      card.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (countEl) countEl.textContent = `Showing ${visible} of ${cards.length} partners`;
+    if (emptyEl) emptyEl.hidden = visible !== 0;
+  }
 
   if (searchInput) {
     searchInput.addEventListener('input', (e) => {
-      const query = e.target.value.toLowerCase().trim();
-      cards.forEach(card => {
-        const text = card.textContent.toLowerCase();
-        card.style.display = text.includes(query) ? '' : 'none';
-      });
+      activeQuery = e.target.value.toLowerCase().trim();
+      applyFilters();
     });
   }
 
   catTabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      catTabs.forEach(t => t.classList.remove('active'));
-      tab.classList.add('active');
-      const cat = tab.getAttribute('data-category');
-      
-      cards.forEach(card => {
-        if (cat === 'all') {
-          card.style.display = '';
-        } else {
-          const cardCats = card.getAttribute('data-categories') || '';
-          card.style.display = cardCats.includes(cat) ? '' : 'none';
-        }
+      catTabs.forEach(t => {
+        t.classList.remove('active');
+        t.setAttribute('aria-pressed', 'false');
       });
+      tab.classList.add('active');
+      tab.setAttribute('aria-pressed', 'true');
+      activeCategory = tab.getAttribute('data-category') || 'all';
+      applyFilters();
     });
+  });
+
+  applyFilters();
+}
+
+// Modal-only search. Bound separately from the directory so the two can
+// never filter each other's DOM.
+function initModalPartnerSearch() {
+  const input = document.getElementById('partnerSearchInputModal');
+  if (!input) return;
+  const items = document.querySelectorAll('.partner-modal-item');
+  const empty = document.getElementById('partnerModalEmpty');
+
+  input.addEventListener('input', (e) => {
+    const query = e.target.value.toLowerCase().trim();
+    let visible = 0;
+    items.forEach(item => {
+      const name = (item.getAttribute('data-partner') || item.textContent).toLowerCase();
+      const show = !query || name.includes(query);
+      item.style.display = show ? '' : 'none';
+      if (show) visible++;
+    });
+    if (empty) empty.hidden = visible !== 0;
   });
 }
 
@@ -188,15 +239,34 @@ function initFAQAccordion() {
   const emptyState = document.getElementById('faqEmptyState');
 
   // Accordion Toggle
-  faqItems.forEach(item => {
+  faqItems.forEach((item, index) => {
     const btn = item.querySelector('.faq-question');
-    if (btn) {
-      btn.addEventListener('click', () => {
-        const isOpen = item.classList.contains('active');
-        item.classList.toggle('active', !isOpen);
-      });
+    const answer = item.querySelector('.faq-answer');
+    if (!btn) return;
+
+    if (answer) {
+      if (!answer.id) answer.id = `faq-answer-${index + 1}`;
+      btn.setAttribute('aria-controls', answer.id);
+      answer.setAttribute('role', 'region');
     }
+    btn.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+
+    btn.addEventListener('click', () => {
+      const isOpen = item.classList.contains('active');
+      item.classList.toggle('active', !isOpen);
+      btn.setAttribute('aria-expanded', !isOpen ? 'true' : 'false');
+    });
   });
+
+  // Keep aria-expanded truthful when search/category filters toggle .active.
+  const syncObserver = new MutationObserver(mutations => {
+    mutations.forEach(m => {
+      const item = m.target;
+      const btn = item.querySelector && item.querySelector('.faq-question');
+      if (btn) btn.setAttribute('aria-expanded', item.classList.contains('active') ? 'true' : 'false');
+    });
+  });
+  faqItems.forEach(item => syncObserver.observe(item, { attributes: true, attributeFilter: ['class'] }));
 
   // Category Filtering
   catTabs.forEach(tab => {
@@ -257,15 +327,15 @@ function initFAQSearch() {
       catTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === 'all'));
     }
 
-    faqItems.forEach(item => {
+    faqItems.forEach((item, index) => {
       const text = item.textContent.toLowerCase();
       const matches = text.includes(query);
       item.style.display = matches ? '' : 'none';
       if (matches) {
         visibleCount++;
-        if (query.length >= 2) {
-          item.classList.add('active');
-        }
+        // Auto-expand matches while searching; collapse back to a single open
+        // item once the query is cleared instead of leaving a wall of text.
+        item.classList.toggle('active', query.length >= 2 || (query.length === 0 && index === 0));
       }
     });
 
@@ -301,6 +371,39 @@ function initContactForm() {
 
     const text = encodeURIComponent(`Hi Moovon, my name is ${name} (${phone}). Inquiry type: ${type}. Message: ${msg}`);
     window.open(`https://wa.me/233593293040?text=${text}`, '_blank');
+  });
+}
+
+// ==========================================================================
+// 4b. Partner Portal Access Request
+//     Replaces a sign-in form that collected real passwords and submitted
+//     them to an alert(). No credentials are handled here.
+// ==========================================================================
+function initPortalAccessForm() {
+  const form = document.getElementById('portalAccessForm');
+  if (!form) return;
+  const status = document.getElementById('portalAccessStatus');
+
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('portalName')?.value.trim() || '';
+    const org = document.getElementById('portalInsurer')?.value.trim() || '';
+    const email = document.getElementById('portalEmail')?.value.trim() || '';
+
+    const text = encodeURIComponent(
+      `Partner Portal access request — ${name}, ${org} (${email}). Please set up SpreadPay portal credentials.`
+    );
+    if (status) status.textContent = 'Opening WhatsApp with your request…';
+    window.location.href = `https://wa.me/233593293040?text=${text}`;
+
+    setTimeout(() => {
+      if (status) {
+        status.innerHTML =
+          'Request prepared. If WhatsApp did not open, email ' +
+          '<a href="mailto:support@moovon.insure?subject=Partner%20Portal%20Access%20Request">support@moovon.insure</a>.';
+      }
+      form.reset();
+    }, 1200);
   });
 }
 
@@ -343,52 +446,69 @@ function initScrollAnimations() {
 }
 
 // ==========================================================================
-// 7. Mobile Navigation Drawer
-// ==========================================================================
-function initMobileDrawer() {
-  const toggle = document.querySelector('.mobile-toggle');
-  const drawer = document.getElementById('mobileDrawer');
-  const close = document.getElementById('closeMobileDrawer');
-
-  if (toggle && drawer) {
-    toggle.addEventListener('click', () => {
-      drawer.classList.add('active');
-      document.body.style.overflow = 'hidden';
-    });
-  }
-
-  if (close && drawer) {
-    close.addEventListener('click', () => {
-      drawer.classList.remove('active');
-      document.body.style.overflow = '';
-    });
-  }
-}
-
+// 7. Mobile Navigation Drawer — owned entirely by header.js, which builds the
+//    drawer DOM. A second controller here previously left body{overflow:hidden}
+//    set whenever the drawer was dismissed via backdrop or a nav link.
 // ==========================================================================
 // 8. Partner Finder Modal Global Triggers
 // ==========================================================================
-function openPartnerModal() {
+let partnerModalInvoker = null;
+
+// tier/premium are optional: passing them carries the customer's calculator
+// context through to the WhatsApp message the partner receives.
+function openPartnerModal(tier, premium) {
   const modal = document.getElementById('partnerModal');
-  if (modal) {
-    modal.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    const input = document.getElementById('partnerSearchInput');
-    if (input) input.focus();
+  if (!modal) return;
+
+  partnerModalInvoker = document.activeElement;
+  applyPartnerModalContext(tier, premium);
+
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+  const input = document.getElementById('partnerSearchInputModal');
+  if (input) input.focus();
+}
+
+function applyPartnerModalContext(tier, premium) {
+  const sub = document.getElementById('partnerModalSub');
+  const partners = window.MOOVON_PARTNERS || [];
+  if (!sub || !partners.length) return;
+
+  let context = '';
+  if (tier) {
+    context = `SpreadPay ${tier}`;
+    if (premium) context += ` — GH₵${Number(premium).toLocaleString()} premium`;
+    sub.innerHTML = `Applying for <strong>${context}</strong>. Ask any of our ${partners.length} verified partner insurers for it.`;
+  } else {
+    sub.innerHTML = `Ask any of our ${partners.length} verified partner insurers or brokers for <strong>Moovon SpreadPay&trade;</strong>.`;
+  }
+
+  if (typeof window.partnerWhatsAppLink === 'function') {
+    document.querySelectorAll('.partner-modal-item').forEach(item => {
+      const short = item.getAttribute('data-partner');
+      const cta = item.querySelector('.partner-modal-cta');
+      const partner = partners.find(p => p.short === short);
+      if (cta && partner) cta.href = window.partnerWhatsAppLink(partner, context);
+    });
   }
 }
 
 function closePartnerModal() {
   const modal = document.getElementById('partnerModal');
-  if (modal) {
-    modal.classList.remove('active');
-    document.body.style.overflow = '';
+  if (!modal || !modal.classList.contains('active')) return;
+  modal.classList.remove('active');
+  document.body.style.overflow = '';
+  if (partnerModalInvoker && typeof partnerModalInvoker.focus === 'function') {
+    partnerModalInvoker.focus();
   }
+  partnerModalInvoker = null;
 }
 
 function initModalListeners() {
   const modal = document.getElementById('partnerModal');
   const closeBtn = document.getElementById('closePartnerModal');
+
+  initModalPartnerSearch();
 
   if (closeBtn) {
     closeBtn.addEventListener('click', closePartnerModal);
@@ -400,11 +520,33 @@ function initModalListeners() {
         closePartnerModal();
       }
     });
+
+    // Keep Tab inside the dialog while it is open.
+    modal.addEventListener('keydown', (e) => {
+      if (e.key !== 'Tab') return;
+      const focusable = modal.querySelectorAll(
+        'a[href], button:not([disabled]), input, [tabindex]:not([tabindex="-1"])'
+      );
+      const visible = Array.from(focusable).filter(el => el.offsetParent !== null);
+      if (!visible.length) return;
+      const first = visible[0];
+      const last = visible[visible.length - 1];
+      if (e.shiftKey && document.activeElement === first) {
+        e.preventDefault();
+        last.focus();
+      } else if (!e.shiftKey && document.activeElement === last) {
+        e.preventDefault();
+        first.focus();
+      }
+    });
   }
 
+  // Guarded so Escape can never clear the scroll lock the drawer relies on.
   document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
+    if (e.key === 'Escape' && modal && modal.classList.contains('active')) {
       closePartnerModal();
     }
   });
 }
+window.openPartnerModal = openPartnerModal;
+window.closePartnerModal = closePartnerModal;

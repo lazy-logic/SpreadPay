@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>How It Works - MOOVON SpreadPay™</title>
   <meta name="description" content="Learn how Moovon SpreadPay empowers motor insurance customers to spread payments while insurance partners receive 100% upfront annual settlement.">
+  <!-- Open Graph / Social Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="How It Works - MOOVON SpreadPay™">
+  <meta property="og:description" content="Learn how Moovon SpreadPay empowers motor insurance customers to spread payments while insurance partners receive 100% upfront annual settlement.">
+  <meta property="og:image" content="assets/graphics/social_banner_exact.png">
+  <meta name="twitter:card" content="summary_large_image">
   
-  <!-- Tailwind CSS & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
 
   <!-- ==========================================================================
        Header & Sticky Glass Navigation (Uniform Across All Pages)
@@ -117,6 +125,8 @@
     </div>
   </header>
 
+  <main id="main">
+
   <!-- ==========================================================================
        Page Hero
        ========================================================================== -->
@@ -189,7 +199,8 @@
       </div>
 
       <div class="ops-card">
-        <table class="ops-table">
+        <div class="table-responsive" tabindex="0" role="region" aria-label="Reference table (scrollable)">
+<table class="ops-table">
           <thead>
             <tr>
               <th>Operational Area</th>
@@ -215,6 +226,8 @@
             </tr>
           </tbody>
         </table>
+</div>
+<p class="table-scroll-hint">Swipe the table sideways to see every column.</p>
 
         <div class="alert-box-info">
           <strong>Wording Note:</strong> Customer repayments arise under the separate SpreadPay finance agreement and do not defer, reduce, or otherwise affect the insurer's entitlement to the annual premium.
@@ -238,6 +251,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ==========================================================================
        Footer
@@ -280,8 +295,8 @@
         <div class="footer-col">
           <h5>LEGAL</h5>
           <ul class="footer-links">
-            <li><a href="faqs.html#legal">Terms & Conditions</a></li>
-            <li><a href="faqs.html#privacy">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -302,7 +317,7 @@
 
       <!-- Footer Bottom Row -->
       <div class="footer-bottom">
-        <p>© 2025 Moovon Insure. All rights reserved.</p>
+        <p>© 2026 Moovon Insure. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -316,21 +331,7 @@
     </div>
   </a>
 
-  <!-- Partner Modal -->
-  <div id="partnerModal" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close" id="closePartnerModal">&times;</button>
-      <h3 class="modal-title">Participating Insurance Partners</h3>
-      <p class="modal-sub">Ask any of our 10 verified partner companies, brokers or agents for <strong>Moovon SpreadPay™</strong>.</p>
-      <input type="text" id="partnerSearchInput" placeholder="Search insurer by name (e.g. Enterprise, Hollard, Glico)..." class="modal-search-input">
-      <div class="modal-partners-list" id="partnersModalList">
-        <div class="partner-modal-item"><img src="assets/logos/logo_activa.png" alt="Activa"><div><h5>Activa International Insurance</h5><p>Motor Comprehensive & Third Party Policies</p></div><a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Activa" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a></div>
-        <div class="partner-modal-item"><img src="assets/logos/logo_enterprise.png" alt="Enterprise"><div><h5>Enterprise Insurance</h5><p>Ghana's Leading Motor Insurer</p></div><a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Enterprise" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="header.js?v=2.1"></script>
-  <script src="script.js?v=2.1"></script>
+  <script src="header.js?v=2.4"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>

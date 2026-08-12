@@ -5,7 +5,73 @@
 document.addEventListener('DOMContentLoaded', () => {
   highlightCurrentPage();
   initUniformMobileDrawer();
+  injectPartnerModal();
 });
+
+// ==========================================================================
+// Participating Partners - single source of truth for the directory,
+// the finder modal and every "10 partners" count on the site.
+// ==========================================================================
+const MOOVON_PARTNERS = [
+  { name: 'Activa International Insurance', short: 'Activa', desc: 'Comprehensive & Third Party Motor', logo: 'logo_activa.png', categories: 'comprehensive thirdparty' },
+  { name: 'Enterprise Insurance', short: 'Enterprise', desc: "Ghana's Leading Motor Insurer", logo: 'logo_enterprise.png', categories: 'comprehensive thirdparty commercial' },
+  { name: 'Ghana Union Assurance (GUA)', short: 'Ghana Union Assurance', desc: 'Commercial & Private Vehicle Policies', logo: 'logo_gua.png', categories: 'comprehensive commercial' },
+  { name: 'Glico General Insurance', short: 'Glico', desc: 'Motor Third Party & Comprehensive', logo: 'logo_glico.png', categories: 'comprehensive thirdparty' },
+  { name: 'Hollard Insurance Ghana', short: 'Hollard', desc: 'Flexible Motor Cover with SpreadPay', logo: 'logo_hollard.png', categories: 'comprehensive thirdparty fleets' },
+  { name: 'NSIA Insurance Ghana', short: 'NSIA', desc: 'Private & Commercial Fleet Protection', logo: 'logo_nsia.png', categories: 'commercial fleets' },
+  { name: 'Priority Insurance Company', short: 'Priority', desc: 'Fast Motor Policy Financing', logo: 'logo_priority.png', categories: 'thirdparty commercial' },
+  { name: 'Provident Insurance Company', short: 'Provident', desc: 'Affordable Motor Protection', logo: 'logo_provident.png', categories: 'thirdparty' },
+  { name: 'Star Assurance Ghana', short: 'Star Assurance', desc: 'Solid Protection & Fleet Financing', logo: 'logo_star.png', categories: 'comprehensive fleets' },
+  { name: 'SUNU Assurances Ghana', short: 'SUNU', desc: 'Pan-African Motor Policy Financing', logo: 'logo_sunu.png', categories: 'comprehensive commercial' }
+];
+window.MOOVON_PARTNERS = MOOVON_PARTNERS;
+
+function partnerWhatsAppLink(partner, context) {
+  let msg = `Hi, I want to apply for SpreadPay with ${partner.short}`;
+  if (context) msg += ` (${context})`;
+  msg += '.';
+  return `https://wa.me/233593293040?text=${encodeURIComponent(msg)}`;
+}
+window.partnerWhatsAppLink = partnerWhatsAppLink;
+
+// Builds the Partner Finder modal once, on every page, from MOOVON_PARTNERS.
+// Replaces the seven hand-copied modals that had drifted out of sync.
+function injectPartnerModal() {
+  if (document.getElementById('partnerModal')) return;
+
+  const modal = document.createElement('div');
+  modal.id = 'partnerModal';
+  modal.className = 'modal-overlay';
+  modal.setAttribute('role', 'dialog');
+  modal.setAttribute('aria-modal', 'true');
+  modal.setAttribute('aria-labelledby', 'partnerModalTitle');
+
+  const rows = MOOVON_PARTNERS.map(p => `
+        <div class="partner-modal-item" data-categories="${p.categories}" data-partner="${p.short}">
+          <img src="assets/logos/${p.logo}" alt="" width="48" height="34" loading="lazy" decoding="async">
+          <div><h5>${p.name}</h5><p>${p.desc}</p></div>
+          <a href="${partnerWhatsAppLink(p)}" target="_blank" rel="noopener" class="btn btn-primary btn-sm partner-modal-cta"
+             aria-label="Ask for SpreadPay with ${p.name} on WhatsApp (opens in a new tab)">Ask for SpreadPay</a>
+        </div>`).join('');
+
+  modal.innerHTML = `
+    <div class="modal-card">
+      <button class="modal-close" id="closePartnerModal" aria-label="Close partner list">&times;</button>
+      <h3 class="modal-title" id="partnerModalTitle">Participating Insurance Partners</h3>
+      <p class="modal-sub" id="partnerModalSub">Ask any of our ${MOOVON_PARTNERS.length} verified partner insurers or brokers for <strong>Moovon SpreadPay&trade;</strong>.</p>
+      <label class="sr-only" for="partnerSearchInputModal">Search insurers by name</label>
+      <input type="search" id="partnerSearchInputModal" class="modal-search-input"
+             placeholder="Search insurer by name (e.g. Enterprise, Hollard, Glico)...">
+      <div class="modal-partners-list" id="partnersModalList">${rows}
+        <div class="partner-modal-empty" id="partnerModalEmpty" hidden>
+          <p>No partner matches that name.</p>
+          <a href="https://wa.me/233593293040?text=${encodeURIComponent("Hi, I couldn't find my insurer in the SpreadPay partner list — can you help me?")}"
+             target="_blank" rel="noopener" class="btn btn-whatsapp btn-sm">Chat with us and we'll route you</a>
+        </div>
+      </div>
+    </div>`;
+  document.body.appendChild(modal);
+}
 
 function highlightCurrentPage() {
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
@@ -118,10 +184,18 @@ function initUniformMobileDrawer() {
   // Toggle button in site header
   const toggles = document.querySelectorAll('.mobile-toggle');
   toggles.forEach(toggle => {
+    toggle.setAttribute('aria-expanded', 'false');
+    toggle.setAttribute('aria-controls', 'mobileDrawer');
     toggle.addEventListener('click', (e) => {
       e.stopPropagation();
       openMobileNavDrawer();
     });
+  });
+
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && drawer.classList.contains('active')) {
+      closeMobileNavDrawer();
+    }
   });
 
   // Close triggers
@@ -166,18 +240,25 @@ function initUniformMobileDrawer() {
 
 function openMobileNavDrawer() {
   const drawer = document.getElementById('mobileDrawer');
-  if (drawer) {
-    drawer.classList.add('active');
-    document.body.classList.add('mobile-drawer-open');
-  }
+  if (!drawer) return;
+  drawer.classList.add('active');
+  document.body.classList.add('mobile-drawer-open');
+  document.querySelectorAll('.mobile-toggle').forEach(t => t.setAttribute('aria-expanded', 'true'));
+  const closeBtn = document.getElementById('closeMobileDrawer');
+  if (closeBtn) closeBtn.focus();
 }
 
 function closeMobileNavDrawer() {
   const drawer = document.getElementById('mobileDrawer');
-  if (drawer) {
-    drawer.classList.remove('active');
-    document.body.classList.remove('mobile-drawer-open');
-  }
+  if (!drawer) return;
+  const wasOpen = drawer.classList.contains('active');
+  drawer.classList.remove('active');
+  document.body.classList.remove('mobile-drawer-open');
+  // Clear any legacy inline lock so the page can always scroll again.
+  document.body.style.overflow = '';
+  const toggles = document.querySelectorAll('.mobile-toggle');
+  toggles.forEach(t => t.setAttribute('aria-expanded', 'false'));
+  if (wasOpen && toggles.length) toggles[0].focus();
 }
 
 window.openMobileNavDrawer = openMobileNavDrawer;

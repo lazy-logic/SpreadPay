@@ -3,8 +3,6 @@
    Uniform Header, Big Brand Logo, Clean Vector Icons, No Yellow Gradients
    ========================================================================== */
 
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700;800&display=swap');
-
 :root {
   /* Brand Core Colors */
   --primary-navy: #0B2265;
@@ -232,10 +230,15 @@ button, input, select, textarea {
   z-index: 1100;
 }
 
-.nav-item-has-dropdown:hover .dropdown-menu {
+.nav-item-has-dropdown:hover .dropdown-menu,
+.nav-item-has-dropdown:focus-within .dropdown-menu {
   opacity: 1;
   visibility: visible;
   transform: translateX(-50%) translateY(0);
+}
+
+[id] {
+  scroll-margin-top: 100px;
 }
 
 .dropdown-item {
@@ -1227,6 +1230,30 @@ button, input, select, textarea {
   margin-bottom: 12px;
   text-transform: uppercase;
   letter-spacing: 0.4px;
+  color: var(--primary-navy);
+  background: var(--primary-navy-soft);
+}
+
+/* Tier colours live here rather than as inline styles written by the
+   calculator, which previously injected an off-palette purple. */
+.calc-tier-badge[data-tier="essential"] {
+  color: var(--primary-navy);
+  background: var(--primary-navy-soft);
+}
+
+.calc-tier-badge[data-tier="flex"] {
+  color: var(--accent-red-hover);
+  background: var(--accent-red-soft);
+}
+
+.calc-tier-badge[data-tier="fixed"] {
+  color: var(--primary-navy-dark);
+  background: #E2E8F0;
+}
+
+.calc-tier-badge[data-tier="none"] {
+  color: var(--text-muted);
+  background: var(--border-subtle);
 }
 
 .calc-breakdown-grid {
@@ -1510,6 +1537,39 @@ button, input, select, textarea {
   align-items: start;
 }
 
+/* Grid items default to min-width:auto, so wide children (tables, nowrap rows)
+   inflate the track past the viewport — and body{overflow-x:hidden} then clips
+   it instead of scrolling. min-width:0 lets the track shrink normally. */
+.ops-guide-grid > *,
+.faq-categories-grid > *,
+.contact-grid > *,
+.hiw-grid > *,
+.products-grid-3 > *,
+.partners-directory-grid > * {
+  min-width: 0;
+}
+
+/* Same rule for flex children whose content otherwise sets a hard floor. */
+.calc-card-wrapper > *,
+.calc-input-panel,
+.calc-input-group,
+.calc-preset-btn,
+.calc-input-box > *,
+.partner-modal-item > div {
+  min-width: 0;
+}
+
+/* A bare number input carries an intrinsic ~230px width; on a 320px screen
+   that alone pushes the calculator card past the viewport. */
+.calc-amount-input {
+  width: 100%;
+  min-width: 0;
+}
+
+.partner-search-field {
+  min-width: min(280px, 100%);
+}
+
 .ops-card {
   background: #FFFFFF;
   border: 1px solid var(--border-subtle);
@@ -1525,6 +1585,39 @@ button, input, select, textarea {
   font-weight: 900;
   color: var(--primary-navy);
   margin-bottom: 14px;
+}
+
+/* Global (not breakpoint-scoped): reference tables scroll inside their own
+   container at any width so the page body never scrolls sideways. */
+.table-responsive {
+  width: 100%;
+  max-width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-md);
+}
+
+.table-responsive:focus-visible {
+  outline: 3px solid rgba(11, 34, 101, 0.45);
+  outline-offset: 2px;
+}
+
+.table-responsive .ops-table {
+  min-width: 560px;
+  margin: 0;
+}
+
+.table-responsive + .table-scroll-hint {
+  display: none;
+  font-size: 12px;
+  color: var(--text-sub);
+  margin: 6px 0 16px;
+}
+
+@media (max-width: 700px) {
+  .table-responsive + .table-scroll-hint {
+    display: block;
+  }
 }
 
 .ops-table {
@@ -2168,6 +2261,70 @@ button, input, select, textarea {
   color: var(--text-muted);
 }
 
+.partner-modal-item > div {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.partner-modal-item .btn {
+  flex-shrink: 0;
+}
+
+.partner-modal-empty {
+  text-align: center;
+  padding: 22px 16px;
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-md);
+}
+
+.partner-modal-empty p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-bottom: 12px;
+}
+
+.partner-dir-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 36px 20px;
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+}
+
+.partner-dir-empty h4 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.partner-dir-empty p {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.partner-result-count {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 12px;
+  font-weight: 500;
+}
+
+/* Modal rows stack on phones so the CTA can't overlap the insurer name. */
+@media (max-width: 600px) {
+  .partner-modal-item {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .partner-modal-item .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
 /* ==========================================================================
    Keyframe Animations
    ========================================================================== */
@@ -2553,17 +2710,6 @@ body.mobile-drawer-open {
     justify-content: center;
   }
 
-  .table-responsive {
-    width: 100%;
-    overflow-x: auto;
-    -webkit-overflow-scrolling: touch;
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-sm);
-  }
-
-  .table-responsive table {
-    min-width: 580px;
-  }
 }
 
 @media (max-width: 600px) {
@@ -2614,6 +2760,199 @@ body.mobile-drawer-open {
 
   .contact-info-card, .contact-form-card {
     padding: 24px 18px;
+  }
+}
+
+/* ==========================================================================
+   Legal Documents (terms.html, privacy.html)
+   ========================================================================== */
+.legal-section {
+  padding: 64px 0 80px;
+}
+
+.legal-container {
+  max-width: 800px;
+}
+
+.legal-updated {
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--text-sub);
+  margin-bottom: 18px;
+}
+
+.legal-notice {
+  margin-bottom: 40px;
+  line-height: 1.65;
+}
+
+.legal-h2 {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: -0.3px;
+  margin: 40px 0 12px;
+  padding-top: 24px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.legal-section p {
+  color: var(--text-muted);
+  line-height: 1.75;
+  margin-bottom: 14px;
+}
+
+.legal-section strong {
+  color: var(--text-main);
+  font-weight: 600;
+}
+
+.legal-list {
+  list-style: none;
+  margin: 0 0 18px;
+  padding: 0;
+}
+
+.legal-list li {
+  position: relative;
+  padding-left: 26px;
+  margin-bottom: 10px;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+.legal-list li::before {
+  content: '';
+  position: absolute;
+  left: 6px;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent-red);
+}
+
+.legal-contact-box {
+  margin-top: 48px;
+  padding: 28px 26px;
+  background: var(--primary-navy-soft);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.legal-contact-box h3 {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.legal-contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+@media (max-width: 600px) {
+  .legal-contact-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ==========================================================================
+   Accessibility Foundations
+   ========================================================================== */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 16px;
+  z-index: 2000;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  padding: 12px 20px;
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  font-weight: 600;
+  font-size: 14px;
+  transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+  top: 0;
+}
+
+:focus-visible {
+  outline: 3px solid rgba(11, 34, 101, 0.55);
+  outline-offset: 2px;
+}
+
+.site-footer :focus-visible,
+.cta-banner-section :focus-visible,
+.page-hero :focus-visible,
+.contact-info-card :focus-visible,
+.floating-whatsapp-widget:focus-visible {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+/* Keyboard access to the header menus, which were hover-only. The ::before
+   bridge keeps the 12px gap between trigger and panel hoverable. */
+.nav-item-has-dropdown:focus-within .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateX(-50%) translateY(0);
+}
+
+.dropdown-menu::before {
+  content: '';
+  position: absolute;
+  top: -12px;
+  left: 0;
+  right: 0;
+  height: 12px;
+}
+
+/* Sticky-header offset so in-page anchors don't land under the glass bar. */
+[id] {
+  scroll-margin-top: 104px;
+}
+
+/* Contrast: --text-light (#94A3B8) sits at ~2.6:1 on white, below AA for
+   small informative text. These two uses carry meaning, so they step up. */
+.calc-stat-item small,
+.partner-dir-sub {
+  color: var(--text-sub);
+}
+
+.section-tag {
+  color: var(--accent-red-hover);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }
 

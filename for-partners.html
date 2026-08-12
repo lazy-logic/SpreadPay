@@ -5,15 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Insurance Partner Product & Operations Guide - MOOVON SpreadPay™</title>
   <meta name="description" content="Official Insurance Partner Product and Operations Guide for Moovon SpreadPay. Effective 10 August 2026.">
+  <!-- Open Graph / Social Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Insurance Partner Product & Operations Guide - MOOVON SpreadPay™">
+  <meta property="og:description" content="Official Insurance Partner Product and Operations Guide for Moovon SpreadPay. Effective August 2026.">
+  <meta property="og:image" content="assets/graphics/social_banner_exact.png">
+  <meta name="twitter:card" content="summary_large_image">
   
-  <!-- Tailwind CSS & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
 
   <!-- ==========================================================================
        Header & Sticky Glass Navigation (Uniform Across All Pages)
@@ -117,6 +125,8 @@
     </div>
   </header>
 
+  <main id="main">
+
   <!-- ==========================================================================
        Page Hero
        ========================================================================== -->
@@ -148,7 +158,8 @@
               <strong>Core Principle:</strong> The product choice affects the customer finance arrangement only. It does not defer, reduce, or alter the insurer's receipt of the 100% annual premium.
             </div>
 
-            <table class="ops-table">
+            <div class="table-responsive" tabindex="0" role="region" aria-label="Reference table (scrollable)">
+<table class="ops-table">
               <thead>
                 <tr>
                   <th>Component</th>
@@ -170,12 +181,15 @@
                 </tr>
               </tbody>
             </table>
+</div>
+<p class="table-scroll-hint">Swipe the table sideways to see every column.</p>
           </div>
 
           <!-- 2. Division of Responsibilities -->
           <div class="ops-card">
             <h3 class="ops-card-title">2. Partnership Division of Responsibilities</h3>
-            <table class="ops-table">
+            <div class="table-responsive" tabindex="0" role="region" aria-label="Reference table (scrollable)">
+<table class="ops-table">
               <thead>
                 <tr>
                   <th>Moovon Administers</th>
@@ -201,12 +215,15 @@
                 </tr>
               </tbody>
             </table>
+</div>
+<p class="table-scroll-hint">Swipe the table sideways to see every column.</p>
           </div>
 
           <!-- 3. Product Positioning & Escalation -->
           <div class="ops-card">
             <h3 class="ops-card-title">3. Product Positioning & Underwriting Limits</h3>
-            <table class="ops-table">
+            <div class="table-responsive" tabindex="0" role="region" aria-label="Reference table (scrollable)">
+<table class="ops-table">
               <thead>
                 <tr>
                   <th>Product</th>
@@ -230,12 +247,14 @@
                 </tr>
                 <tr>
                   <td><strong>Fixed</strong></td>
-                  <td>GH₵15,000 – GH₵50,000</td>
+                  <td>GH₵15,001 – GH₵50,000</td>
                   <td>Larger premiums; fleets and corporate accounts</td>
                   <td>40% deposit; 1% Setup Fee; upfront GH₵900 Facility Fee; 3 fixed repayments</td>
                 </tr>
               </tbody>
             </table>
+</div>
+<p class="table-scroll-hint">Swipe the table sideways to see every column.</p>
 
             <div class="alert-box-warning">
               <strong>Escalation Protocol:</strong> Fixed tier supports a maximum automated financed balance of GH₵50,000. Requests exceeding this threshold require the Insurance Partner's <strong>Relationship Manager (RM) Approval</strong>.
@@ -277,23 +296,34 @@
               </li>
             </ul>
 
-            <h4 style="font-family:var(--font-heading); font-size:18px; font-weight:800; color:var(--primary-navy); margin-bottom:12px;">Partner Portal Sign In</h4>
-            <form onsubmit="event.preventDefault(); alert('Partner Portal SSO is configured for authorized insurer domains. Please contact your Relationship Manager for access credentials.');">
+            <h4 style="font-family:var(--font-heading); font-size:18px; font-weight:800; color:var(--primary-navy); margin-bottom:12px;">Partner Portal Access</h4>
+            <p style="font-size:13.5px; color:var(--text-muted); line-height:1.65; margin-bottom:16px;">
+              Portal sign-in is issued per insurer domain by your Relationship Manager. Request access
+              below and we will set your account up and confirm by email.
+            </p>
+            <form id="portalAccessForm">
               <div class="form-group">
-                <label>Insurer Work Email</label>
-                <input type="email" class="form-control" placeholder="e.g. name@enterprise.com.gh" required>
+                <label for="portalName">Your Name</label>
+                <input type="text" id="portalName" name="name" class="form-control" autocomplete="name" placeholder="e.g. Ama Mensah" required>
               </div>
               <div class="form-group">
-                <label>Password</label>
-                <input type="password" class="form-control" placeholder="••••••••" required>
+                <label for="portalInsurer">Insurer / Brokerage</label>
+                <input type="text" id="portalInsurer" name="organization" class="form-control" autocomplete="organization" placeholder="e.g. Enterprise Insurance" required>
               </div>
-              <button type="submit" class="btn btn-find-partner" style="width:100%; border-radius:8px;">Sign In to Portal</button>
+              <div class="form-group">
+                <label for="portalEmail">Insurer Work Email</label>
+                <input type="email" id="portalEmail" name="email" class="form-control" autocomplete="email" placeholder="e.g. name@enterprise.com.gh" required>
+              </div>
+              <button type="submit" class="btn btn-find-partner" style="width:100%; border-radius:8px;">Request Portal Access</button>
+              <p id="portalAccessStatus" role="status" aria-live="polite" style="font-size:13px; color:var(--text-muted); margin-top:12px;"></p>
             </form>
           </div>
         </div>
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ==========================================================================
        Footer
@@ -336,8 +366,8 @@
         <div class="footer-col">
           <h5>LEGAL</h5>
           <ul class="footer-links">
-            <li><a href="faqs.html#legal">Terms & Conditions</a></li>
-            <li><a href="faqs.html#privacy">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -358,7 +388,7 @@
 
       <!-- Footer Bottom Row -->
       <div class="footer-bottom">
-        <p>© 2025 Moovon Insure. All rights reserved.</p>
+        <p>© 2026 Moovon Insure. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -372,21 +402,7 @@
     </div>
   </a>
 
-  <!-- Partner Modal -->
-  <div id="partnerModal" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close" id="closePartnerModal">&times;</button>
-      <h3 class="modal-title">Participating Insurance Partners</h3>
-      <p class="modal-sub">Ask any of our 10 verified partner insurers or brokers for <strong>Moovon SpreadPay™</strong>.</p>
-      <input type="text" id="partnerSearchInput" placeholder="Search insurer by name (e.g. Enterprise, Hollard, Glico)..." class="modal-search-input">
-      <div class="modal-partners-list" id="partnersModalList">
-        <div class="partner-modal-item"><img src="assets/logos/logo_activa.png" alt="Activa"><div><h5>Activa International Insurance</h5><p>Motor Comprehensive & Third Party Policies</p></div><a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Activa" target="_blank" class="btn btn-find-partner" style="padding:6px 14px; font-size:12px;">Ask for SpreadPay</a></div>
-        <div class="partner-modal-item"><img src="assets/logos/logo_enterprise.png" alt="Enterprise"><div><h5>Enterprise Insurance</h5><p>Ghana's Leading Motor Insurer</p></div><a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Enterprise" target="_blank" class="btn btn-find-partner" style="padding:6px 14px; font-size:12px;">Ask for SpreadPay</a></div>
-      </div>
-    </div>
-  </div>
-
-  <script src="header.js?v=2.1"></script>
-  <script src="script.js?v=2.1"></script>
+  <script src="header.js?v=2.4"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>

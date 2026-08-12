@@ -5,29 +5,23 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MOOVON SpreadPay™ - Pay Motor Insurance in Flexible Monthly Installments</title>
   <meta name="description" content="Moovon SpreadPay empowers drivers and fleet owners in Ghana to spread motor insurance payments into affordable monthly installments while insurance partners receive 100% upfront annual premium.">
+  <!-- Open Graph / Social Previews -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="MOOVON SpreadPay™ - Pay Motor Insurance in Flexible Monthly Installments">
+  <meta property="og:description" content="Spread your Third Party, Comprehensive, or Commercial motor insurance over 3 to 6 monthly installments. 100% upfront settlement to insurers.">
+  <meta property="og:image" content="assets/graphics/social_banner_exact.png">
+  <meta name="twitter:card" content="summary_large_image">
   
-  <!-- Tailwind CSS & Fonts -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            brandNavy: '#0B2265',
-            brandDarkNavy: '#06143D',
-            brandRed: '#E51937',
-            waGreen: '#25D366',
-          }
-        }
-      }
-    }
-  </script>
+  <!-- Fonts & Stylesheet -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.4">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css?v=2.5">
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to main content</a>
+
 
   <!-- ==========================================================================
        Header & Sticky Glass Navigation (Uniform Across All Pages)
@@ -130,6 +124,8 @@
       </button>
     </div>
   </header>
+
+  <main id="main">
 
   <!-- ==========================================================================
        Hero Billboard Section (Live Re-creation of Reference Flyer:
@@ -272,7 +268,7 @@
               <p class="tier-desc">Designed for qualifying Third Party motor covers.</p>
             </div>
             <ul class="tier-specs-list">
-              <li class="tier-spec-item"><span>Minimum Deposit</span><strong>GH₵100 flat</strong></li>
+              <li class="tier-spec-item"><span>Minimum Deposit</span><strong>GH₵100 minimum</strong></li>
               <li class="tier-spec-item"><span>Setup Fee</span><strong>GH₵25 flat</strong></li>
               <li class="tier-spec-item"><span>Repayment Tenure</span><strong>Up to 3 Months</strong></li>
               <li class="tier-spec-item"><span>Month 1 Minimum</span><strong>35% of Financed Balance</strong></li>
@@ -305,7 +301,7 @@
           <div>
             <div class="tier-header">
               <h3 class="tier-name">Fixed</h3>
-              <div class="tier-range">GH₵15,000 – GH₵50,000+</div>
+              <div class="tier-range">GH₵15,001 – GH₵50,000+</div>
               <p class="tier-desc">Certainty for corporate fleets and high-value vehicles.</p>
             </div>
             <ul class="tier-specs-list">
@@ -336,6 +332,8 @@
       </div>
     </div>
   </section>
+
+  </main>
 
   <!-- ==========================================================================
        Footer
@@ -378,8 +376,8 @@
         <div class="footer-col">
           <h5>LEGAL</h5>
           <ul class="footer-links">
-            <li><a href="faqs.html#legal">Terms & Conditions</a></li>
-            <li><a href="faqs.html#privacy">Privacy Policy</a></li>
+            <li><a href="terms.html">Terms & Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
           </ul>
         </div>
 
@@ -400,7 +398,7 @@
 
       <!-- Footer Bottom Row -->
       <div class="footer-bottom">
-        <p>© 2025 Moovon Insure. All rights reserved.</p>
+        <p>© 2026 Moovon Insure. All rights reserved.</p>
       </div>
     </div>
   </footer>
@@ -414,69 +412,7 @@
     </div>
   </a>
 
-  <!-- Partner Modal -->
-  <div id="partnerModal" class="modal-overlay">
-    <div class="modal-card">
-      <button class="modal-close" id="closePartnerModal">&times;</button>
-      <h3 class="modal-title">Participating Insurance Partners</h3>
-      <p class="modal-sub">Ask any of our 10 verified partner insurers or brokers for <strong>Moovon SpreadPay™</strong>.</p>
-      <input type="text" id="partnerSearchInput" placeholder="Search insurer by name (e.g. Enterprise, Hollard, Glico)..." class="modal-search-input">
-      <div class="modal-partners-list" id="partnersModalList">
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_activa.png" alt="Activa International">
-          <div><h5>Activa International Insurance</h5><p>Comprehensive & Third Party Motor</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Activa" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_enterprise.png" alt="Enterprise Insurance">
-          <div><h5>Enterprise Insurance</h5><p>Ghana's Leading Motor Insurer</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Enterprise" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_gua.png" alt="Ghana Union Assurance">
-          <div><h5>Ghana Union Assurance (GUA)</h5><p>Commercial & Private Vehicle Policies</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20GUA" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_glico.png" alt="Glico General">
-          <div><h5>Glico General Insurance</h5><p>Motor Third Party & Comprehensive</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Glico" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_hollard.png" alt="Hollard Insurance">
-          <div><h5>Hollard Insurance Ghana</h5><p>Flexible Motor Cover with SpreadPay</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Hollard" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_nsia.png" alt="NSIA Insurance">
-          <div><h5>NSIA Insurance Ghana</h5><p>Private & Commercial Fleet Protection</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20NSIA" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_priority.png" alt="Priority Insurance">
-          <div><h5>Priority Insurance Company</h5><p>Fast Motor Policy Financing</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Priority" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_provident.png" alt="Provident Insurance">
-          <div><h5>Provident Insurance Company</h5><p>Affordable Motor Protection</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Provident" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_star.png" alt="Star Assurance">
-          <div><h5>Star Assurance Ghana</h5><p>Solid Protection & Fleet Financing</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20StarAssurance" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-        <div class="partner-modal-item">
-          <img src="assets/logos/logo_sunu.png" alt="SUNU Assurances">
-          <div><h5>SUNU Assurances Ghana</h5><p>Pan-African Motor Policy Financing</p></div>
-          <a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20SUNU" target="_blank" class="btn btn-primary btn-sm">Ask for SpreadPay</a>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <script src="header.js?v=2.1"></script>
-  <script src="script.js?v=2.1"></script>
+  <script src="header.js?v=2.4"></script>
+  <script src="script.js?v=2.4"></script>
 </body>
 </html>
