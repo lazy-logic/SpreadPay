@@ -295,49 +295,54 @@ button, input, select, textarea {
   gap: 12px;
 }
 
-/* Header Buttons matching exact reference image */
+/* Header Action Buttons */
 .btn-signin {
   font-family: var(--font-heading);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
-  color: #0B2265;
+  color: var(--primary-navy);
   background: #FFFFFF;
-  border: 1.5px solid #D5DDE7;
-  padding: 10px 24px;
+  border: 1.5px solid rgba(11, 34, 101, 0.2);
+  padding: 9px 20px;
   border-radius: var(--radius-full);
   text-decoration: none;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-spring);
-  box-shadow: 0 1px 3px rgba(11, 34, 101, 0.04);
+  gap: 6px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(11, 34, 101, 0.05);
 }
 
 .btn-signin:hover {
-  border-color: #0B2265;
-  background: #F0F4FC;
-  transform: translateY(-1px);
+  border-color: var(--primary-navy);
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(11, 34, 101, 0.18);
 }
 
 .btn-find-partner {
   font-family: var(--font-heading);
-  font-size: 14.5px;
+  font-size: 14px;
   font-weight: 700;
   color: #FFFFFF;
-  background: #E51937;
-  border: none;
-  padding: 11px 26px;
+  background: var(--accent-red);
+  border: 1.5px solid var(--accent-red);
+  padding: 9px 22px;
   border-radius: var(--radius-full);
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  transition: var(--transition-spring);
+  gap: 6px;
+  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
   box-shadow: 0 4px 14px rgba(229, 25, 55, 0.3);
 }
 
 .btn-find-partner:hover {
-  background: #C4122C;
+  background: var(--accent-red-hover);
+  border-color: var(--accent-red-hover);
   transform: translateY(-2px);
   box-shadow: 0 8px 22px rgba(229, 25, 55, 0.4);
 }
@@ -890,40 +895,85 @@ button, input, select, textarea {
   }
 }
 
-/* Trusted Partners Strip Below Hero */
+/* Trusted Partners Strip Below Hero - Infinite Smooth Marquee */
 .hero-partners-ribbon {
   position: relative;
   z-index: 3;
   background: #FFFFFF;
   border-bottom: 1px solid var(--border-subtle);
-  padding: 12px 0 16px;
+  padding: 16px 0;
   box-shadow: 0 4px 16px rgba(0, 0, 0, 0.02);
+  overflow: hidden;
 }
 
-.ribbon-logos-strip {
+/* Subtle gradient fade on left and right edges */
+.hero-partners-ribbon::before,
+.hero-partners-ribbon::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 90px;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hero-partners-ribbon::before {
+  left: 0;
+  background: linear-gradient(90deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.hero-partners-ribbon::after {
+  right: 0;
+  background: linear-gradient(270deg, #FFFFFF 0%, rgba(255, 255, 255, 0) 100%);
+}
+
+.ribbon-logos-track {
+  display: flex;
+  width: 100%;
+  overflow: hidden;
+  user-select: none;
+}
+
+.ribbon-logos-slide {
   display: flex;
   align-items: center;
-  justify-content: space-around;
-  gap: 28px;
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-  padding: 0 16px;
+  gap: 56px;
+  padding-right: 56px;
+  flex-shrink: 0;
+  animation: smoothMarquee 32s linear infinite;
+  will-change: transform;
 }
 
-.ribbon-logos-strip img {
-  height: 28px;
+.ribbon-logos-track:hover .ribbon-logos-slide {
+  animation-play-state: paused;
+}
+
+.ribbon-logos-slide img {
+  height: 30px;
   width: auto;
+  max-width: 140px;
   object-fit: contain;
   filter: grayscale(100%);
   opacity: 0.72;
-  transition: var(--transition-smooth);
+  transition: filter 0.25s ease, opacity 0.25s ease, transform 0.25s ease;
   flex-shrink: 0;
+  cursor: pointer;
 }
 
-.ribbon-logos-strip img:hover {
+.ribbon-logos-slide img:hover {
   filter: grayscale(0%);
   opacity: 1;
   transform: scale(1.08);
+}
+
+@keyframes smoothMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
 }
 
 /* Floating Stat Pill on Hero */
