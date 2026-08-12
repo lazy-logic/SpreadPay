@@ -277,17 +277,29 @@ function injectChatWidget() {
   widget.id = 'moovonChatWidget';
   widget.className = 'moovon-chat-widget-wrap';
   widget.innerHTML = `
-    <!-- Floating Quote / Speech Bubble -->
-    <div class="moovon-chat-bubble" id="moovonChatBubble">
-      <button class="moovon-chat-bubble-close" id="closeChatBubble" aria-label="Dismiss chat quote">&times;</button>
-      <div class="moovon-chat-bubble-badge">
-        <span class="hero-live-pulse"></span> Online Now
+    <!-- Top Floating Section: Floating Superhero Mascot on Left + Speech Bubble on Right -->
+    <div class="moovon-hero-top-stage">
+      <!-- The 3D Superhero Mascot Floating Above the Widget on Left -->
+      <div class="moovon-mascot-float-box" aria-hidden="true">
+        <img src="assets/graphics/mr_moovon_waving_avatar.png" 
+             alt="Mr. Moovon Superhero" 
+             class="moovon-mascot-floating-img"
+             loading="eager">
+        <div class="moovon-mascot-shadow"></div>
       </div>
-      <p class="moovon-chat-bubble-quote">“Need help spreading your motor insurance? <strong>Chat with us!</strong> 👋”</p>
-      <div class="moovon-chat-bubble-arrow"></div>
+
+      <!-- Floating Quote / Speech Bubble pointing to Mr. Moovon -->
+      <div class="moovon-chat-bubble" id="moovonChatBubble">
+        <button class="moovon-chat-bubble-close" id="closeChatBubble" aria-label="Dismiss chat quote">&times;</button>
+        <div class="moovon-chat-bubble-badge">
+          <span class="hero-live-pulse"></span> Online Now
+        </div>
+        <p class="moovon-chat-bubble-quote">“Need help spreading your insurance? <strong>Chat with us!</strong> 👋”</p>
+        <div class="moovon-chat-bubble-arrow"></div>
+      </div>
     </div>
 
-    <!-- Floating Superhero Trigger Button -->
+    <!-- Floating Action Button Pill Below Mascot -->
     <a href="https://wa.me/233593293040?text=${encodeURIComponent('Hi Mr. Moovon, I want to ask about Moovon SpreadPay.')}" 
        target="_blank" 
        rel="noopener" 
@@ -295,33 +307,24 @@ function injectChatWidget() {
        id="moovonWidgetTrigger"
        aria-label="Chat with Mr. Moovon on WhatsApp">
       
-      <!-- Standing Superhero Mascot Popping Out -->
-      <div class="moovon-hero-avatar-wrap">
-        <img src="assets/graphics/mr_moovon_waving_avatar.png" 
-             alt="Mr. Moovon Superhero Mascot" 
-             class="moovon-hero-standing-img"
-             loading="eager">
-        <span class="moovon-wa-status-badge" title="WhatsApp Active">
-          <svg viewBox="0 0 24 24" width="10" height="10" fill="#FFFFFF">
-            <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001L2 22l5.12-1.341c1.472.802 3.13 1.225 4.887 1.226h.005c5.506 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/>
-          </svg>
-        </span>
+      <div class="moovon-wa-pill-badge">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366">
+          <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001L2 22l5.12-1.341c1.472.802 3.13 1.225 4.887 1.226h.005c5.506 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/>
+          <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+        </svg>
       </div>
 
-      <!-- Text Group -->
       <div class="moovon-hero-text-col">
-        <div class="moovon-hero-name">
-          <span>Chat with Mr. Moovon</span>
-        </div>
+        <div class="moovon-hero-name">Chat with Mr. Moovon</div>
         <div class="moovon-hero-sub">
           <span class="moovon-sub-tag">Chat with us</span> • Instant Reply
         </div>
       </div>
 
-      <div class="moovon-wa-icon-box" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
-          <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001L2 22l5.12-1.341c1.472.802 3.13 1.225 4.887 1.226h.005c5.506 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/>
-          <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+      <div class="moovon-wa-action-circle" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+          <line x1="5" y1="12" x2="19" y2="12"></line>
+          <polyline points="12 5 19 12 12 19"></polyline>
         </svg>
       </div>
     </a>
