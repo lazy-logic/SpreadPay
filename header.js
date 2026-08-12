@@ -74,15 +74,29 @@ function injectPartnerModal() {
   document.body.appendChild(modal);
 }
 
+// Reduces "/contact", "contact.html", "/contact#x" and "" to a single
+// comparable slug, so link matching survives clean URLs, the .html form and
+// local file:// previews alike.
+function pageSlug(value) {
+  if (!value) return 'index';
+  let slug = value.split('#')[0].split('?')[0];
+  slug = slug.substring(slug.lastIndexOf('/') + 1);
+  slug = slug.replace(/\.html$/, '');
+  return slug === '' ? 'index' : slug;
+}
+
 function highlightCurrentPage() {
-  const currentPath = window.location.pathname.split('/').pop() || 'index.html';
+  const current = pageSlug(window.location.pathname);
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
   navLinks.forEach(link => {
-    const href = link.getAttribute('href');
-    if (href === currentPath || (currentPath === '' && href === 'index.html')) {
+    const href = link.getAttribute('href') || '';
+    // Ignore pure in-page anchors ("#main") and off-site links.
+    const isInternal = !href.startsWith('#') && !/^[a-z]+:/i.test(href);
+
+    if (isInternal && pageSlug(href) === current) {
       link.classList.add('active');
-      if (href === 'contact.html' && link.classList.contains('nav-link')) {
+      if (current === 'contact' && link.classList.contains('nav-link')) {
         link.classList.add('nav-contact-active');
       }
     } else {
@@ -103,7 +117,7 @@ function initUniformMobileDrawer() {
       <div class="mobile-drawer-backdrop" id="mobileDrawerBackdrop"></div>
       <div class="mobile-drawer-panel">
         <div class="mobile-drawer-header">
-          <a href="index.html" class="brand-logo-group" aria-label="Moovon SpreadPay Home">
+          <a href="/" class="brand-logo-group" aria-label="Moovon SpreadPay Home">
             <svg class="brand-logo-svg" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg" style="height:32px;">
               <text x="0" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="29" fill="#0B2265" letter-spacing="-0.5">MOOVON</text>
               <path d="M77 31 L82 37 L87 31 H84.5 L82 33.5 L79.5 31 Z" fill="#E51937" />
@@ -116,7 +130,7 @@ function initUniformMobileDrawer() {
 
         <nav class="mobile-drawer-nav">
           <ul class="mobile-nav-list">
-            <li><a href="how-it-works.html" class="mobile-nav-link">How It Works</a></li>
+            <li><a href="/how-it-works" class="mobile-nav-link">How It Works</a></li>
             
             <li class="mobile-nav-item-dropdown">
               <button class="mobile-dropdown-toggle" aria-expanded="false">
@@ -124,15 +138,15 @@ function initUniformMobileDrawer() {
                 <svg class="mobile-dropdown-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="mobile-submenu">
-                <a href="products.html#essential" class="mobile-sublink">
+                <a href="/products#essential" class="mobile-sublink">
                   <strong>Essential Tier</strong>
                   <span>Third Party from GH₵330</span>
                 </a>
-                <a href="products.html#flex" class="mobile-sublink">
+                <a href="/products#flex" class="mobile-sublink">
                   <strong>Flex Tier</strong>
                   <span>Installments up to 6 months</span>
                 </a>
-                <a href="products.html#fixed" class="mobile-sublink">
+                <a href="/products#fixed" class="mobile-sublink">
                   <strong>Fixed Tier</strong>
                   <span>Commercial & fleets</span>
                 </a>
@@ -145,29 +159,29 @@ function initUniformMobileDrawer() {
                 <svg class="mobile-dropdown-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="mobile-submenu">
-                <a href="partners.html" class="mobile-sublink">
+                <a href="/partners" class="mobile-sublink">
                   <strong>Participating Partners</strong>
                   <span>View all 10 Ghana partner insurers</span>
                 </a>
-                <a href="for-partners.html" class="mobile-sublink">
+                <a href="/for-partners" class="mobile-sublink">
                   <strong>Operations Guide</strong>
                   <span>Settlement rules & underwriting</span>
                 </a>
-                <a href="for-partners.html#portal" class="mobile-sublink">
+                <a href="/for-partners#portal" class="mobile-sublink">
                   <strong>Partner Portal Sign In</strong>
                   <span>Insurer & broker portal</span>
                 </a>
               </div>
             </li>
 
-            <li><a href="faqs.html" class="mobile-nav-link">FAQs</a></li>
-            <li><a href="contact.html" class="mobile-nav-link">Contact Us</a></li>
+            <li><a href="/faqs" class="mobile-nav-link">FAQs</a></li>
+            <li><a href="/contact" class="mobile-nav-link">Contact Us</a></li>
           </ul>
         </nav>
 
         <div class="mobile-drawer-footer">
           <button onclick="openPartnerModal(); closeMobileNavDrawer();" class="btn btn-find-partner" style="width:100%; justify-content:center; padding:12px; margin-bottom:10px;">Find a Partner</button>
-          <a href="for-partners.html#portal" class="btn btn-signin" style="width:100%; text-align:center; justify-content:center; padding:12px; margin-bottom:14px;">Partner Sign In</a>
+          <a href="/for-partners#portal" class="btn btn-signin" style="width:100%; text-align:center; justify-content:center; padding:12px; margin-bottom:14px;">Partner Sign In</a>
           
           <a href="https://wa.me/233593293040" target="_blank" class="mobile-drawer-wa" rel="noopener">
             <svg class="wa-green-icon" viewBox="0 0 24 24" width="20" height="20" fill="none">
