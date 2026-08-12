@@ -85,8 +85,15 @@ function pageSlug(value) {
   return slug === '' ? 'index' : slug;
 }
 
+// Pages reached through a dropdown have no top-level nav item of their own,
+// so they light up their parent instead.
+const NAV_PARENT = {
+  'partners': 'for-partners'
+};
+
 function highlightCurrentPage() {
   const current = pageSlug(window.location.pathname);
+  const target = NAV_PARENT[current] || current;
   const navLinks = document.querySelectorAll('.nav-link, .mobile-nav-link');
 
   navLinks.forEach(link => {
@@ -94,7 +101,7 @@ function highlightCurrentPage() {
     // Ignore pure in-page anchors ("#main") and off-site links.
     const isInternal = !href.startsWith('#') && !/^[a-z]+:/i.test(href);
 
-    if (isInternal && pageSlug(href) === current) {
+    if (isInternal && pageSlug(href) === target) {
       link.classList.add('active');
       if (current === 'contact' && link.classList.contains('nav-link')) {
         link.classList.add('nav-contact-active');
