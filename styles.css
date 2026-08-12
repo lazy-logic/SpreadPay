@@ -1629,19 +1629,19 @@ button, input, select, textarea {
    ========================================================================== */
 .floating-whatsapp-widget {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 20px;
+  right: 20px;
   z-index: 1200;
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 8px;
   background: rgba(11, 34, 101, 0.94);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   border-radius: var(--radius-full);
-  padding: 6px 18px 6px 6px;
-  box-shadow: var(--shadow-xl);
+  padding: 4px 14px 4px 4px;
+  box-shadow: var(--shadow-lg);
   color: #FFFFFF;
   text-decoration: none;
   transition: var(--transition-spring);
@@ -1649,32 +1649,34 @@ button, input, select, textarea {
 }
 
 .floating-whatsapp-widget:hover {
-  transform: translateY(-4px) scale(1.03);
-  box-shadow: 0 20px 40px rgba(11, 34, 101, 0.35);
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 12px 28px rgba(11, 34, 101, 0.35);
   border-color: var(--whatsapp-green);
 }
 
 .wa-avatar-img {
-  width: 44px;
-  height: 44px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid var(--whatsapp-green);
-  box-shadow: 0 0 12px rgba(37, 211, 102, 0.5);
+  border: 1.5px solid var(--whatsapp-green);
+  box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
 }
 
 .wa-text-group h5 {
   font-family: var(--font-heading);
-  font-size: 13.5px;
-  font-weight: 800;
+  font-size: 12px;
+  font-weight: 700;
   color: #FFFFFF;
-  line-height: 1.2;
+  line-height: 1.15;
+  white-space: nowrap;
 }
 
 .wa-text-group p {
-  font-size: 11px;
+  font-size: 10px;
   color: var(--whatsapp-green);
   font-weight: 600;
+  line-height: 1;
 }
 
 /* ==========================================================================
@@ -2233,20 +2235,20 @@ body.mobile-drawer-open {
   }
 
   .floating-whatsapp-widget {
-    bottom: 12px;
-    right: 12px;
-    padding: 6px 12px;
-    gap: 8px;
-    max-width: calc(100vw - 24px);
+    bottom: 10px;
+    right: 10px;
+    padding: 3px 10px 3px 3px;
+    gap: 6px;
+    max-width: calc(100vw - 20px);
   }
 
   .wa-avatar-img {
-    width: 38px;
-    height: 38px;
+    width: 28px;
+    height: 28px;
   }
 
   .wa-text-group h5 {
-    font-size: 12px;
+    font-size: 11px;
   }
 
   .wa-text-group p {
