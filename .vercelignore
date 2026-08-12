@@ -1,0 +1,8 @@
+# Internal source material - not for public hosting
+CONTENT_EXTRACTION.md
+spreadpay_operations_guide_extraction.md
+sample/
+
+# Unused legacy partials (no page references these)
+header.html
+footer.html
