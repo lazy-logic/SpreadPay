@@ -277,22 +277,22 @@ function injectChatWidget() {
   widget.id = 'moovonChatWidget';
   widget.className = 'moovon-pure-avatar-widget';
   widget.innerHTML = `
-    <!-- Speech Bubble saying "Chat with us" -->
+    <!-- Redesigned Sleek Portable Speech Bubble -->
     <a href="https://wa.me/233593293040?text=${encodeURIComponent('Hi Mr. Moovon, I want to ask about Moovon SpreadPay.')}" 
        target="_blank" 
        rel="noopener" 
        class="moovon-pure-speech-bubble" 
        id="moovonChatBubble"
        aria-label="Chat with us on WhatsApp">
-      <div class="moovon-speech-content">
-        <span class="hero-live-pulse" title="Online"></span>
-        <span class="moovon-speech-text">Chat with us</span>
-        <svg class="moovon-speech-wa-icon" viewBox="0 0 24 24" width="16" height="16" fill="#25D366">
+      <span class="bubble-pulse-dot" aria-hidden="true"></span>
+      <span class="moovon-speech-text">Chat with us</span>
+      <span class="moovon-speech-wa-badge" aria-hidden="true">
+        <svg viewBox="0 0 24 24" width="13" height="13" fill="#FFFFFF">
           <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001L2 22l5.12-1.341c1.472.802 3.13 1.225 4.887 1.226h.005c5.506 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/>
-          <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+          <path fill="#25D366" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
         </svg>
-      </div>
-      <div class="moovon-pure-bubble-arrow"></div>
+      </span>
+      <div class="moovon-pure-bubble-arrow" aria-hidden="true"></div>
     </a>
 
     <!-- Full Image Superhero Avatar Link -->
