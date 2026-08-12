@@ -2068,56 +2068,240 @@ button, input, select, textarea {
 /* ==========================================================================
    Floating Superhero Mascot WhatsApp Widget
    ========================================================================== */
-.floating-whatsapp-widget {
+/* ==========================================================================
+   Modern Superhero Floating Chat Widget & Speech Quote Bubble
+   ========================================================================== */
+.moovon-chat-widget-wrap {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
+  bottom: 24px;
+  right: 24px;
   z-index: 1200;
   display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 12px;
+  pointer-events: auto;
+}
+
+/* Floating Speech Quote Bubble */
+.moovon-chat-bubble {
+  position: relative;
+  background: #FFFFFF;
+  border-radius: 18px 18px 4px 18px;
+  padding: 12px 18px 12px 16px;
+  box-shadow: 0 14px 36px rgba(11, 34, 101, 0.2), 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(11, 34, 101, 0.1);
+  max-width: 255px;
+  animation: floatChatBubble 3.5s ease-in-out infinite alternate;
+  transform-origin: bottom right;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.moovon-chat-bubble:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 42px rgba(11, 34, 101, 0.26);
+}
+
+.moovon-chat-bubble-close {
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  line-height: 1;
+  color: var(--text-muted);
+  cursor: pointer;
+  padding: 2px 4px;
+  border-radius: 50%;
+  transition: color 0.2s ease;
+}
+
+.moovon-chat-bubble-close:hover {
+  color: var(--accent-red);
+}
+
+.moovon-chat-bubble-badge {
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  background: rgba(11, 34, 101, 0.94);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  gap: 6px;
+  font-size: 11px;
+  font-weight: 700;
+  color: #15803D;
+  background: #DCFCE7;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
-  padding: 4px 14px 4px 4px;
-  box-shadow: var(--shadow-lg);
+  margin-bottom: 6px;
+  letter-spacing: 0.02em;
+}
+
+.hero-live-pulse {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #22C55E;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  animation: livePulse 1.8s infinite;
+}
+
+@keyframes livePulse {
+  0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+  70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+  100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+
+.moovon-chat-bubble-quote {
+  font-size: 12.5px;
+  font-weight: 500;
+  color: var(--primary-navy);
+  line-height: 1.45;
+  margin: 0;
+}
+
+.moovon-chat-bubble-quote strong {
+  color: var(--accent-red);
+  font-weight: 700;
+}
+
+.moovon-chat-bubble-arrow {
+  position: absolute;
+  bottom: -8px;
+  right: 28px;
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 8px solid #FFFFFF;
+  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.05));
+}
+
+@keyframes floatChatBubble {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-5px); }
+}
+
+/* Floating Superhero Trigger Button */
+.moovon-hero-widget-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: linear-gradient(135deg, #0B2265 0%, #06143D 100%);
+  border: 1.5px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-full);
+  padding: 6px 16px 6px 6px;
+  box-shadow: 0 12px 32px rgba(11, 34, 101, 0.4), 0 4px 12px rgba(0, 0, 0, 0.25);
   color: #FFFFFF;
   text-decoration: none;
-  transition: var(--transition-spring);
-  animation: pulseGlow 4s infinite alternate;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  overflow: visible;
+  position: relative;
 }
 
-.floating-whatsapp-widget:hover {
-  transform: translateY(-2px) scale(1.02);
-  box-shadow: 0 12px 28px rgba(11, 34, 101, 0.35);
-  border-color: var(--whatsapp-green);
+.moovon-hero-widget-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  border-color: rgba(37, 211, 102, 0.85);
+  box-shadow: 0 16px 40px rgba(11, 34, 101, 0.45), 0 0 24px rgba(37, 211, 102, 0.35);
 }
 
-.wa-avatar-img {
+/* Superhero Avatar Wrap with breakout superhero character */
+.moovon-hero-avatar-wrap {
+  position: relative;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(37, 211, 102, 0.35) 0%, #071746 100%);
+  border: 2px solid var(--whatsapp-green);
+  box-shadow: 0 0 14px rgba(37, 211, 102, 0.55);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  overflow: visible;
+}
+
+.moovon-hero-standing-img {
+  position: absolute;
+  bottom: 0px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+  filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.45));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+.moovon-hero-widget-btn:hover .moovon-hero-standing-img {
+  transform: translateX(-50%) translateY(-6px) scale(1.12);
+}
+
+.moovon-wa-status-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--whatsapp-green);
+  border: 2px solid #0B2265;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+}
+
+/* Text Column */
+.moovon-hero-text-col {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  text-align: left;
+}
+
+.moovon-hero-name {
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: #FFFFFF;
+  letter-spacing: -0.2px;
+  line-height: 1.2;
+}
+
+.moovon-hero-sub {
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.78);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.moovon-sub-tag {
+  color: var(--whatsapp-green);
+  font-weight: 700;
+}
+
+.moovon-wa-icon-box {
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  object-fit: cover;
-  border: 1.5px solid var(--whatsapp-green);
-  box-shadow: 0 0 8px rgba(37, 211, 102, 0.4);
-}
-
-.wa-text-group h5 {
-  font-family: var(--font-heading);
-  font-size: 12px;
-  font-weight: 700;
-  color: #FFFFFF;
-  line-height: 1.15;
-  white-space: nowrap;
-}
-
-.wa-text-group p {
-  font-size: 10px;
+  background: rgba(37, 211, 102, 0.16);
+  border: 1px solid rgba(37, 211, 102, 0.35);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--whatsapp-green);
-  font-weight: 600;
-  line-height: 1;
+  margin-left: 2px;
+  flex-shrink: 0;
+  transition: all 0.25s ease;
+}
+
+.moovon-hero-widget-btn:hover .moovon-wa-icon-box {
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  transform: rotate(12deg) scale(1.06);
 }
 
 /* ==========================================================================
@@ -2728,24 +2912,45 @@ body.mobile-drawer-open {
     text-align: center;
   }
 
-  .floating-whatsapp-widget {
-    bottom: 10px;
-    right: 10px;
-    padding: 3px 10px 3px 3px;
-    gap: 6px;
-    max-width: calc(100vw - 20px);
+  .moovon-chat-widget-wrap {
+    bottom: 16px;
+    right: 14px;
+    gap: 8px;
   }
 
-  .wa-avatar-img {
-    width: 28px;
-    height: 28px;
+  .moovon-chat-bubble {
+    max-width: 220px;
+    padding: 10px 14px;
   }
 
-  .wa-text-group h5 {
-    font-size: 11px;
+  .moovon-chat-bubble-quote {
+    font-size: 11.5px;
   }
 
-  .wa-text-group p {
+  .moovon-hero-widget-btn {
+    padding: 4px 12px 4px 4px;
+    gap: 8px;
+  }
+
+  .moovon-hero-avatar-wrap {
+    width: 42px;
+    height: 42px;
+  }
+
+  .moovon-hero-standing-img {
+    width: 50px;
+    height: 56px;
+  }
+
+  .moovon-hero-name {
+    font-size: 12.5px;
+  }
+
+  .moovon-hero-sub {
+    font-size: 10.5px;
+  }
+
+  .moovon-wa-icon-box {
     display: none;
   }
 
