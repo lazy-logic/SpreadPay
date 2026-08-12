@@ -2903,11 +2903,11 @@ body.mobile-drawer-open {
   }
 
   .nav-container {
-    height: 56px; /* Reduced header height on mobile */
+    height: 60px; /* Balanced, compact mobile header */
   }
 
   .brand-logo-svg {
-    height: 48px; /* Increased logo size on mobile */
+    height: 36px; /* Perfectly proportioned & crisp on mobile */
     width: auto;
   }
 
