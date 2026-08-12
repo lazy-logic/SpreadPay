@@ -2069,278 +2069,150 @@ button, input, select, textarea {
    Floating Superhero Mascot WhatsApp Widget
    ========================================================================== */
 /* ==========================================================================
-   Modern Superhero Floating Chat Widget & Speech Quote Bubble
+   Modern Superhero Floating Avatar & "Chat with us" Speech Bubble
    ========================================================================== */
-.moovon-chat-widget-wrap {
+.moovon-pure-avatar-widget {
   position: fixed;
-  bottom: 24px;
-  right: 24px;
+  bottom: 28px;
+  right: 26px;
   z-index: 1200;
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
-  gap: 12px;
+  gap: 6px;
   pointer-events: auto;
+  text-decoration: none;
 }
 
-/* Stage containing Superhero Mascot on Left + Speech Bubble on Right */
-.moovon-hero-top-stage {
-  display: flex;
-  align-items: flex-end;
-  justify-content: flex-end;
-  gap: 10px;
-  margin-bottom: -18px;
-  position: relative;
-  z-index: 2;
-  pointer-events: auto;
-  padding-left: 8px;
-}
-
-/* Floating Speech Quote Bubble pointing to Mr. Moovon */
-.moovon-chat-bubble {
+/* Floating "Chat with us" Speech Bubble */
+.moovon-pure-speech-bubble {
   position: relative;
   background: #FFFFFF;
-  border-radius: 18px 18px 18px 4px;
-  padding: 12px 18px 12px 16px;
-  box-shadow: 0 14px 36px rgba(11, 34, 101, 0.2), 0 4px 12px rgba(0, 0, 0, 0.06);
-  border: 1px solid rgba(11, 34, 101, 0.1);
-  max-width: 250px;
-  animation: floatChatBubble 3.5s ease-in-out infinite alternate;
-  transform-origin: bottom left;
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-  margin-bottom: 22px;
-}
-
-.moovon-chat-bubble:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 18px 42px rgba(11, 34, 101, 0.26);
-}
-
-.moovon-chat-bubble-close {
-  position: absolute;
-  top: 6px;
-  right: 8px;
-  background: none;
-  border: none;
-  font-size: 16px;
-  line-height: 1;
-  color: var(--text-muted);
-  cursor: pointer;
-  padding: 2px 4px;
-  border-radius: 50%;
-  transition: color 0.2s ease;
-}
-
-.moovon-chat-bubble-close:hover {
-  color: var(--accent-red);
-}
-
-.moovon-chat-bubble-badge {
-  display: inline-flex;
+  border-radius: 22px 22px 4px 22px;
+  padding: 10px 18px 10px 16px;
+  box-shadow: 0 14px 34px rgba(11, 34, 101, 0.18), 0 4px 12px rgba(0, 0, 0, 0.06);
+  border: 1.5px solid rgba(11, 34, 101, 0.09);
+  text-decoration: none;
+  display: flex;
   align-items: center;
-  gap: 6px;
-  font-size: 11px;
-  font-weight: 700;
-  color: #15803D;
-  background: #DCFCE7;
-  padding: 2px 8px;
-  border-radius: var(--radius-full);
-  margin-bottom: 6px;
-  letter-spacing: 0.02em;
+  margin-bottom: 70px;
+  animation: floatPureBubble 3.2s ease-in-out infinite alternate;
+  transform-origin: bottom right;
+  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.moovon-pure-speech-bubble:hover {
+  transform: translateY(-4px) scale(1.04);
+  border-color: rgba(37, 211, 102, 0.8);
+  box-shadow: 0 18px 40px rgba(11, 34, 101, 0.25), 0 0 16px rgba(37, 211, 102, 0.3);
+}
+
+.moovon-speech-content {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.moovon-speech-text {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  letter-spacing: -0.2px;
+  line-height: 1;
+}
+
+.moovon-speech-wa-icon {
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+}
+
+.moovon-pure-speech-bubble:hover .moovon-speech-wa-icon {
+  transform: rotate(12deg) scale(1.15);
+}
+
+.moovon-pure-bubble-arrow {
+  position: absolute;
+  right: -9px;
+  bottom: 14px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid transparent;
+  border-bottom: 8px solid transparent;
+  border-left: 10px solid #FFFFFF;
+  filter: drop-shadow(2px 0 2px rgba(0, 0, 0, 0.04));
+}
+
+@keyframes floatPureBubble {
+  0% { transform: translateY(0px); }
+  100% { transform: translateY(-7px); }
+}
+
+/* Full Superhero Character Avatar */
+.moovon-full-avatar-link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  cursor: pointer;
+  position: relative;
+  animation: floatFullSuperhero 3.2s ease-in-out infinite alternate;
+  transform-origin: bottom center;
+}
+
+.moovon-full-avatar-img {
+  height: 145px;
+  width: auto;
+  max-width: 130px;
+  object-fit: contain;
+  filter: drop-shadow(0 12px 24px rgba(11, 34, 101, 0.4));
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), filter 0.3s ease;
+  pointer-events: auto;
+}
+
+.moovon-avatar-ground-shadow {
+  width: 55px;
+  height: 9px;
+  background: radial-gradient(ellipse at center, rgba(11, 34, 101, 0.4) 0%, rgba(11, 34, 101, 0) 70%);
+  border-radius: 50%;
+  margin-top: -4px;
+  animation: fullShadowScale 3.2s ease-in-out infinite alternate;
+}
+
+@keyframes floatFullSuperhero {
+  0% { transform: translateY(0px) rotate(0deg); }
+  50% { transform: translateY(-7px) rotate(1deg); }
+  100% { transform: translateY(-13px) rotate(-1deg); }
+}
+
+@keyframes fullShadowScale {
+  0% { transform: scale(1); opacity: 0.65; }
+  100% { transform: scale(0.6); opacity: 0.25; }
+}
+
+/* Widget hover interaction */
+.moovon-pure-avatar-widget:hover .moovon-full-avatar-img {
+  transform: translateY(-8px) scale(1.07);
+  filter: drop-shadow(0 16px 30px rgba(37, 211, 102, 0.6));
 }
 
 .hero-live-pulse {
-  width: 7px;
-  height: 7px;
+  width: 8px;
+  height: 8px;
   border-radius: 50%;
   background: #22C55E;
   box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
   animation: livePulse 1.8s infinite;
+  display: inline-block;
+  flex-shrink: 0;
 }
 
 @keyframes livePulse {
   0% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
   70% { transform: scale(1); box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
   100% { transform: scale(0.95); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
-}
-
-.moovon-chat-bubble-quote {
-  font-size: 12.5px;
-  font-weight: 500;
-  color: var(--primary-navy);
-  line-height: 1.45;
-  margin: 0;
-}
-
-.moovon-chat-bubble-quote strong {
-  color: var(--accent-red);
-  font-weight: 700;
-}
-
-.moovon-chat-bubble-arrow {
-  position: absolute;
-  bottom: -8px;
-  left: 24px;
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 8px solid transparent;
-  border-top: 8px solid #FFFFFF;
-  filter: drop-shadow(0 2px 2px rgba(0, 0, 0, 0.05));
-}
-
-@keyframes floatChatBubble {
-  0% { transform: translateY(0px); }
-  100% { transform: translateY(-5px); }
-}
-
-/* Floating Superhero Mascot Box */
-.moovon-mascot-float-box {
-  position: relative;
-  width: 96px;
-  height: 104px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: flex-end;
-  animation: floatSuperhero 3.2s ease-in-out infinite alternate;
-  transform-origin: bottom center;
-  pointer-events: none;
-  flex-shrink: 0;
-}
-
-.moovon-mascot-floating-img {
-  width: 96px;
-  height: 96px;
-  object-fit: contain;
-  filter: drop-shadow(0 8px 18px rgba(11, 34, 101, 0.45));
-  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.moovon-mascot-shadow {
-  width: 50px;
-  height: 8px;
-  background: radial-gradient(ellipse at center, rgba(11, 34, 101, 0.35) 0%, rgba(11, 34, 101, 0) 70%);
-  border-radius: 50%;
-  animation: mascotShadowScale 3.2s ease-in-out infinite alternate;
-}
-
-@keyframes floatSuperhero {
-  0% { transform: translateY(0px) rotate(0deg); }
-  50% { transform: translateY(-8px) rotate(2deg); }
-  100% { transform: translateY(-14px) rotate(-2deg); }
-}
-
-@keyframes mascotShadowScale {
-  0% { transform: scale(1); opacity: 0.6; }
-  100% { transform: scale(0.65); opacity: 0.25; }
-}
-
-/* Hovering the widget triggers superhero greeting */
-.moovon-chat-widget-wrap:hover .moovon-mascot-floating-img {
-  transform: translateY(-10px) scale(1.12) rotate(4deg);
-  filter: drop-shadow(0 14px 26px rgba(37, 211, 102, 0.55));
-}
-
-/* Floating Action Button Pill Below Mascot */
-.moovon-hero-widget-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 12px;
-  background: linear-gradient(135deg, #0B2265 0%, #06143D 100%);
-  border: 1.5px solid rgba(255, 255, 255, 0.22);
-  border-radius: var(--radius-full);
-  padding: 8px 18px 8px 12px;
-  box-shadow: 0 14px 34px rgba(11, 34, 101, 0.4), 0 4px 12px rgba(0, 0, 0, 0.2);
-  color: #FFFFFF;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-  position: relative;
-  z-index: 1;
-}
-
-.moovon-hero-widget-btn:hover {
-  transform: translateY(-3px) scale(1.02);
-  border-color: rgba(37, 211, 102, 0.85);
-  box-shadow: 0 18px 42px rgba(11, 34, 101, 0.45), 0 0 24px rgba(37, 211, 102, 0.35);
-}
-
-.moovon-wa-pill-badge {
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background: rgba(37, 211, 102, 0.16);
-  border: 1.5px solid rgba(37, 211, 102, 0.4);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-  transition: all 0.25s ease;
-}
-
-.moovon-hero-widget-btn:hover .moovon-wa-pill-badge {
-  background: var(--whatsapp-green);
-  border-color: var(--whatsapp-green);
-  box-shadow: 0 0 12px rgba(37, 211, 102, 0.6);
-}
-
-.moovon-hero-widget-btn:hover .moovon-wa-pill-badge svg path:first-child {
-  fill: #FFFFFF;
-}
-
-.moovon-hero-widget-btn:hover .moovon-wa-pill-badge svg path:last-child {
-  fill: var(--whatsapp-green);
-}
-
-.moovon-hero-text-col {
-  display: flex;
-  flex-direction: column;
-  gap: 2px;
-  text-align: left;
-}
-
-.moovon-hero-name {
-  font-family: var(--font-heading);
-  font-size: 14px;
-  font-weight: 800;
-  color: #FFFFFF;
-  letter-spacing: -0.2px;
-  line-height: 1.2;
-}
-
-.moovon-hero-sub {
-  font-size: 11px;
-  color: rgba(255, 255, 255, 0.78);
-  font-weight: 500;
-  display: flex;
-  align-items: center;
-  gap: 4px;
-}
-
-.moovon-sub-tag {
-  color: var(--whatsapp-green);
-  font-weight: 700;
-}
-
-.moovon-wa-action-circle {
-  width: 26px;
-  height: 26px;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.12);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: rgba(255, 255, 255, 0.8);
-  margin-left: 2px;
-  flex-shrink: 0;
-  transition: all 0.25s ease;
-}
-
-.moovon-hero-widget-btn:hover .moovon-wa-action-circle {
-  background: #FFFFFF;
-  color: var(--primary-navy);
-  transform: translateX(3px);
 }
 
 /* ==========================================================================
@@ -2951,70 +2823,35 @@ body.mobile-drawer-open {
     text-align: center;
   }
 
-  .moovon-chat-widget-wrap {
-    bottom: 14px;
-    right: 12px;
-    gap: 0;
+  .moovon-pure-avatar-widget {
+    bottom: 18px;
+    right: 14px;
+    gap: 4px;
   }
 
-  .moovon-hero-top-stage {
-    gap: 6px;
-    margin-bottom: -14px;
-    padding-right: 8px;
+  .moovon-pure-speech-bubble {
+    padding: 7px 12px 7px 10px;
+    margin-bottom: 50px;
+    border-radius: 18px 18px 4px 18px;
   }
 
-  .moovon-chat-bubble {
-    max-width: 190px;
-    padding: 8px 12px;
-    margin-bottom: 16px;
-    border-radius: 14px 14px 4px 14px;
+  .moovon-speech-text {
+    font-size: 13px;
   }
 
-  .moovon-chat-bubble-quote {
-    font-size: 11px;
-    line-height: 1.35;
+  .moovon-speech-wa-icon {
+    width: 14px;
+    height: 14px;
   }
 
-  .moovon-mascot-float-box {
-    width: 68px;
-    height: 74px;
+  .moovon-full-avatar-img {
+    height: 108px;
+    max-width: 95px;
   }
 
-  .moovon-mascot-floating-img {
-    width: 68px;
-    height: 68px;
-  }
-
-  .moovon-mascot-shadow {
-    width: 34px;
-    height: 6px;
-  }
-
-  .moovon-hero-widget-btn {
-    padding: 6px 14px 6px 8px;
-    gap: 10px;
-  }
-
-  .moovon-wa-pill-badge {
-    width: 30px;
-    height: 30px;
-  }
-
-  .moovon-wa-pill-badge svg {
-    width: 17px;
-    height: 17px;
-  }
-
-  .moovon-hero-name {
-    font-size: 12.5px;
-  }
-
-  .moovon-hero-sub {
-    font-size: 10px;
-  }
-
-  .moovon-wa-action-circle {
-    display: none;
+  .moovon-avatar-ground-shadow {
+    width: 42px;
+    height: 7px;
   }
 
   .footer-grid {

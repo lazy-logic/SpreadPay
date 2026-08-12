@@ -266,85 +266,61 @@ window.openMobileNavDrawer = openMobileNavDrawer;
 window.closeMobileNavDrawer = closeMobileNavDrawer;
 
 // ==========================================================================
-// Modern Superhero Floating Chat Widget & Speech Quote Bubble
+// Centralized WhatsApp Superhero Widget Injection
 // ==========================================================================
 function injectChatWidget() {
   // Remove any legacy floating widget if present in DOM
-  const existingLegacy = document.querySelectorAll('.floating-whatsapp-widget, #moovonChatWidget');
+  const existingLegacy = document.querySelectorAll('.floating-whatsapp-widget, #moovonChatWidget, .moovon-chat-widget-wrap, .moovon-pure-avatar-widget');
   existingLegacy.forEach(w => w.remove());
 
   const widget = document.createElement('div');
   widget.id = 'moovonChatWidget';
-  widget.className = 'moovon-chat-widget-wrap';
+  widget.className = 'moovon-pure-avatar-widget';
   widget.innerHTML = `
-    <!-- Top Floating Section: Floating Superhero Mascot on Left + Speech Bubble on Right -->
-    <div class="moovon-hero-top-stage">
-      <!-- The 3D Superhero Mascot Floating Above the Widget on Left -->
-      <div class="moovon-mascot-float-box" aria-hidden="true">
-        <img src="assets/graphics/mr_moovon_waving_avatar.png" 
-             alt="Mr. Moovon Superhero" 
-             class="moovon-mascot-floating-img"
-             loading="eager">
-        <div class="moovon-mascot-shadow"></div>
-      </div>
-
-      <!-- Floating Quote / Speech Bubble pointing to Mr. Moovon -->
-      <div class="moovon-chat-bubble" id="moovonChatBubble">
-        <button class="moovon-chat-bubble-close" id="closeChatBubble" aria-label="Dismiss chat quote">&times;</button>
-        <div class="moovon-chat-bubble-badge">
-          <span class="hero-live-pulse"></span> Online Now
-        </div>
-        <p class="moovon-chat-bubble-quote">“Need help spreading your insurance? <strong>Chat with us!</strong> 👋”</p>
-        <div class="moovon-chat-bubble-arrow"></div>
-      </div>
-    </div>
-
-    <!-- Floating Action Button Pill Below Mascot -->
+    <!-- Speech Bubble saying "Chat with us" -->
     <a href="https://wa.me/233593293040?text=${encodeURIComponent('Hi Mr. Moovon, I want to ask about Moovon SpreadPay.')}" 
        target="_blank" 
        rel="noopener" 
-       class="moovon-hero-widget-btn" 
-       id="moovonWidgetTrigger"
-       aria-label="Chat with Mr. Moovon on WhatsApp">
-      
-      <div class="moovon-wa-pill-badge">
-        <svg viewBox="0 0 24 24" width="20" height="20" fill="#25D366">
+       class="moovon-pure-speech-bubble" 
+       id="moovonChatBubble"
+       aria-label="Chat with us on WhatsApp">
+      <div class="moovon-speech-content">
+        <span class="hero-live-pulse" title="Online"></span>
+        <span class="moovon-speech-text">Chat with us</span>
+        <svg class="moovon-speech-wa-icon" viewBox="0 0 24 24" width="16" height="16" fill="#25D366">
           <path d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001L2 22l5.12-1.341c1.472.802 3.13 1.225 4.887 1.226h.005c5.506 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/>
           <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
         </svg>
       </div>
+      <div class="moovon-pure-bubble-arrow"></div>
+    </a>
 
-      <div class="moovon-hero-text-col">
-        <div class="moovon-hero-name">Chat with Mr. Moovon</div>
-        <div class="moovon-hero-sub">
-          <span class="moovon-sub-tag">Chat with us</span> • Instant Reply
-        </div>
-      </div>
-
-      <div class="moovon-wa-action-circle" aria-hidden="true">
-        <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-          <line x1="5" y1="12" x2="19" y2="12"></line>
-          <polyline points="12 5 19 12 12 19"></polyline>
-        </svg>
-      </div>
+    <!-- Full Image Superhero Avatar Link -->
+    <a href="https://wa.me/233593293040?text=${encodeURIComponent('Hi Mr. Moovon, I want to ask about Moovon SpreadPay.')}" 
+       target="_blank" 
+       rel="noopener" 
+       class="moovon-full-avatar-link"
+       aria-label="Chat with Mr. Moovon on WhatsApp">
+      <img src="assets/graphics/mr_moovon_full_standing_tight.png" 
+           alt="Mr. Moovon - Chat with us" 
+           class="moovon-full-avatar-img"
+           loading="eager">
+      <div class="moovon-avatar-ground-shadow"></div>
     </a>
   `;
 
   document.body.appendChild(widget);
-
-  // Close bubble trigger
-  const closeBtn = document.getElementById('closeChatBubble');
-  if (closeBtn) {
-    closeBtn.addEventListener('click', (e) => {
-      e.stopPropagation();
-      e.preventDefault();
-      const bubble = document.getElementById('moovonChatBubble');
-      if (bubble) {
-        bubble.style.opacity = '0';
-        bubble.style.transform = 'translateY(10px) scale(0.9)';
-        setTimeout(() => bubble.remove(), 250);
-      }
-    });
-  }
 }
-window.injectChatWidget = injectChatWidget;
+
+// Auto-run on DOMContentLoaded or immediate if already loaded
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', () => {
+    initHeader();
+    injectPartnerModal();
+    injectChatWidget();
+  });
+} else {
+  initHeader();
+  injectPartnerModal();
+  injectChatWidget();
+}
