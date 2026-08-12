@@ -1,0 +1,475 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Frequently Asked Questions - MOOVON SpreadPay™</title>
+  <meta name="description" content="Find comprehensive answers to common questions regarding SpreadPay customer installments, insurer settlements, and claims processing.">
+  
+  <!-- Tailwind CSS & Fonts -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+       Header & Sticky Glass Navigation (Uniform Across All Pages)
+       ========================================================================== -->
+  <header class="site-header" id="siteHeader">
+    <div class="container nav-container">
+      <a href="index.html" class="brand-logo-group" aria-label="Moovon SpreadPay Home">
+        <svg class="brand-logo-svg" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <text x="0" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="29" fill="#0B2265" letter-spacing="-0.5">MOOVON</text>
+          <path d="M77 31 L82 37 L87 31 H84.5 L82 33.5 L79.5 31 Z" fill="#E51937" />
+        </svg>
+        <span class="brand-tagline">A Moovon Group Company</span>
+      </a>
+
+      <nav aria-label="Primary Navigation">
+        <ul class="nav-menu">
+          <li><a href="how-it-works.html" class="nav-link">How It Works</a></li>
+          <li class="nav-item-has-dropdown">
+            <a href="products.html" class="nav-link">
+              For Customers
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="products.html#essential" class="dropdown-item">
+                <div class="dropdown-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                </div>
+                <div>
+                  <div class="dropdown-title">Essential Tier</div>
+                  <div class="dropdown-desc">For Third Party motor from GH₵330</div>
+                </div>
+              </a>
+              <a href="products.html#flex" class="dropdown-item">
+                <div class="dropdown-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                </div>
+                <div>
+                  <div class="dropdown-title">Flex Tier</div>
+                  <div class="dropdown-desc">Flexible payments up to 6 months</div>
+                </div>
+              </a>
+              <a href="products.html#fixed" class="dropdown-item">
+                <div class="dropdown-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div>
+                  <div class="dropdown-title">Fixed Tier</div>
+                  <div class="dropdown-desc">Commercial & large fleet financing</div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li class="nav-item-has-dropdown">
+            <a href="for-partners.html" class="nav-link">
+              For Partners
+              <svg class="dropdown-arrow" viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </a>
+            <div class="dropdown-menu">
+              <a href="partners.html" class="dropdown-item">
+                <div class="dropdown-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <div>
+                  <div class="dropdown-title">Participating Partners</div>
+                  <div class="dropdown-desc">View all 10 Ghana partner insurers</div>
+                </div>
+              </a>
+              <a href="for-partners.html" class="dropdown-item">
+                <div class="dropdown-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+                </div>
+                <div>
+                  <div class="dropdown-title">Operations Guide</div>
+                  <div class="dropdown-desc">Settlement rules & underwriting</div>
+                </div>
+              </a>
+              <a href="for-partners.html#portal" class="dropdown-item">
+                <div class="dropdown-icon-box">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                </div>
+                <div>
+                  <div class="dropdown-title">Partner Portal Sign In</div>
+                  <div class="dropdown-desc">Access insurer & broker dashboard</div>
+                </div>
+              </a>
+            </div>
+          </li>
+          <li><a href="faqs.html" class="nav-link active">FAQs</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="for-partners.html#portal" class="btn btn-signin">Partner Sign In</a>
+        <button onclick="openPartnerModal()" class="btn btn-find-partner">Find a Partner</button>
+      </div>
+
+      <button class="mobile-toggle" aria-label="Toggle navigation">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B2265" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+      </button>
+    </div>
+  </header>
+
+  <!-- ==========================================================================
+       Page Hero
+       ========================================================================== -->
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-badge">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
+        Knowledge Base & Frequently Asked Questions
+      </div>
+      <h1 class="page-hero-title">Frequently Asked <span>Questions</span></h1>
+      <p class="page-hero-subtitle">Everything you need to know about customer installments, insurer settlements, underwriting protocols, and claims processing.</p>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       FAQ Content & Interactive Filter Engine
+       ========================================================================== -->
+  <section class="faq-section">
+    <div class="container">
+      <div class="faq-categories-grid">
+        <!-- Interactive Category Sidebar -->
+        <div>
+          <ul class="faq-cat-nav">
+            <li>
+              <button class="faq-cat-link active" data-category="all">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+                All Questions (12)
+              </button>
+            </li>
+            <li>
+              <button class="faq-cat-link" data-category="customers">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M19 17h2c.6 0 1-.4 1-1v-3c0-.9-.7-1.7-1.5-1.9C18.7 10.6 16 10 16 10s-1.3-1.4-2.2-2.3c-.5-.4-1.1-.7-1.8-.7H5c-.6 0-1.1.4-1.4.9l-1.4 2.9A3.7 3.7 0 0 0 2 12v4c0 .6.4 1 1 1h2"/><circle cx="7" cy="17" r="2"/><path d="M9 17h6"/><circle cx="17" cy="17" r="2"/></svg>
+                Customer & Repayment
+              </button>
+            </li>
+            <li>
+              <button class="faq-cat-link" data-category="insurers">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/></svg>
+                Insurer & Settlement
+              </button>
+            </li>
+            <li>
+              <button class="faq-cat-link" data-category="claims">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Claims & Coverage
+              </button>
+            </li>
+            <li>
+              <button class="faq-cat-link" data-category="security">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+                Ghana Card & Security
+              </button>
+            </li>
+            <li>
+              <button class="faq-cat-link" data-category="fleets">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="1" y="3" width="15" height="13"/><polygon points="16 8 20 8 23 11 23 16 16 16 16 8"/><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="18.5" r="2.5"/></svg>
+                Fleets & Fixed Tier
+              </button>
+            </li>
+          </ul>
+
+          <!-- Quick Assistance Box -->
+          <div style="background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-lg); padding:24px; margin-top:20px;">
+            <h5 style="font-family:var(--font-heading); font-size:15px; font-weight:800; color:var(--primary-navy); margin-bottom:8px;">Need Specific Help?</h5>
+            <p style="font-size:13px; color:var(--text-muted); line-height:1.5; margin-bottom:16px;">Our team is online Monday to Friday, 8am – 5pm GMT to assist drivers, brokers, and insurers.</p>
+            <a href="https://wa.me/233593293040" target="_blank" class="btn btn-whatsapp" style="width:100%; text-align:center; font-size:13px; padding:10px;">Chat on WhatsApp</a>
+          </div>
+        </div>
+
+        <!-- Accordion & Live Keyword Search Group -->
+        <div class="faq-accordion-group">
+          <!-- Real-Time Search Bar -->
+          <div style="position:relative; margin-bottom: 8px;">
+            <input type="text" id="faqSearchInput" placeholder="Search questions by keyword (e.g. deposit, MoMo, claim, 100% upfront, RM approval, Ghana Card)..." class="form-control" style="padding-left:42px; font-size:14px; height:48px;">
+            <svg style="position:absolute; left:14px; top:15px; color:var(--text-muted);" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+
+          <!-- Quick Keyword Tag Pills -->
+          <div style="display:flex; flex-wrap:wrap; gap:8px; margin-bottom:18px;">
+            <button class="faq-tag-btn" onclick="setFAQSearch('Third Party')">Third Party</button>
+            <button class="faq-tag-btn" onclick="setFAQSearch('Deposit')">Deposit</button>
+            <button class="faq-tag-btn" onclick="setFAQSearch('100% Upfront')">100% Upfront</button>
+            <button class="faq-tag-btn" onclick="setFAQSearch('Claims')">Claims</button>
+            <button class="faq-tag-btn" onclick="setFAQSearch('Ghana Card')">Ghana Card</button>
+            <button class="faq-tag-btn" onclick="setFAQSearch('RM Approval')">RM Approval</button>
+          </div>
+
+          <!-- Empty State Box -->
+          <div id="faqEmptyState" style="display:none; text-align:center; padding:48px 24px; background:#FFFFFF; border:1px solid var(--border-subtle); border-radius:var(--radius-lg);">
+            <svg width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#E51937" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" style="margin:0 auto 16px;"><circle cx="12" cy="12" r="10"/><path d="M16 16s-1.5-2-4-2-4 2-4 2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg>
+            <h4 style="font-family:var(--font-heading); font-size:18px; font-weight:800; color:var(--primary-navy); margin-bottom:6px;">No Matching Questions Found</h4>
+            <p style="font-size:13.5px; color:var(--text-muted); margin-bottom:18px;">Try searching for a different keyword or contact our live WhatsApp support desk directly.</p>
+            <a href="https://wa.me/233593293040" target="_blank" class="btn btn-find-partner" style="font-size:13.5px; padding:10px 20px;">Ask Mr. Moovon on WhatsApp</a>
+          </div>
+
+          <!-- FAQ 1: Customer -->
+          <div class="faq-item active" data-category="customers" id="customers">
+            <button class="faq-question">
+              <span>What is Moovon SpreadPay™ and how does it work for vehicle owners?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Moovon SpreadPay™</strong> is a smart motor premium financing platform in Ghana. It allows drivers and fleet owners to spread their Third Party, Comprehensive, or Commercial motor insurance payments into affordable monthly installments, while the insurance partner receives <strong>100% of the annual premium upfront</strong>.</p>
+              <p style="margin-top:10px;">You can view your exact monthly breakdown anytime on our <a href="products.html" style="color:#E51937; font-weight:700; text-decoration:underline;">Repayment Calculator</a>.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 2: Customer -->
+          <div class="faq-item" data-category="customers security">
+            <button class="faq-question">
+              <span>How do I qualify and what documents are required for instant approval?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Onboarding is <strong>100% digital</strong> and takes under 60 seconds. All you need is:</p>
+              <ul style="list-style:disc; margin-left:20px; margin-top:8px; display:flex; flex-direction:column; gap:6px;">
+                <li>A valid <strong>Ghana Card</strong> (National Identification Authority).</li>
+                <li>A live biometric selfie for instant liveness verification.</li>
+                <li>An active Mobile Money wallet (MTN, Telecel, AT) or debit card for the deposit.</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- FAQ 3: Customer -->
+          <div class="faq-item" data-category="customers">
+            <button class="faq-question">
+              <span>What payment methods are supported for deposits and monthly installments?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>We support all major payment channels across Ghana, including <strong>MTN MoMo</strong>, <strong>Telecel Cash</strong>, <strong>AT Money</strong>, as well as <strong>Visa and Mastercard debit/credit cards</strong>. Monthly installments are debited automatically with automated SMS and WhatsApp reminders prior to each due date.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 4: Customer -->
+          <div class="faq-item" data-category="customers">
+            <button class="faq-question">
+              <span>What happens if I miss an installment payment?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Late payment penalties depend on your product tier:</p>
+              <ul style="list-style:disc; margin-left:20px; margin-top:8px; display:flex; flex-direction:column; gap:6px;">
+                <li><strong>Essential Tier:</strong> GH₵50 flat monthly penalty if unpaid after 4 weeks.</li>
+                <li><strong>Flex Tier:</strong> 3.5% flat monthly penalty applied only on the overdue balance.</li>
+                <li><strong>Fixed Tier:</strong> 4.0% flat monthly penalty (up to 9 months maximum).</li>
+              </ul>
+              <p style="margin-top:10px;">Timely repayments keep your SpreadPay credit rating high for future vehicle financing.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 5: Customer -->
+          <div class="faq-item" data-category="customers">
+            <button class="faq-question">
+              <span>Can I settle my remaining SpreadPay balance early without penalty?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Yes, absolutely.</strong> Early settlement is strongly encouraged and incurs zero prepayment penalties. Paying early closes out your balance immediately and unlocks higher financing limits for additional private or commercial vehicles.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 6: Insurers -->
+          <div class="faq-item" data-category="insurers" id="insurers">
+            <button class="faq-question">
+              <span>How does the insurance partner receive 100% upfront annual premium?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Under the core <strong>100% Upfront Settlement Principle</strong>, once the customer completes verification and pays the initial deposit and setup fee, Moovon disburses the full 100% annual premium directly into the insurance partner's nominated bank account. The insurer carries zero deferred premium exposure.</p>
+              <p style="margin-top:10px;">For full settlement rules and reconciliation procedures, see the <a href="for-partners.html" style="color:#0B2265; font-weight:700; text-decoration:underline;">Insurance Partner Operations Guide</a>.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 7: Insurers & Claims -->
+          <div class="faq-item" data-category="insurers claims">
+            <button class="faq-question">
+              <span>Who underwrites the insurance policy and issues the physical road sticker?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>The <strong>Insurance Partner</strong> (such as Enterprise, Hollard, Activa, Glico, Star Assurance, etc.) underwrites the risk, issues the policy, and provides the official National Insurance Commission (NIC) sticker. Moovon acts strictly as the premium financing technology and collections partner.</p>
+              <p style="margin-top:10px;">You can browse all <a href="partners.html" style="color:#E51937; font-weight:700; text-decoration:underline;">10 Verified Ghana Insurance Partners here</a>.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 8: Claims -->
+          <div class="faq-item" data-category="claims" id="claims">
+            <button class="faq-question">
+              <span>What happens if I have an accident or need to file an insurance claim?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Because your insurer receives 100% of the annual premium upfront, your policy is <strong>100% fully active and comprehensive from Day 1</strong>. You file insurance claims directly with your insurance company following their standard claims procedures. SpreadPay installment financing does not delay or invalidate your claims.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 9: Fleets & Fixed -->
+          <div class="faq-item" data-category="fleets insurers" id="fleets">
+            <button class="faq-question">
+              <span>What is the maximum financing limit before Relationship Manager approval is required?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Under the Fixed Tier, the platform automatically finances balances up to <strong>GH₵50,000</strong>. Any corporate fleet or high-value vehicle transaction exceeding GH₵50,000 financed balance triggers our automated escalation protocol and requires <strong>RM Approval</strong> (Relationship Manager sign-off) from the Insurance Partner before the policy can be issued.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 10: Insurers -->
+          <div class="faq-item" data-category="insurers">
+            <button class="faq-question">
+              <span>Who is responsible for debt recovery and installment administration?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p><strong>Moovon manages 100% of customer collections</strong>, automated MoMo debits, SMS payment reminders, and KYC audits. Your insurance agents and branch managers are relieved of all collection burdens, enabling them to focus entirely on underwriting and customer acquisition.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 11: Security -->
+          <div class="faq-item" data-category="security" id="security">
+            <button class="faq-question">
+              <span>Is personal and Ghana Card data secure on Moovon SpreadPay?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. SpreadPay uses <strong>256-bit bank-grade SSL encryption</strong> and operates in full compliance with the <strong>Data Protection Act of Ghana (Act 843)</strong>. Identity checks are conducted via secure, direct API integrations with the National Identification Authority (NIA) and Shrinq iVerify.</p>
+            </div>
+          </div>
+
+          <!-- FAQ 12: Brokers & Operations -->
+          <div class="faq-item" data-category="insurers fleets">
+            <button class="faq-question">
+              <span>How can insurance brokers and agents register to offer SpreadPay?</span>
+              <svg class="faq-toggle-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Approved brokers and underwriting agents can register for the SpreadPay Partner Portal to issue instant installment quotes, track client settlements, and access relationship support. Contact our onboarding desk on our <a href="contact.html" style="color:#0B2265; font-weight:700; text-decoration:underline;">Contact Page</a> or call the Support Line on <strong>0308 047 949</strong>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Pre-Footer CTA
+       ========================================================================== -->
+  <section class="cta-banner-section">
+    <div class="container cta-banner-content">
+      <div>
+        <h2 class="cta-title">Still Have Questions About <span>SpreadPay™</span>?</h2>
+        <p class="cta-sub">Speak with our customer service desk or chat with Mr. Moovon on WhatsApp today.</p>
+      </div>
+      <div class="cta-buttons-group">
+        <a href="https://wa.me/233593293040" target="_blank" class="btn btn-find-partner">Chat with Mr. Moovon</a>
+        <a href="contact.html" class="btn btn-signin" style="color:#FFFFFF; border-color:rgba(255,255,255,0.3); background:rgba(255,255,255,0.08);">Contact Support Desk</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ==========================================================================
+       Footer
+       ========================================================================== -->
+  <footer class="site-footer" id="siteFooter">
+    <div class="container">
+      <div class="footer-grid">
+        <!-- Brand & Tagline Column -->
+        <div class="footer-brand-col">
+          <a href="index.html" class="brand-logo-group brand-logo-footer" aria-label="Moovon SpreadPay Home">
+            <svg class="brand-logo-svg" viewBox="0 0 190 38" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <text x="0" y="28" font-family="'Plus Jakarta Sans', sans-serif" font-weight="900" font-size="29" fill="#FFFFFF" letter-spacing="-0.5">MOOVON</text>
+              <path d="M77 31 L82 37 L87 31 H84.5 L82 33.5 L79.5 31 Z" fill="#E51937" />
+            </svg>
+            <span class="brand-tagline footer-tagline">A Moovon Group Company</span>
+          </a>
+        </div>
+
+        <!-- Company Column -->
+        <div class="footer-col">
+          <h5>COMPANY</h5>
+          <ul class="footer-links">
+            <li><a href="how-it-works.html">How It Works</a></li>
+            <li><a href="products.html">Our Products</a></li>
+            <li><a href="partners.html">Partners</a></li>
+          </ul>
+        </div>
+
+        <!-- Support Column -->
+        <div class="footer-col">
+          <h5>SUPPORT</h5>
+          <ul class="footer-links">
+            <li><a href="faqs.html">FAQs</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            <li><a href="for-partners.html">Partner Support</a></li>
+          </ul>
+        </div>
+
+        <!-- Legal Column -->
+        <div class="footer-col">
+          <h5>LEGAL</h5>
+          <ul class="footer-links">
+            <li><a href="faqs.html#legal">Terms & Conditions</a></li>
+            <li><a href="faqs.html#privacy">Privacy Policy</a></li>
+          </ul>
+        </div>
+
+        <!-- Direct WhatsApp Support Card -->
+        <div class="footer-col footer-wa-col">
+          <a href="https://wa.me/233593293040" target="_blank" class="footer-contact-box" rel="noopener">
+            <svg class="wa-green-icon" viewBox="0 0 24 24" width="32" height="32" fill="none">
+              <path fill="#25D366" d="M12.012 2c-5.506 0-9.989 4.478-9.99 9.984 0 1.762.459 3.48 1.332 5.001L2 22l5.12-1.341c1.472.802 3.13 1.225 4.887 1.226h.005c5.506 0 9.99-4.478 9.99-9.985 0-2.667-1.039-5.176-2.924-7.062A9.923 9.923 0 0 0 12.012 2z"/>
+              <path fill="#FFFFFF" d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/>
+            </svg>
+            <div>
+              <h6>059 329 3040</h6>
+              <p>Chat on WhatsApp</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Footer Bottom Row -->
+      <div class="footer-bottom">
+        <p>© 2025 Moovon Insure. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Floating Superhero WhatsApp Widget -->
+  <a href="https://wa.me/233593293040" target="_blank" class="floating-whatsapp-widget" rel="noopener">
+    <img src="assets/graphics/whatsapp_widget.png" alt="Mr. Moovon Superhero Mascot" class="wa-avatar-img">
+    <div class="wa-text-group">
+      <h5>Chat with Mr. Moovon</h5>
+      <p>We're here to help!</p>
+    </div>
+  </a>
+
+  <!-- Partner Modal -->
+  <div id="partnerModal" class="modal-overlay">
+    <div class="modal-card">
+      <button class="modal-close" id="closePartnerModal">&times;</button>
+      <h3 class="modal-title">Participating Insurance Partners</h3>
+      <p class="modal-sub">Ask any of our 10 verified partner insurers or brokers for <strong>Moovon SpreadPay™</strong>.</p>
+      <input type="text" id="partnerSearchInputModal" placeholder="Search insurer by name (e.g. Enterprise, Hollard, Glico)..." class="modal-search-input">
+      <div class="modal-partners-list">
+        <div class="partner-modal-item"><img src="assets/logos/logo_activa.png" alt="Activa"><div><h5>Activa International Insurance</h5><p>Motor Comprehensive & Third Party Policies</p></div><a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Activa" target="_blank" class="btn btn-find-partner" style="padding:6px 14px; font-size:12px;">Ask for SpreadPay</a></div>
+        <div class="partner-modal-item"><img src="assets/logos/logo_enterprise.png" alt="Enterprise"><div><h5>Enterprise Insurance</h5><p>Ghana's Leading Motor Insurer</p></div><a href="https://wa.me/233593293040?text=Hi,%20I%20want%20to%20apply%20for%20SpreadPay%20with%20Enterprise" target="_blank" class="btn btn-find-partner" style="padding:6px 14px; font-size:12px;">Ask for SpreadPay</a></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="header.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
