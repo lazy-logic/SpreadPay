@@ -1,0 +1,17 @@
+# Node & Package Managers
+node_modules/
+.npm/
+
+# Vercel
+.vercel/
+
+# Operating System & IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.log
+
+# Scratch & Temporary files
+*.tmp
+.tempmediaStorage/
