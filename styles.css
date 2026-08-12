@@ -1387,8 +1387,8 @@ button, input, select, textarea {
 }
 
 .product-tier-card.featured-tier {
-  border: 2px solid var(--accent-red);
-  box-shadow: var(--shadow-glow-red);
+  border: 2px solid var(--primary-navy);
+  box-shadow: var(--shadow-md);
 }
 
 .tier-popular-tag {
