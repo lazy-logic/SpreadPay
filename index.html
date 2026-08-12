@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.1">
+  <link rel="stylesheet" href="styles.css?v=2.3">
 </head>
 <body>
 
@@ -132,52 +132,17 @@
   </header>
 
   <!-- ==========================================================================
-       Cinematic Hero Section (Exact Reference Artwork Re-creation)
+       Hero Billboard Section (Exact Reference Artwork Re-creation)
        ========================================================================== -->
-  <section class="cinematic-hero-section">
-    <div class="cinematic-hero-bg-wrap">
-      <img src="assets/graphics/hero_generated_cinematic.png" alt="Moovon SpreadPay Panorama" class="cinematic-hero-bg-img">
-    </div>
-
-    <div class="container cinematic-hero-container">
-      <div class="cinematic-hero-content">
-        <div class="cinematic-tagline">
-          <svg viewBox="0 0 12 12" width="12" height="12" fill="none">
-            <path d="M1 3 L6 9 L11 3 H8.5 L6 6 L3.5 3 Z" fill="#E51937" />
-          </svg>
-          <span>A Moovon Group Company</span>
-        </div>
-
-        <h1 class="cinematic-hero-title">
-          <span class="title-navy">Protect</span><br>
-          <span class="title-red">Your Journey.</span>
-        </h1>
-
-        <div class="cinematic-hero-badge">
-          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#E51937" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
-            <polyline points="9 12 11 14 15 10"/>
-          </svg>
-          <span>SPREADPAY PROTECTED™</span>
-        </div>
-
-        <p class="cinematic-hero-subtitle">
-          Wherever you buy your motor insurance,<br>
-          ask for <strong>Moovon SpreadPay™</strong>.
-        </p>
-
-        <div class="cinematic-hero-ctas">
-          <button onclick="openPartnerModal()" class="btn-hero-primary">
-            <span>Find a Participating Partner</span>
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-          
-          <a href="how-it-works.html" class="btn-hero-secondary">
-            <span>How It Works</span>
-            <span class="play-circle-icon">
-              <svg width="10" height="10" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-            </span>
-          </a>
+  <section class="billboard-hero-section">
+    <div class="container billboard-hero-container">
+      <div class="billboard-artwork-wrapper">
+        <img src="assets/graphics/hero_exact_flyer_composite.png" alt="Moovon SpreadPay - Protect Your Journey" class="billboard-hero-img">
+        
+        <!-- Interactive Clickable Hotspots over the artwork action buttons -->
+        <div class="billboard-actions-overlay">
+          <button onclick="openPartnerModal()" class="btn-hotspot-partner" title="Find a Participating Partner" aria-label="Find a Participating Partner"></button>
+          <a href="how-it-works.html" class="btn-hotspot-hiw" title="How It Works" aria-label="How It Works"></a>
         </div>
       </div>
     </div>
@@ -185,7 +150,6 @@
     <!-- Trusted Partners Strip Below Hero -->
     <div class="hero-partners-ribbon">
       <div class="container ribbon-container">
-        <h6 class="ribbon-title">TRUSTED BY GHANA'S LEADING INSURANCE COMPANIES</h6>
         <div class="ribbon-logos-strip">
           <img src="assets/logos/logo_enterprise.png" alt="Enterprise Insurance">
           <img src="assets/logos/logo_hollard.png" alt="Hollard Ghana">
