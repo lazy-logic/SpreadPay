@@ -25,7 +25,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=2.3">
+  <link rel="stylesheet" href="styles.css?v=2.4">
 </head>
 <body>
 
@@ -132,17 +132,56 @@
   </header>
 
   <!-- ==========================================================================
-       Hero Billboard Section (Exact Reference Artwork Re-creation)
+       Hero Billboard Section (Live Re-creation of Reference Flyer:
+       real HTML text + CTAs over layered artwork)
        ========================================================================== -->
   <section class="billboard-hero-section">
     <div class="container billboard-hero-container">
-      <div class="billboard-artwork-wrapper">
-        <img src="assets/graphics/hero_exact_flyer_composite.png" alt="Moovon SpreadPay - Protect Your Journey" class="billboard-hero-img">
-        
-        <!-- Interactive Clickable Hotspots over the artwork action buttons -->
-        <div class="billboard-actions-overlay">
-          <button onclick="openPartnerModal()" class="btn-hotspot-partner" title="Find a Participating Partner" aria-label="Find a Participating Partner"></button>
-          <a href="how-it-works.html" class="btn-hotspot-hiw" title="How It Works" aria-label="How It Works"></a>
+      <div class="billboard-live-wrapper">
+        <div class="billboard-live-content">
+          <h1 class="billboard-headline">
+            Protect<br>
+            <span class="billboard-headline-accent">Your Journey.</span>
+          </h1>
+
+          <div class="billboard-protected-badge">
+            <span class="billboard-shield-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </span>
+            SpreadPay Protected&trade;
+          </div>
+
+          <p class="billboard-sub">
+            Wherever you buy your motor insurance,<br>
+            ask for <strong>Moovon SpreadPay&trade;</strong>.
+          </p>
+
+          <div class="billboard-cta-row">
+            <button onclick="openPartnerModal()" class="btn-billboard-primary">
+              Find a Participating Partner
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+            </button>
+            <a href="how-it-works.html" class="btn-billboard-secondary">
+              How It Works
+              <span class="billboard-play-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9.5 7.5v9l7-4.5-7-4.5z"/></svg>
+              </span>
+            </a>
+          </div>
+        </div>
+
+        <div class="billboard-art-frame">
+          <picture>
+            <source srcset="assets/graphics/hero_billboard_art.webp?v=2.4" type="image/webp">
+            <img src="assets/graphics/hero_billboard_art.png?v=2.4"
+                 alt="Mr. Moovon superhero flying over a fleet of insured vehicles on an Accra highway"
+                 class="billboard-live-art" width="1708" height="872" fetchpriority="high">
+          </picture>
+          <div class="billboard-bubble">
+            <strong>Mr. Moovon</strong><br>
+            never forgets.<br>
+            Always protecting your journey.
+          </div>
         </div>
       </div>
     </div>
