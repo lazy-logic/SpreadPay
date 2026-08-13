@@ -3163,22 +3163,29 @@ body.mobile-drawer-open {
 /* ==========================================================================
    "Already have an insurer?" reassurance band (per the flyer)
    ========================================================================== */
+/* Full-bleed band. The handset deliberately breaks the lower edge, so the
+   section keeps bottom room for it to land in and nothing here clips. */
 .eligibility-section {
-  padding: 0 0 80px;
+  padding: 0 0 96px;
   background: #FFFFFF;
 }
 
-.eligibility-card {
+.eligibility-band {
+  position: relative;
+  width: 100%;
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-navy-soft) 100%);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.eligibility-inner {
+  max-width: 1560px;
+  margin: 0 auto;
+  padding: 46px 48px;
   display: grid;
-  grid-template-columns: 1.25fr 1.1fr 1fr 0.62fr;
+  grid-template-columns: 1.15fr 1.05fr 0.95fr 0.78fr;
   align-items: center;
-  gap: 32px;
-  background: var(--bg-surface);
-  border: 1px solid var(--border-subtle);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
-  padding: 34px 0 34px 38px;
-  overflow: hidden;
+  gap: 44px;
 }
 
 /* --- intro --- */
@@ -3326,28 +3333,48 @@ body.mobile-drawer-open {
 }
 
 /* --- app preview, bleeding off the card edge as on the flyer --- */
-/* Absolutely placed so the handset can run past the card's lower edge and be
-   clipped there, as on the flyer, without stretching the row. */
+/* The handset sits proud of the band rather than being cropped into it:
+   given its own column width, it overhangs the lower edge and casts a
+   shadow onto the section below. */
 .elig-app {
   position: relative;
   align-self: stretch;
   min-width: 0;
+  display: flex;
+  justify-content: center;
 }
 
+/* Bottom sits flush with the band's lower border so the source image's own
+   crop is hidden behind it, while the top of the device rises clear of the
+   band. -46px cancels .eligibility-inner's padding. */
 .elig-app img {
   position: absolute;
-  top: -34px;
-  right: -14px;
+  bottom: -46px;
   width: auto;
-  height: 306px;
-  filter: drop-shadow(0 10px 26px rgba(17, 59, 110, 0.16));
+  height: 382px;
+  max-width: none;
+  filter: drop-shadow(0 18px 34px rgba(17, 59, 110, 0.24));
+}
+
+/* Soft halo so the handset reads as lifted off the band. */
+.elig-app::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(27, 91, 170, 0.10) 0%, rgba(27, 91, 170, 0) 68%);
+  pointer-events: none;
 }
 
 @media (max-width: 1180px) {
-  .eligibility-card {
+  .eligibility-inner {
     grid-template-columns: 1fr 1fr;
-    gap: 30px 34px;
-    padding: 34px 34px;
+    gap: 34px 40px;
+    padding: 42px 32px;
   }
 
   .elig-entities,
@@ -3359,33 +3386,42 @@ body.mobile-drawer-open {
     padding-left: 0;
   }
 
-  /* Stacked: the handset returns to normal flow, cropped to a neat window. */
+  /* Handset moves to its own full-width row, still rising out of the band. */
   .elig-app {
     grid-column: 1 / -1;
-    height: 210px;
-    overflow: hidden;
-    border-radius: var(--radius-lg);
+    min-height: 250px;
   }
 
   .elig-app img {
-    position: absolute;
-    top: 0;
-    right: 50%;
-    transform: translateX(50%);
-    height: 300px;
+    bottom: -42px;
+    height: 340px;
   }
 }
 
 @media (max-width: 760px) {
   .eligibility-section {
-    padding-bottom: 56px;
+    padding-bottom: 80px;
   }
 
-  .eligibility-card {
+  .eligibility-inner {
     grid-template-columns: 1fr;
-    gap: 28px;
-    padding: 28px 22px;
+    gap: 30px;
+    padding: 34px 22px;
     text-align: center;
+  }
+
+  .elig-app {
+    min-height: 214px;
+  }
+
+  .elig-app img {
+    bottom: -34px;
+    height: 282px;
+  }
+
+  .elig-app::before {
+    width: 220px;
+    height: 220px;
   }
 
   .elig-intro {
