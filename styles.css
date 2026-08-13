@@ -3160,6 +3160,261 @@ body.mobile-drawer-open {
 /* ==========================================================================
    Customer Journey Stepper (homepage "How It Works", per the flyer)
    ========================================================================== */
+/* ==========================================================================
+   "Already have an insurer?" reassurance band (per the flyer)
+   ========================================================================== */
+.eligibility-section {
+  padding: 0 0 80px;
+  background: #FFFFFF;
+}
+
+.eligibility-card {
+  display: grid;
+  grid-template-columns: 1.25fr 1.1fr 1fr 0.62fr;
+  align-items: center;
+  gap: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 34px 0 34px 38px;
+  overflow: hidden;
+}
+
+/* --- intro --- */
+.elig-intro {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.elig-handshake {
+  position: relative;
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 78px;
+  height: 78px;
+  border-radius: 50%;
+  border: 1px solid var(--border-subtle);
+  background: var(--bg-page);
+  color: var(--primary-navy);
+}
+
+.elig-handshake > svg {
+  width: 40px;
+  height: 40px;
+}
+
+.elig-check {
+  position: absolute;
+  right: -2px;
+  bottom: -2px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 27px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  color: #FFFFFF;
+  border: 2.5px solid var(--bg-surface);
+}
+
+.elig-check svg {
+  width: 13px;
+  height: 13px;
+}
+
+.elig-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.28;
+  letter-spacing: -0.3px;
+  color: var(--primary-navy-dark);
+  margin-bottom: 8px;
+}
+
+.elig-lead {
+  font-size: 15.5px;
+  line-height: 1.5;
+  font-weight: 600;
+  color: var(--primary-navy);
+}
+
+/* --- entity trio --- */
+.elig-entities {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  border-left: 1px solid var(--border-subtle);
+}
+
+.elig-entities li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  padding: 4px 10px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  line-height: 1.35;
+  color: var(--primary-navy-dark);
+}
+
+.elig-entities li + li {
+  border-left: 1px solid var(--border-subtle);
+}
+
+.elig-entities svg {
+  width: 38px;
+  height: 38px;
+  color: var(--primary-navy);
+}
+
+/* --- eligible policies --- */
+.elig-policies {
+  border-left: 1px solid var(--border-subtle);
+  padding-left: 30px;
+}
+
+.elig-policies-title {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.45;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  max-width: 22ch;
+}
+
+.elig-policy-list {
+  list-style: none;
+  display: grid;
+  gap: 11px;
+  margin: 0;
+  padding: 0;
+}
+
+.elig-policy-list li {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--primary-navy-dark);
+}
+
+.elig-policy-list svg {
+  width: 19px;
+  height: 19px;
+  flex-shrink: 0;
+  color: var(--primary-navy);
+}
+
+.elig-more {
+  margin-top: 14px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary-navy);
+}
+
+/* --- app preview, bleeding off the card edge as on the flyer --- */
+/* Absolutely placed so the handset can run past the card's lower edge and be
+   clipped there, as on the flyer, without stretching the row. */
+.elig-app {
+  position: relative;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.elig-app img {
+  position: absolute;
+  top: -34px;
+  right: -14px;
+  width: auto;
+  height: 306px;
+  filter: drop-shadow(0 10px 26px rgba(17, 59, 110, 0.16));
+}
+
+@media (max-width: 1180px) {
+  .eligibility-card {
+    grid-template-columns: 1fr 1fr;
+    gap: 30px 34px;
+    padding: 34px 34px;
+  }
+
+  .elig-entities,
+  .elig-policies {
+    border-left: none;
+  }
+
+  .elig-policies {
+    padding-left: 0;
+  }
+
+  /* Stacked: the handset returns to normal flow, cropped to a neat window. */
+  .elig-app {
+    grid-column: 1 / -1;
+    height: 210px;
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+  }
+
+  .elig-app img {
+    position: absolute;
+    top: 0;
+    right: 50%;
+    transform: translateX(50%);
+    height: 300px;
+  }
+}
+
+@media (max-width: 760px) {
+  .eligibility-section {
+    padding-bottom: 56px;
+  }
+
+  .eligibility-card {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    padding: 28px 22px;
+    text-align: center;
+  }
+
+  .elig-intro {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .elig-title {
+    font-size: 18.5px;
+  }
+
+  .elig-entities {
+    gap: 8px;
+  }
+
+  .elig-entities li {
+    padding: 4px 2px;
+    font-size: 12.5px;
+  }
+
+  .elig-policies-title {
+    max-width: none;
+  }
+
+  .elig-policy-list li {
+    justify-content: center;
+  }
+}
+
 /* On how-it-works.html the journey leads and the operational grid follows,
    so the two read as distinct chapters rather than one long white run. */
 .hiw-journey-section {
