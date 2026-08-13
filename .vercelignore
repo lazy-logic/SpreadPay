@@ -1,7 +1,10 @@
 # Internal source material - not for public hosting
 CONTENT_EXTRACTION.md
 spreadpay_operations_guide_extraction.md
+new-content.md
 sample/
+design-reference/
+*.docx
 
 # Unused legacy partials (no page references these)
 header.html
