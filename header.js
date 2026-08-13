@@ -128,7 +128,7 @@ function initUniformMobileDrawer() {
             <img src="assets/brand/moovon_logo_main.png" alt="Moovon" class="brand-logo-img brand-logo-drawer" width="2371" height="613">
           </a>
           <button class="mobile-drawer-close" id="closeMobileDrawer" aria-label="Close menu">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0B2265" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1B5BAA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
 
