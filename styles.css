@@ -154,6 +154,19 @@ button, input, select, textarea {
   width: auto;
 }
 
+/* The supplied wordmark carries a descending chevron, so only ~60% of the
+   image height is the lettering. Sized so the letters read at roughly the
+   same weight as the drawn mark they replaced. */
+.brand-logo-img {
+  height: 48px;
+  width: auto;
+  display: block;
+}
+
+.brand-logo-drawer {
+  height: 40px;
+}
+
 .brand-tagline {
   font-size: 11px;
   font-weight: 600;
@@ -2064,6 +2077,45 @@ button, input, select, textarea {
   overflow: visible;
 }
 
+.brand-logo-footer .brand-logo-img {
+  height: 46px;
+}
+
+/* Social row, foot of the brand column */
+.footer-social {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 0;
+  padding: 0;
+}
+
+.footer-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: rgba(255, 255, 255, 0.82);
+  transition: var(--transition-smooth);
+}
+
+.footer-social a:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.footer-social svg {
+  width: 19px;
+  height: 19px;
+}
+
 .footer-tagline {
   font-family: var(--font-body);
   font-size: 11.5px;
@@ -2917,6 +2969,14 @@ body.mobile-drawer-open {
   .brand-logo-svg {
     height: 36px; /* Perfectly proportioned & crisp on mobile */
     width: auto;
+  }
+
+  .brand-logo-img {
+    height: 42px;
+  }
+
+  .brand-logo-footer .brand-logo-img {
+    height: 42px;
   }
 
   .page-hero {
