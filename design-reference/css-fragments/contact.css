@@ -1,0 +1,504 @@
+/* ==========================================================================
+   MOOVON SpreadPay™ — Contact / Mr. Moovon's HelpDesk (contact.html)
+   Fragment: appended to styles.css. Every new class is prefixed .contact-*
+   Palette: navy / red / white only (R8). The single green mark is the
+   third-party WhatsApp glyph (.contact-wa-glyph).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Section rhythm
+   -------------------------------------------------------------------------- */
+.contact-section {
+  padding: 76px 0;
+}
+
+.contact-section-alt {
+  background: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Hero action row (inside .page-hero)
+   -------------------------------------------------------------------------- */
+.contact-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Four contact routes
+   -------------------------------------------------------------------------- */
+.contact-routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.contact-routes > * {
+  min-width: 0;
+}
+
+.contact-route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.contact-route-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(27, 91, 170, 0.28);
+}
+
+.contact-route-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  flex-shrink: 0;
+}
+
+.contact-route-card:nth-child(4) .contact-route-icon {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.contact-route-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.3;
+}
+
+.contact-route-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-route-dest {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-navy-dark);
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-subtle);
+  overflow-wrap: anywhere;
+}
+
+.contact-route-dest-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 2px;
+}
+
+.contact-route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--accent-red);
+  transition: var(--transition-smooth);
+}
+
+.contact-route-link svg {
+  transition: var(--transition-smooth);
+}
+
+.contact-route-link:hover {
+  color: var(--accent-red-hover);
+}
+
+.contact-route-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Mr. Moovon's HelpDesk panel (WhatsApp-first)
+   -------------------------------------------------------------------------- */
+.contact-helpdesk {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: 28px;
+  align-items: end;
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.contact-helpdesk::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(204, 30, 65, 0.30) 0%, rgba(204, 30, 65, 0) 70%);
+  pointer-events: none;
+}
+
+.contact-helpdesk > * {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-helpdesk-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  margin-bottom: 16px;
+}
+
+/* Third-party brand mark — the only green permitted on the page (R8). */
+.contact-wa-glyph {
+  color: var(--whatsapp-green);
+  flex-shrink: 0;
+}
+
+.contact-helpdesk-title {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.contact-helpdesk-text {
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+.contact-helpdesk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-helpdesk-note {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 12px;
+  max-width: 56ch;
+}
+
+.contact-quicklinks-title {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 30px 0 12px;
+}
+
+.contact-quicklinks {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-quicklinks > li {
+  min-width: 0;
+}
+
+.contact-quicklink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.contact-quicklink svg {
+  flex-shrink: 0;
+}
+
+.contact-quicklink:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: translateY(-2px);
+}
+
+.contact-helpdesk-figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: end;
+  margin-bottom: -44px;
+}
+
+.contact-helpdesk-figure img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(5, 26, 51, 0.45));
+}
+
+/* --------------------------------------------------------------------------
+   Contact details card additions (inside the existing .contact-info-card)
+   -------------------------------------------------------------------------- */
+.contact-info-lead {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.contact-detail-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-detail-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
+.contact-detail-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 3px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+  transition: var(--transition-smooth);
+}
+
+.contact-detail-link:hover {
+  text-decoration-color: #FFFFFF;
+}
+
+.contact-detail-hint {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+}
+
+.contact-info-foot {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Enquiry form card additions
+   -------------------------------------------------------------------------- */
+.contact-form-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.contact-form-intro {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.contact-form-submit {
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 13px 22px;
+}
+
+.contact-form-note {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.55;
+  margin-top: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   Follow Mr. Moovon (compact, R10)
+   -------------------------------------------------------------------------- */
+.contact-follow {
+  background: var(--primary-navy-dark);
+  color: #FFFFFF;
+  padding: 34px 0;
+}
+
+.contact-follow-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-follow-copy {
+  min-width: 0;
+}
+
+.contact-follow-title {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.contact-follow-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+}
+
+.contact-follow .contact-follow-social {
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* Keep the closing CTA copy shrinkable next to its button group. */
+.contact-cta-copy {
+  min-width: 0;
+}
+
+.contact-follow :focus-visible,
+.contact-helpdesk :focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .contact-helpdesk {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 34px 28px;
+    align-items: start;
+  }
+
+  .contact-helpdesk-figure {
+    justify-content: flex-start;
+    margin-bottom: -34px;
+  }
+
+  .contact-helpdesk-figure img {
+    max-width: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 52px 0;
+  }
+
+  .contact-hero-actions .btn,
+  .contact-helpdesk-actions .btn {
+    width: 100%;
+  }
+
+  .contact-route-card {
+    padding: 24px 20px;
+  }
+
+  .contact-helpdesk {
+    padding: 28px 20px;
+  }
+
+  .contact-helpdesk-title {
+    font-size: 24px;
+  }
+
+  .contact-helpdesk-figure {
+    align-self: center;
+    justify-content: center;
+    margin-bottom: -28px;
+  }
+
+  .contact-helpdesk-figure img {
+    max-width: 160px;
+  }
+
+  .contact-follow-inner {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-quicklinks {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-detail-hint {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-route-card,
+  .contact-route-card:hover,
+  .contact-route-link svg,
+  .contact-route-link:hover svg,
+  .contact-quicklink,
+  .contact-quicklink:hover {
+    transform: none;
+    transition: none;
+  }
+}

@@ -1,0 +1,700 @@
+/* ==========================================================================
+   MOOVON SpreadPay™ — Partner with Moovon (for-partners.html)
+   Page CSS fragment. Every selector is prefixed .for-partners-* so this file
+   cannot collide with another page fragment. Layout, cards, steppers, tables
+   and buttons all come from styles.css wherever an existing class fits.
+   Tokens only — no hard-coded brand hexes. Navy / red / white (R8).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero — "Let's Move Insurance Forward."
+   Extends .page-hero: left-aligned executive layout with Mr. Moovon at right.
+   -------------------------------------------------------------------------- */
+.for-partners-hero {
+  text-align: left;
+  padding: 56px 0 52px;
+}
+
+/* Sits above the .page-hero ::before glow and ::after dot grid, both of which
+   are positioned pseudo-elements and would otherwise paint over static text. */
+.for-partners-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.for-partners-hero-grid > * {
+  min-width: 0;
+}
+
+.for-partners-hero-copy .page-hero-subtitle {
+  margin: 0;
+  max-width: 560px;
+}
+
+.for-partners-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+/* White-outline action for dark bands (hero + pre-footer CTA). */
+.for-partners-btn-ghost {
+  background: rgba(255, 255, 255, 0.10);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  box-shadow: none;
+}
+
+.for-partners-btn-ghost:hover,
+.for-partners-btn-ghost:focus-visible {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--primary-navy-dark);
+  transform: translateY(-2px);
+}
+
+.for-partners-hero-note {
+  margin-top: 26px;
+  max-width: 620px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(255, 255, 255, 0.28);
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.for-partners-hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.for-partners-hero-art img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 24px 38px rgba(4, 12, 36, 0.45));
+}
+
+/* --------------------------------------------------------------------------
+   2. Shared card rows (proposition, who we work with, benefits)
+   -------------------------------------------------------------------------- */
+.for-partners-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.for-partners-grid-3 > * {
+  min-width: 0;
+}
+
+.for-partners-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.for-partners-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 91, 170, 0.28);
+}
+
+.for-partners-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  margin-bottom: 16px;
+}
+
+.for-partners-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.for-partners-icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.for-partners-card-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.for-partners-card-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Regulatory statements read as notes, not as body copy. */
+.for-partners-compliance {
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   3. Four-party ecosystem strip
+   -------------------------------------------------------------------------- */
+.for-partners-eco {
+  margin-top: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: 30px 26px 26px;
+}
+
+.for-partners-eco-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.for-partners-eco-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.for-partners-eco-node {
+  position: relative;
+  text-align: center;
+  min-width: 0;
+}
+
+/* Dotted run between nodes; 34px clears the icon radius at both ends. */
+.for-partners-eco-node:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: calc(50% + 38px);
+  width: calc(100% - 76px);
+  border-top: 2px dotted var(--border-medium);
+}
+
+.for-partners-eco-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  margin-bottom: 14px;
+}
+
+.for-partners-eco-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.for-partners-eco-icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.for-partners-eco-name {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.for-partners-eco-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.for-partners-eco-note {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   4. How the partnership works — reuses the .hiw-flow stepper
+   -------------------------------------------------------------------------- */
+.for-partners-steps .hiw-step-icon svg {
+  width: 38px;
+  height: 38px;
+}
+
+.for-partners-steps .hiw-step-desc {
+  max-width: 30ch;
+}
+
+/* Product capability (tier names only — no rates, fees or parameters, R5/R6) */
+.for-partners-capability {
+  margin-top: 44px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 26px;
+}
+
+.for-partners-capability-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.for-partners-capability-lead {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  max-width: 70ch;
+}
+
+.for-partners-tiers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.for-partners-tier {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.for-partners-tier-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-red);
+  flex-shrink: 0;
+}
+
+.for-partners-tier-mark svg {
+  width: 19px;
+  height: 19px;
+}
+
+.for-partners-tier-copy {
+  min-width: 0;
+}
+
+.for-partners-tier-copy strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 3px;
+}
+
+.for-partners-tier-copy span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Partner Portal panel + request-access form
+   -------------------------------------------------------------------------- */
+.for-partners-portal-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.for-partners-portal-grid > * {
+  min-width: 0;
+}
+
+.for-partners-portal-card {
+  background: linear-gradient(150deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 34px 30px;
+}
+
+.for-partners-portal-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.for-partners-portal-lead {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.for-partners-portal-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.for-partners-portal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.for-partners-portal-list svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.for-partners-portal-note {
+  margin-top: 22px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.for-partners-portal-contact {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.for-partners-portal-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.for-partners-portal-contact svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.for-partners-portal-contact a {
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  overflow-wrap: anywhere;
+  transition: var(--transition-smooth);
+}
+
+.for-partners-portal-contact a:hover {
+  border-bottom-color: #FFFFFF;
+}
+
+.for-partners-form-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 32px 28px;
+}
+
+.for-partners-form-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.for-partners-form-lead {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.for-partners-form-submit {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  white-space: normal;
+}
+
+.for-partners-form-status {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Compact "Follow Mr. Moovon" strip (R10)
+   -------------------------------------------------------------------------- */
+.for-partners-follow {
+  padding: 34px 0;
+  background: var(--primary-navy-soft);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.for-partners-follow-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 26px;
+  text-align: center;
+}
+
+.for-partners-follow-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 4px;
+}
+
+.for-partners-follow-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.for-partners-social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.for-partners-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.for-partners-social a:hover,
+.for-partners-social a:focus-visible {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.for-partners-social svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Pre-footer CTA — long partnership label must be allowed to wrap
+   -------------------------------------------------------------------------- */
+.for-partners-cta .cta-buttons-group .btn {
+  white-space: normal;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive — nothing may scroll sideways at 390px or 320px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .for-partners-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .for-partners-hero {
+    text-align: center;
+  }
+
+  .for-partners-hero-copy .page-hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .for-partners-hero-cta {
+    justify-content: center;
+  }
+
+  .for-partners-hero-note {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  /* Copy stays first at every width so the headline leads the fold. */
+  .for-partners-hero-art img {
+    max-width: 210px;
+  }
+
+  .for-partners-eco-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 20px;
+  }
+
+  .for-partners-eco-node:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .for-partners-grid-3,
+  .for-partners-tiers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .for-partners-portal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .for-partners-hero {
+    padding: 40px 0 36px;
+  }
+
+  .for-partners-hero-cta .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .for-partners-grid-3,
+  .for-partners-tiers,
+  .for-partners-eco-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stacked: the dotted run turns vertical between one node and the next. */
+  .for-partners-eco-node:not(:last-child)::after,
+  .for-partners-eco-node:nth-child(2n)::after {
+    display: block;
+    top: auto;
+    bottom: -18px;
+    left: 50%;
+    width: 0;
+    height: 12px;
+    border-top: 0;
+    border-left: 2px dotted var(--border-medium);
+  }
+
+  .for-partners-eco {
+    padding: 24px 18px;
+  }
+
+  .for-partners-eco-row {
+    gap: 34px;
+  }
+
+  .for-partners-card,
+  .for-partners-capability,
+  .for-partners-portal-card,
+  .for-partners-form-card {
+    padding: 22px 18px;
+  }
+
+  .for-partners-follow-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .for-partners-hero-art img {
+    max-width: 170px;
+  }
+
+  .for-partners-tier {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .for-partners-social a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Reduced motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .for-partners-card,
+  .for-partners-social a,
+  .for-partners-btn-ghost,
+  .for-partners-portal-contact a {
+    transition: none;
+  }
+
+  .for-partners-card:hover,
+  .for-partners-social a:hover,
+  .for-partners-social a:focus-visible,
+  .for-partners-btn-ghost:hover,
+  .for-partners-btn-ghost:focus-visible {
+    transform: none;
+  }
+}

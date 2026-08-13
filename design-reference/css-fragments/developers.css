@@ -1,0 +1,491 @@
+/* ==========================================================================
+   Developers & Integrations (developers.html) — page fragment
+   Every new class is prefixed .dev- so this fragment cannot collide with
+   another page's fragment. Everything else on the page reuses the existing
+   design system (.page-hero, .section-header, .btn, .alert-box-info,
+   .hiw-flow stepper, .cta-banner-section).
+   Palette: navy / red / white only.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero — left-aligned two-column variant of .page-hero
+   -------------------------------------------------------------------------- */
+.page-hero.dev-hero {
+  text-align: left;
+  padding: 64px 0 60px;
+}
+
+/* .page-hero::after paints a dot overlay above static children; z-index lifts
+   the hero content back on top of it. */
+.dev-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.dev-hero-grid > * {
+  min-width: 0;
+}
+
+.dev-hero .page-hero-subtitle {
+  margin: 0;
+  max-width: 58ch;
+}
+
+.dev-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.dev-hero-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 54ch;
+  margin-top: 22px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.dev-hero-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.85;
+}
+
+.dev-hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.dev-hero-art img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(5, 26, 51, 0.45));
+}
+
+/* --------------------------------------------------------------------------
+   Section shells
+   -------------------------------------------------------------------------- */
+.dev-section {
+  padding: 78px 0;
+  background: var(--bg-surface);
+}
+
+.dev-section-alt {
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   "What you can build with" — capability grid
+   -------------------------------------------------------------------------- */
+.dev-cap-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.dev-cap-grid > * {
+  min-width: 0;
+}
+
+.dev-cap-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.dev-cap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 91, 170, 0.28);
+}
+
+.dev-cap-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  transition: var(--transition-smooth);
+}
+
+.dev-cap-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.dev-cap-card:hover .dev-cap-icon {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+}
+
+.dev-cap-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: var(--primary-navy-dark);
+  margin-bottom: 9px;
+}
+
+.dev-cap-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.dev-note-wrap {
+  max-width: 940px;
+  margin: 34px auto 0;
+}
+
+/* --------------------------------------------------------------------------
+   "Who can integrate"
+   -------------------------------------------------------------------------- */
+.dev-who-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.dev-who-grid > * {
+  min-width: 0;
+}
+
+.dev-who-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-xs);
+}
+
+.dev-who-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.dev-who-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.dev-who-body {
+  min-width: 0;
+}
+
+.dev-who-title {
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  margin-bottom: 6px;
+}
+
+.dev-who-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Secure / reliable + what stays behind Developer Sign In
+   -------------------------------------------------------------------------- */
+.dev-secure-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.dev-secure-grid > * {
+  min-width: 0;
+}
+
+.dev-subhead {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 18px;
+}
+
+.dev-check-list {
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.dev-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.dev-check-item svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--primary-navy);
+}
+
+/* R7 — the page shows no code at all; this states the rule in plain sight. */
+.dev-placeholder-note {
+  background: var(--accent-red-soft);
+  border: 1px dashed var(--accent-red);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+}
+
+.dev-placeholder-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--accent-red);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dev-placeholder-note p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #7E1329;
+}
+
+.dev-locked-card {
+  background: linear-gradient(155deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 30px 28px;
+  box-shadow: var(--shadow-lg);
+}
+
+.dev-locked-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+}
+
+.dev-locked-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dev-locked-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+}
+
+.dev-locked-lead {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 16px;
+}
+
+.dev-locked-list {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+
+.dev-locked-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.dev-locked-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-red);
+}
+
+.dev-locked-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 2px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.dev-locked-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.dev-locked-link:hover {
+  color: #FF6B89;
+  border-bottom-color: currentColor;
+}
+
+.dev-locked-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .dev-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .dev-hero-art img {
+    max-width: 240px;
+  }
+
+  .dev-secure-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-hero.dev-hero {
+    padding: 46px 0 44px;
+  }
+
+  .dev-section {
+    padding: 58px 0;
+  }
+
+  .dev-hero-art img {
+    max-width: 190px;
+  }
+
+  .dev-cap-card {
+    padding: 22px 18px;
+  }
+
+  .dev-locked-card {
+    padding: 26px 22px;
+  }
+
+  .dev-note-wrap {
+    margin-top: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dev-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dev-who-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dev-check-item,
+  .dev-cap-desc,
+  .dev-who-desc {
+    font-size: 13.5px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — scoped to this page so no other page is affected
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .dev-hero .page-hero-badge {
+    animation: none;
+  }
+
+  .dev-cap-card,
+  .dev-cap-icon,
+  .dev-locked-link,
+  .dev-locked-link svg {
+    transition: none;
+  }
+
+  .dev-cap-card:hover {
+    transform: none;
+  }
+
+  .dev-locked-link:hover svg {
+    transform: none;
+  }
+}

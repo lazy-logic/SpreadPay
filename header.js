@@ -13,17 +13,20 @@ document.addEventListener('DOMContentLoaded', () => {
 // Participating Partners - single source of truth for the directory,
 // the finder modal and every "10 partners" count on the site.
 // ==========================================================================
+// Descriptions are neutral policy-type labels only. The brand rules forbid
+// ranking, recommending or comparative claims between participating insurers,
+// so no insurer carries a promotional tagline here.
 const MOOVON_PARTNERS = [
-  { name: 'Activa International Insurance', short: 'Activa', desc: 'Comprehensive & Third Party Motor', logo: 'logo_activa.png', categories: 'comprehensive thirdparty' },
-  { name: 'Enterprise Insurance', short: 'Enterprise', desc: "Ghana's Leading Motor Insurer", logo: 'logo_enterprise.png', categories: 'comprehensive thirdparty commercial' },
-  { name: 'Ghana Union Assurance (GUA)', short: 'Ghana Union Assurance', desc: 'Commercial & Private Vehicle Policies', logo: 'logo_gua.png', categories: 'comprehensive commercial' },
-  { name: 'Glico General Insurance', short: 'Glico', desc: 'Motor Third Party & Comprehensive', logo: 'logo_glico.png', categories: 'comprehensive thirdparty' },
-  { name: 'Hollard Insurance Ghana', short: 'Hollard', desc: 'Flexible Motor Cover with SpreadPay', logo: 'logo_hollard.png', categories: 'comprehensive thirdparty fleets' },
-  { name: 'NSIA Insurance Ghana', short: 'NSIA', desc: 'Private & Commercial Fleet Protection', logo: 'logo_nsia.png', categories: 'commercial fleets' },
-  { name: 'Priority Insurance Company', short: 'Priority', desc: 'Fast Motor Policy Financing', logo: 'logo_priority.png', categories: 'thirdparty commercial' },
-  { name: 'Provident Insurance Company', short: 'Provident', desc: 'Affordable Motor Protection', logo: 'logo_provident.png', categories: 'thirdparty' },
-  { name: 'Star Assurance Ghana', short: 'Star Assurance', desc: 'Solid Protection & Fleet Financing', logo: 'logo_star.png', categories: 'comprehensive fleets' },
-  { name: 'SUNU Assurances Ghana', short: 'SUNU', desc: 'Pan-African Motor Policy Financing', logo: 'logo_sunu.png', categories: 'comprehensive commercial' }
+  { name: 'Activa International Insurance', short: 'Activa', desc: 'Comprehensive & Third Party motor', logo: 'logo_activa.png', categories: 'comprehensive thirdparty' },
+  { name: 'Enterprise Insurance', short: 'Enterprise', desc: 'Comprehensive, Third Party & commercial motor', logo: 'logo_enterprise.png', categories: 'comprehensive thirdparty commercial' },
+  { name: 'Ghana Union Assurance (GUA)', short: 'Ghana Union Assurance', desc: 'Private & commercial vehicle policies', logo: 'logo_gua.png', categories: 'comprehensive commercial' },
+  { name: 'Glico General Insurance', short: 'Glico', desc: 'Comprehensive & Third Party motor', logo: 'logo_glico.png', categories: 'comprehensive thirdparty' },
+  { name: 'Hollard Insurance Ghana', short: 'Hollard', desc: 'Comprehensive, Third Party & fleet motor', logo: 'logo_hollard.png', categories: 'comprehensive thirdparty fleets' },
+  { name: 'NSIA Insurance Ghana', short: 'NSIA', desc: 'Private, commercial & fleet motor', logo: 'logo_nsia.png', categories: 'commercial fleets' },
+  { name: 'Priority Insurance Company', short: 'Priority', desc: 'Third Party & commercial motor', logo: 'logo_priority.png', categories: 'thirdparty commercial' },
+  { name: 'Provident Insurance Company', short: 'Provident', desc: 'Third Party motor', logo: 'logo_provident.png', categories: 'thirdparty' },
+  { name: 'Star Assurance Ghana', short: 'Star Assurance', desc: 'Comprehensive & fleet motor', logo: 'logo_star.png', categories: 'comprehensive fleets' },
+  { name: 'SUNU Assurances Ghana', short: 'SUNU', desc: 'Comprehensive & commercial motor', logo: 'logo_sunu.png', categories: 'comprehensive commercial' }
 ];
 window.MOOVON_PARTNERS = MOOVON_PARTNERS;
 
@@ -88,7 +91,12 @@ function pageSlug(value) {
 // Pages reached through a dropdown have no top-level nav item of their own,
 // so they light up their parent instead.
 const NAV_PARENT = {
-  'partners': 'for-partners'
+  'partners': 'products',      // Participating Partners lives under For Customers
+  'faqs': 'faqs',
+  'developers': 'for-partners',
+  'news': 'about',             // What's Mooving? lives under Company
+  'terms': 'about',
+  'privacy': 'about'
 };
 
 function highlightCurrentPage() {
@@ -142,17 +150,17 @@ function initUniformMobileDrawer() {
                 <svg class="mobile-dropdown-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="mobile-submenu">
-                <a href="/products#essential" class="mobile-sublink">
-                  <strong>Essential Tier</strong>
-                  <span>Third Party from GH₵330</span>
+                <a href="/partners" class="mobile-sublink">
+                  <strong>Participating Partners</strong>
+                  <span>Choose your preferred insurer</span>
                 </a>
-                <a href="/products#flex" class="mobile-sublink">
-                  <strong>Flex Tier</strong>
-                  <span>Installments up to 6 months</span>
+                <a href="/products" class="mobile-sublink">
+                  <strong>Flexible Ways to Pay</strong>
+                  <span>Premium bands and payment periods</span>
                 </a>
-                <a href="/products#fixed" class="mobile-sublink">
-                  <strong>Fixed Tier</strong>
-                  <span>Commercial & fleets</span>
+                <a href="/faqs" class="mobile-sublink">
+                  <strong>FAQs</strong>
+                  <span>Answers about your SpreadPay journey</span>
                 </a>
               </div>
             </li>
@@ -163,17 +171,34 @@ function initUniformMobileDrawer() {
                 <svg class="mobile-dropdown-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
               </button>
               <div class="mobile-submenu">
-                <a href="/partners" class="mobile-sublink">
-                  <strong>Participating Partners</strong>
-                  <span>View all 10 Ghana partner insurers</span>
-                </a>
                 <a href="/for-partners" class="mobile-sublink">
-                  <strong>Operations Guide</strong>
-                  <span>Settlement rules & underwriting</span>
+                  <strong>Partner with Moovon</strong>
+                  <span>For insurers, brokers and agents</span>
+                </a>
+                <a href="/developers" class="mobile-sublink">
+                  <strong>Developers &amp; Integrations</strong>
+                  <span>Secure partner APIs</span>
                 </a>
                 <a href="/for-partners#portal" class="mobile-sublink">
                   <strong>Partner Portal Sign In</strong>
-                  <span>Insurer & broker portal</span>
+                  <span>Approved partner access</span>
+                </a>
+              </div>
+            </li>
+
+            <li class="mobile-nav-item-dropdown">
+              <button class="mobile-dropdown-toggle" aria-expanded="false">
+                <span>Company</span>
+                <svg class="mobile-dropdown-arrow" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+              </button>
+              <div class="mobile-submenu">
+                <a href="/about" class="mobile-sublink">
+                  <strong>About Moovon</strong>
+                  <span>Built in Ghana. Built for Africa.</span>
+                </a>
+                <a href="/news" class="mobile-sublink">
+                  <strong>What&rsquo;s Mooving?</strong>
+                  <span>News, partners and industry updates</span>
                 </a>
               </div>
             </li>

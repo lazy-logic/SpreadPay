@@ -12,6 +12,8 @@
   --accent-red: #CC1E41;
   --accent-red-hover: #A41934;
   --accent-red-soft: #FDEBEF;
+  /* Third-party mark only. Per the brand rules green is not part of Moovon's
+     palette - use these solely on an actual WhatsApp logo glyph. */
   --whatsapp-green: #25D366;
   --whatsapp-green-dark: #1EBE5D;
   --whatsapp-green-soft: #E8FBF0;
@@ -435,16 +437,18 @@ button, input, select, textarea {
   font-size: 12.5px;
 }
 
+/* R8: navy/red/white only. WhatsApp green survives on the logo glyph itself
+   (a third-party mark), not on Moovon's own buttons. */
 .btn-whatsapp {
-  background: var(--whatsapp-green);
+  background: var(--primary-navy);
   color: #FFFFFF;
-  box-shadow: var(--shadow-glow-green);
+  box-shadow: var(--shadow-glow-blue);
 }
 
 .btn-whatsapp:hover {
-  background: var(--whatsapp-green-dark);
+  background: var(--primary-navy-dark);
   transform: translateY(-2px);
-  box-shadow: 0 12px 30px rgba(37, 211, 102, 0.4);
+  box-shadow: 0 12px 30px rgba(17, 59, 110, 0.32);
 }
 
 /* ==========================================================================
@@ -2277,8 +2281,8 @@ button, input, select, textarea {
   width: 6px;
   height: 6px;
   border-radius: 50%;
-  background: #22C55E;
-  box-shadow: 0 0 6px rgba(34, 197, 94, 0.8);
+  background: #7FA8E0;
+  box-shadow: 0 0 6px rgba(127, 168, 224, 0.85);
 }
 
 /* ==========================================================================
@@ -2359,8 +2363,8 @@ button, input, select, textarea {
   width: 7px;
   height: 7px;
   border-radius: 50%;
-  background: #22C55E;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  background: var(--accent-red);
+  box-shadow: 0 0 0 0 rgba(204, 30, 65, 0.7);
   animation: livePulse 1.8s infinite;
   display: inline-block;
   flex-shrink: 0;
@@ -2465,8 +2469,8 @@ button, input, select, textarea {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: #22C55E;
-  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7);
+  background: var(--accent-red);
+  box-shadow: 0 0 0 0 rgba(204, 30, 65, 0.7);
   animation: livePulse 1.8s infinite;
   display: inline-block;
   flex-shrink: 0;
@@ -3853,3 +3857,6219 @@ body.mobile-drawer-open {
   }
 }
 
+/* Site-wide regulatory strip required by the brand rules. */
+.footer-regulatory {
+  font-size: 12px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.66);
+  max-width: 96ch;
+  margin-top: 6px;
+}
+
+/* ==== PAGE FRAGMENTS (generated - do not hand-edit above this line) ==== */
+
+/* ---------- index ---------- */
+/* ==========================================================================
+   HOME (index.html) — page fragment
+   Appended after styles.css. Every new class is prefixed .index- so this
+   fragment cannot collide with another page's fragment.
+   Palette: navy / red / white only (R8). Tokens only — no hard-coded brand hexes.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Participating Insurance Partners
+   The logo marquee (.hero-partners-ribbon) now lives inside this section
+   rather than the hero, so the heading introduces the logos it labels.
+   -------------------------------------------------------------------------- */
+.index-partners {
+  padding: 72px 0 68px;
+  background: var(--bg-surface);
+}
+
+.index-partners .section-header {
+  margin-bottom: 32px;
+}
+
+.index-partners .hero-partners-ribbon {
+  border-top: 1px solid var(--border-subtle);
+  margin-bottom: 28px;
+}
+
+/* The ribbon logos are not links, so they should not advertise a click. */
+.index-partners .ribbon-logos-slide img {
+  cursor: default;
+}
+
+.index-partners-note {
+  max-width: 760px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: 15px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.index-partners-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Simple Customer Journey — six canonical steps
+   Reuses the .hiw-flow stepper. Only the desktop column count and the
+   connector run between columns change, so the shared stepper stays intact.
+   -------------------------------------------------------------------------- */
+.index-journey .hiw-step-icon svg {
+  width: 34px;
+  height: 34px;
+}
+
+.index-journey .hiw-step-desc {
+  max-width: 30ch;
+}
+
+/* Three across, two rows. Scoped to the desktop range so the 1024px (2-up)
+   and 700px (stacked) rules in styles.css still take effect below it. */
+@media (min-width: 1025px) {
+  .index-journey .hiw-flow {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 48px 24px;
+  }
+
+  /* No connector off the end of a row. */
+  .index-journey .hiw-step:nth-child(3n)::after {
+    display: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Core Benefits
+   -------------------------------------------------------------------------- */
+.index-benefits {
+  padding: 84px 0;
+  background: var(--bg-page);
+}
+
+.index-benefits-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.index-benefits-grid > li {
+  min-width: 0;
+}
+
+.index-benefit {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: 28px 24px 26px;
+  transition: var(--transition-smooth);
+}
+
+.index-benefit:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--primary-navy);
+}
+
+.index-benefit-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  margin-bottom: 18px;
+}
+
+.index-benefit-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.index-benefit-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+  letter-spacing: -0.2px;
+  color: var(--primary-navy-dark);
+  margin-bottom: 9px;
+}
+
+.index-benefit-desc {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.index-benefits-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Flexible Ways to Pay — tier names and premium bands only.
+   No deposit percentages, setup or facility fees, or penalty amounts (R5/R6).
+   -------------------------------------------------------------------------- */
+.index-ways {
+  padding: 84px 0;
+  background: var(--bg-surface);
+}
+
+.index-ways-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.index-ways-grid > li {
+  min-width: 0;
+}
+
+.index-way {
+  position: relative;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  padding: 30px 26px;
+  overflow: hidden;
+  transition: var(--transition-smooth);
+}
+
+/* Red keyline along the top edge, echoing the brand rule on the flyer. */
+.index-way::before {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: 4px;
+  background: var(--accent-red);
+}
+
+.index-way:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.index-way-name {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: var(--primary-navy);
+  margin-bottom: 10px;
+}
+
+.index-way-band {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  background: var(--primary-navy-soft);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  display: inline-block;
+  margin-bottom: 14px;
+}
+
+.index-way-note {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.index-ways-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+/* Regulatory positioning: R1 (underwriting), R2 (claims), R3 (financing
+   partners), R4 (customer chooses). Kept on-page, not only in the footer. */
+.index-compliance {
+  max-width: 900px;
+  margin: 40px auto 0;
+  padding: 20px 24px;
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--primary-navy);
+  border-radius: var(--radius-md);
+  background: var(--bg-page);
+  font-size: 13.5px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  text-align: left;
+}
+
+/* --------------------------------------------------------------------------
+   5. Follow Mr. Moovon (compact social band, R10)
+   Dark band so the shared .footer-social pills apply unchanged.
+   -------------------------------------------------------------------------- */
+.index-follow {
+  padding: 46px 0;
+  background: linear-gradient(120deg, var(--bg-surface-dark) 0%, var(--primary-navy-dark) 100%);
+  color: #FFFFFF;
+}
+
+.index-follow-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  flex-wrap: wrap;
+}
+
+.index-follow-copy {
+  min-width: 0;
+  flex: 1 1 320px;
+}
+
+.index-follow-title {
+  font-family: var(--font-heading);
+  font-size: 27px;
+  font-weight: 900;
+  letter-spacing: -0.4px;
+  margin-bottom: 8px;
+}
+
+.index-follow-sub {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 52ch;
+}
+
+.index-follow .footer-social {
+  margin-top: 18px;
+  flex-wrap: wrap;
+}
+
+.index-follow-art {
+  flex: 0 0 auto;
+  padding: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+}
+
+.index-follow-art img {
+  width: 162px;
+  height: auto;
+  border-radius: var(--radius-md);
+}
+
+/* White focus ring on the dark band, matching the treatment styles.css
+   already gives .cta-banner-section and .site-footer. */
+.index-follow :focus-visible {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .index-benefits-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .index-ways-grid {
+    grid-template-columns: 1fr;
+    max-width: 520px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 820px) {
+  .index-partners {
+    padding: 56px 0 52px;
+  }
+
+  .index-benefits,
+  .index-ways {
+    padding: 62px 0;
+  }
+
+  .index-follow-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+  }
+
+  .index-follow-art {
+    align-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .index-benefits-grid {
+    grid-template-columns: 1fr;
+    max-width: 460px;
+    margin: 0 auto;
+  }
+
+  .index-partners-actions .btn,
+  .index-benefits-actions .btn,
+  .index-ways-actions .btn {
+    width: 100%;
+    justify-content: center;
+    white-space: normal;
+  }
+
+  .index-follow-title {
+    font-size: 23px;
+  }
+
+  .index-compliance {
+    padding: 18px 16px;
+    font-size: 13px;
+  }
+
+  /* .section-title is a fixed 36px in styles.css; scale it down for this
+     page's sections only so long titles stay comfortable on a phone. */
+  .index-partners .section-title,
+  .index-journey .section-title,
+  .index-benefits .section-title,
+  .index-ways .section-title {
+    font-size: 27px;
+  }
+}
+
+/* 320–390px: nothing may push the page sideways. */
+@media (max-width: 400px) {
+  .index-benefit,
+  .index-way {
+    padding: 24px 18px;
+  }
+
+  /* The band can wrap to two lines at this width; a pill radius would read
+     as a mistake, so it becomes a block chip instead. */
+  .index-way-band {
+    display: block;
+    font-size: 13px;
+    padding: 8px 12px;
+    border-radius: var(--radius-md);
+  }
+
+  .index-follow-art img {
+    width: 140px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .index-benefit,
+  .index-way {
+    transition: none;
+  }
+
+  .index-benefit:hover,
+  .index-way:hover {
+    transform: none;
+  }
+}
+
+/* ---------- how-it-works ---------- */
+/* ==========================================================================
+   HOW SPREADPAY WORKS — page CSS fragment (slug: how-it-works)
+   --------------------------------------------------------------------------
+   Append after styles.css. Everything here is new; nothing in styles.css is
+   redefined. All new classes carry the `hiw-` prefix — the established page
+   prefix for how-it-works.html already used throughout styles.css
+   (.hiw-section, .hiw-flow, .hiw-step…) — so this fragment cannot collide
+   with other page fragments.
+
+   Reused from the design system (no new CSS written for them):
+     .container .page-hero/.page-hero-badge/-title/-subtitle
+     .section-header .section-tag .section-title .section-subtitle
+     .btn .btn-primary .btn-outline
+     .hiw-section .hiw-journey-section .hiw-flow (+ .hiw-step*, heading, cta, link)
+     .faq-accordion-group .faq-item .faq-question .faq-toggle-icon .faq-answer
+     .alert-box-info .footer-social .cta-banner-section
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero action row (sits under .page-hero-subtitle)
+   -------------------------------------------------------------------------- */
+.hiw-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   2. Key line band — "Your annual premium is paid. Your payments are spread."
+   Lifted so the card overlaps the foot of the navy hero.
+   -------------------------------------------------------------------------- */
+.hiw-keyline-section {
+  position: relative;
+  z-index: 2;
+  margin-top: -34px;
+}
+
+.hiw-keyline {
+  display: flex;
+  align-items: flex-start;
+  gap: 22px;
+  padding: 28px 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-top: 3px solid var(--accent-red);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.hiw-keyline-mark {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+}
+
+.hiw-keyline-mark svg {
+  width: 28px;
+  height: 28px;
+}
+
+.hiw-keyline-body {
+  min-width: 0;
+}
+
+.hiw-keyline-line {
+  font-family: var(--font-heading);
+  font-size: clamp(19px, 2.6vw, 29px);
+  font-weight: 900;
+  line-height: 1.22;
+  letter-spacing: -0.5px;
+  color: var(--primary-navy-dark);
+  margin-bottom: 10px;
+}
+
+.hiw-keyline-line span {
+  color: var(--accent-red);
+}
+
+.hiw-keyline-note {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 84ch;
+}
+
+/* Matches the 820px breakpoint where .page-hero drops to 32px of bottom
+   padding, so the card never rides up over the hero CTAs. */
+@media (max-width: 860px) {
+  .hiw-keyline-section {
+    margin-top: -24px;
+  }
+}
+
+@media (max-width: 760px) {
+  .hiw-keyline {
+    flex-direction: column;
+    gap: 16px;
+    padding: 24px 20px;
+  }
+}
+
+@media (max-width: 420px) {
+  .hiw-keyline {
+    padding: 20px 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3. Six-step journey — modifier on the shared .hiw-flow stepper.
+   styles.css lays the stepper out four-across for the homepage; the canonical
+   journey is six steps, so this modifier owns the track count at every width
+   and therefore also has to own which connectors are suppressed at each one.
+   -------------------------------------------------------------------------- */
+.hiw-flow.hiw-flow-six {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 46px 28px;
+}
+
+/* Last column of each row joins nothing — the next step is on the row below. */
+.hiw-flow-six .hiw-step:nth-child(3n)::after {
+  display: none;
+}
+
+@media (max-width: 1024px) {
+  .hiw-flow.hiw-flow-six {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .hiw-flow-six .hiw-step:nth-child(3n)::after {
+    display: block;
+  }
+
+  .hiw-flow-six .hiw-step:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+/* Stacked: styles.css turns the connector vertical here, so every step that
+   has one shows it again. */
+@media (max-width: 700px) {
+  .hiw-flow.hiw-flow-six {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .hiw-flow-six .hiw-step:nth-child(2n)::after,
+  .hiw-flow-six .hiw-step:nth-child(3n)::after {
+    display: block;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   4. Who Does What? — the three-party split
+   -------------------------------------------------------------------------- */
+.hiw-roles {
+  display: grid;
+  /* min() keeps the track from setting a floor wider than a 320px viewport. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 272px), 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.hiw-roles > * {
+  min-width: 0;
+}
+
+.hiw-role {
+  display: flex;
+  flex-direction: column;
+  padding: 30px 26px;
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  transition: var(--transition-spring);
+}
+
+.hiw-role:hover {
+  background: var(--bg-surface);
+  border-color: rgba(17, 59, 110, 0.2);
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-6px);
+}
+
+.hiw-role-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-xs);
+}
+
+.hiw-role-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.hiw-role-name {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.2px;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.hiw-role-lead {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.hiw-role-list {
+  list-style: none;
+  display: grid;
+  gap: 10px;
+  margin: 0;
+  padding: 16px 0 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.hiw-role-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-main);
+}
+
+.hiw-role-list svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin-top: 2px;
+  color: var(--accent-red);
+}
+
+.hiw-role-note {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-sub);
+}
+
+/* Moovon's own column, called out in navy */
+.hiw-role-feature,
+.hiw-role-feature:hover {
+  background: linear-gradient(150deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  border-color: var(--primary-navy);
+  box-shadow: var(--shadow-glow-blue);
+}
+
+.hiw-role-feature .hiw-role-icon {
+  background: rgba(255, 255, 255, 0.14);
+  border-color: rgba(255, 255, 255, 0.28);
+  color: #FFFFFF;
+  box-shadow: none;
+}
+
+.hiw-role-feature .hiw-role-name {
+  color: #FFFFFF;
+}
+
+.hiw-role-feature .hiw-role-lead {
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.hiw-role-feature .hiw-role-list {
+  border-top-color: rgba(255, 255, 255, 0.22);
+}
+
+.hiw-role-feature .hiw-role-list li {
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.hiw-role-feature .hiw-role-list svg {
+  color: #FFFFFF;
+}
+
+.hiw-role-feature .hiw-role-note {
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.hiw-choice-note {
+  max-width: 900px;
+  margin: 36px auto 0;
+}
+
+.hiw-choice-note .alert-box-info {
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* --------------------------------------------------------------------------
+   5. Before You Agree — accordion + "who should I talk to?" card
+   -------------------------------------------------------------------------- */
+.hiw-know-section {
+  background: var(--bg-page);
+}
+
+.hiw-know-grid {
+  display: grid;
+  grid-template-columns: 1.45fr 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.hiw-know-grid > * {
+  min-width: 0;
+}
+
+.hiw-faq-more {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 20px;
+  font-size: 14.5px;
+  font-weight: 600;
+  color: var(--primary-navy);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.hiw-faq-more svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.25s ease;
+}
+
+.hiw-faq-more:hover {
+  color: var(--accent-red);
+  border-bottom-color: currentColor;
+}
+
+.hiw-faq-more:hover svg {
+  transform: translateX(3px);
+}
+
+.hiw-help-card {
+  padding: 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.hiw-help-figure {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.hiw-help-figure > div {
+  min-width: 0;
+}
+
+.hiw-help-figure img {
+  width: 74px;
+  height: 74px;
+  flex-shrink: 0;
+  object-fit: cover;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: var(--primary-navy-soft);
+}
+
+.hiw-help-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 900;
+  line-height: 1.3;
+  color: var(--primary-navy);
+}
+
+.hiw-help-sub {
+  margin-top: 4px;
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.hiw-help-block + .hiw-help-block {
+  margin-top: 18px;
+}
+
+.hiw-help-block-label {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-red);
+  margin-bottom: 9px;
+}
+
+.hiw-help-block-alt .hiw-help-block-label {
+  color: var(--primary-navy);
+}
+
+.hiw-help-list {
+  list-style: none;
+  display: grid;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+}
+
+.hiw-help-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  min-width: 0;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.hiw-help-list svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  margin-top: 3px;
+  color: var(--primary-navy);
+}
+
+.hiw-help-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.hiw-help-actions .btn {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+@media (max-width: 960px) {
+  .hiw-know-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   6. Follow Mr. Moovon — compact social strip (R10)
+   Sits on the same page-tinted run as the section above it, whose bottom
+   padding supplies the gap.
+   -------------------------------------------------------------------------- */
+.hiw-follow-section {
+  padding: 0 0 84px;
+  background: var(--bg-page);
+}
+
+.hiw-follow {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 24px 32px;
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  color: #FFFFFF;
+}
+
+.hiw-follow-figure {
+  flex-shrink: 0;
+  width: 124px;
+  height: 98px;
+  overflow: hidden;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.28);
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.hiw-follow-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hiw-follow-body {
+  flex: 1 1 auto;
+  min-width: 0;
+}
+
+.hiw-follow-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  line-height: 1.25;
+  margin-bottom: 6px;
+}
+
+.hiw-follow-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.84);
+  max-width: 56ch;
+}
+
+/* The shared social row is already built for a dark surface. */
+.hiw-follow .footer-social {
+  flex-shrink: 0;
+  margin: 0;
+}
+
+/* Same treatment styles.css gives focus rings on the other navy surfaces. */
+.hiw-follow :focus-visible,
+.hiw-role-feature :focus-visible {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 820px) {
+  .hiw-follow {
+    flex-direction: column;
+    text-align: center;
+    gap: 18px;
+    padding: 24px 20px;
+  }
+
+  .hiw-follow-text {
+    max-width: none;
+  }
+
+  .hiw-follow .footer-social {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   7. Small screens & reduced motion
+   -------------------------------------------------------------------------- */
+@media (max-width: 560px) {
+  .hiw-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .hiw-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hiw-role {
+    padding: 26px 20px;
+  }
+
+  .hiw-role-name {
+    font-size: 17px;
+  }
+
+  .hiw-help-card {
+    padding: 22px 18px;
+  }
+
+  .hiw-follow-section {
+    padding-bottom: 64px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hiw-role,
+  .hiw-faq-more,
+  .hiw-faq-more svg {
+    transition: none;
+  }
+
+  .hiw-role:hover {
+    transform: none;
+  }
+
+  .hiw-faq-more:hover svg {
+    transform: none;
+  }
+}
+
+/* ---------- products ---------- */
+/* ==========================================================================
+   MOOVON SpreadPay™ — page fragment: /products  (04 — For Customers)
+   Every selector below is prefixed `.products-` so this fragment cannot
+   collide with another page's fragment. Existing design-system classes
+   (.ops-card, .elig-policy-list, .hiw-grid, .product-tier-card, .footer-social,
+   .cta-buttons-group, .alert-box-*) carry the base look; the rules here only
+   add the page-specific composition.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero — "Keep Moving."
+   -------------------------------------------------------------------------- */
+.products-hero-lead {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.4vw, 24px);
+  font-weight: 800;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+  color: #FFFFFF;
+  max-width: 620px;
+  margin: 0 auto 12px;
+}
+
+/* Inherits .cta-buttons-group (flex row; stacks full-width under 820px). */
+.products-hero-actions {
+  justify-content: center;
+  flex-wrap: wrap;
+  flex-shrink: 1;
+  margin-top: 28px;
+}
+
+/* --------------------------------------------------------------------------
+   "One annual premium. Flexible ways to pay." + Why it matters
+   -------------------------------------------------------------------------- */
+.products-promise-section {
+  padding: 66px 0 10px;
+  background: var(--bg-page);
+}
+
+.products-promise-grid {
+  display: grid;
+  grid-template-columns: 1.25fr 1fr;
+  gap: 28px;
+  align-items: stretch;
+}
+
+/* Grid children default to min-width:auto, which lets long words inflate the
+   track past the viewport; body{overflow-x:hidden} then clips instead of
+   scrolling. min-width:0 lets the tracks shrink normally. */
+.products-promise-grid > *,
+.products-pay-grid > *,
+.products-support-grid > *,
+.products-choice-grid > * {
+  min-width: 0;
+  margin-bottom: 0;
+}
+
+.products-promise {
+  background: linear-gradient(140deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  border-color: transparent;
+  color: #FFFFFF;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.products-promise-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  margin-bottom: 20px;
+}
+
+.products-promise-title {
+  font-family: var(--font-heading);
+  font-size: clamp(22px, 2.6vw, 28px);
+  font-weight: 900;
+  line-height: 1.25;
+  letter-spacing: -0.5px;
+  color: #FFFFFF;
+  margin-bottom: 14px;
+  max-width: 18ch;
+}
+
+.products-promise-text {
+  font-size: 15px;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.products-promise-note {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.products-why {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.products-why-list {
+  gap: 15px;
+}
+
+.products-why-list li {
+  align-items: flex-start;
+}
+
+.products-why-list svg {
+  margin-top: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   The 6-step journey (reuses .hiw-grid / .hiw-card)
+   -------------------------------------------------------------------------- */
+.products-journey {
+  grid-template-columns: repeat(auto-fit, minmax(212px, 1fr));
+}
+
+.products-journey-foot {
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* --------------------------------------------------------------------------
+   Flexible ways to pay — the three SpreadPay options
+   -------------------------------------------------------------------------- */
+.products-tiers-section .tier-specs-list {
+  margin-bottom: 20px;
+}
+
+/* Long band values ("GH₵1,501 – GH₵15,000") must be able to wrap rather than
+   push the row wider than the card. */
+.products-tiers-section .tier-spec-item {
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.products-tiers-section .tier-spec-label,
+.products-tiers-section .tier-spec-value {
+  min-width: 0;
+}
+
+.products-tier-note {
+  margin-top: 4px;
+  padding-top: 16px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-sub);
+}
+
+.products-tiers-note {
+  margin-top: 34px;
+  line-height: 1.65;
+}
+
+.products-tiers-note strong {
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsible payment
+   -------------------------------------------------------------------------- */
+.products-pay-section {
+  padding: 80px 0;
+  background: #FFFFFF;
+}
+
+.products-pay-grid {
+  display: grid;
+  /* min() so the track can fall below 300px on a 320px screen instead of
+     forcing the row wider than the container. */
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 28px;
+  align-items: start;
+}
+
+.products-card-lead {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+/* Plain-text flow diagram: pills joined by arrow glyphs. No SVG, so it still
+   reads correctly if this fragment has not loaded. */
+.products-steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 22px 0 0;
+}
+
+.products-step {
+  display: inline-flex;
+  align-items: center;
+  padding: 9px 15px;
+  border-radius: var(--radius-full);
+  background: var(--primary-navy-soft);
+  border: 1px solid rgba(27, 91, 170, 0.18);
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--primary-navy-dark);
+}
+
+.products-step-strong {
+  background: var(--accent-red-soft);
+  border-color: rgba(204, 30, 65, 0.22);
+  color: var(--accent-red-hover);
+}
+
+.products-step-arrow {
+  font-size: 17px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--border-medium);
+}
+
+.products-tip {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 24px;
+  padding: 16px 18px;
+  border-radius: var(--radius-lg);
+  background: var(--primary-navy-soft);
+  border: 1px solid rgba(27, 91, 170, 0.14);
+}
+
+.products-tip-img {
+  width: 78px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.products-tip-body {
+  min-width: 0;
+}
+
+.products-tip-title {
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--accent-red-hover);
+  margin-bottom: 5px;
+}
+
+.products-tip-body p {
+  font-size: 13.5px;
+  font-weight: 600;
+  line-height: 1.6;
+  color: var(--primary-navy-dark);
+}
+
+/* --------------------------------------------------------------------------
+   Know before you agree · Help · Your SpreadPay account
+   -------------------------------------------------------------------------- */
+.products-support-section {
+  padding: 80px 0;
+  background: var(--bg-page);
+}
+
+.products-support-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 276px), 1fr));
+  gap: 28px;
+  align-items: stretch;
+}
+
+.products-support-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.products-check-list {
+  margin-top: 6px;
+}
+
+.products-support-btn {
+  align-self: flex-start;
+  margin-top: 20px;
+  max-width: 100%;
+  white-space: normal;
+  text-align: left;
+}
+
+.products-support-btn svg {
+  flex-shrink: 0;
+}
+
+.products-card-foot {
+  margin-top: auto;
+  padding-top: 18px;
+  font-size: 13.5px;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+.products-account-img {
+  width: 100%;
+  max-width: 186px;
+  height: auto;
+  margin: 22px auto 0;
+}
+
+/* --------------------------------------------------------------------------
+   Your insurer. Your policy. Your choice.
+   -------------------------------------------------------------------------- */
+.products-choice-section {
+  padding: 80px 0 88px;
+  background: #FFFFFF;
+}
+
+.products-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(268px, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+.products-choice-card {
+  padding: 30px 26px;
+  transition: var(--transition-spring);
+}
+
+.products-choice-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.products-choice-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--accent-red-soft);
+  color: var(--accent-red-hover);
+  margin-bottom: 16px;
+}
+
+.products-choice-cta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 38px;
+}
+
+/* --------------------------------------------------------------------------
+   Compact "Follow Mr. Moovon" strip (R10), inside the navy pre-footer band so
+   the shared .footer-social treatment reads correctly on a dark surface.
+   -------------------------------------------------------------------------- */
+.products-follow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  margin-top: 40px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.products-follow-copy {
+  min-width: 0;
+}
+
+.products-follow-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: #FFFFFF;
+}
+
+.products-follow-sub {
+  margin-top: 4px;
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.products-follow-social {
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1000px) {
+  .products-promise-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .products-promise-title {
+    max-width: none;
+  }
+}
+
+@media (max-width: 820px) {
+  .products-promise-section {
+    padding-top: 52px;
+  }
+
+  .products-pay-section,
+  .products-support-section,
+  .products-choice-section {
+    padding: 60px 0;
+  }
+
+  .products-hero-actions {
+    margin-top: 24px;
+  }
+
+  .products-follow {
+    margin-top: 30px;
+  }
+}
+
+@media (max-width: 560px) {
+  /* .ops-card ships 36px of padding, which leaves ~200px of content at 320px. */
+  .products-promise,
+  .products-why,
+  .products-pay-card,
+  .products-support-card,
+  .products-choice-card {
+    padding: 24px 20px;
+  }
+
+  .products-tiers-section .product-tier-card {
+    padding: 28px 20px;
+  }
+
+  /* Flow diagram turns vertical; the arrow glyph turns with it. */
+  .products-steps {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+
+  .products-step {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .products-step-arrow {
+    text-align: center;
+    transform: rotate(90deg);
+  }
+
+  .products-tip {
+    flex-direction: column;
+    text-align: center;
+    gap: 12px;
+  }
+
+  .products-support-btn {
+    align-self: stretch;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .products-choice-cta .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .products-follow {
+    justify-content: center;
+    text-align: center;
+  }
+
+  .products-follow-social {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .products-choice-card {
+    transition: none;
+  }
+
+  .products-choice-card:hover {
+    transform: none;
+  }
+}
+
+/* ---------- partners ---------- */
+/* ==========================================================================
+   Find a Participating Insurance Partner (partners.html)
+   Page-scoped fragment. Every new class is prefixed `.partners-` so it cannot
+   collide with another page fragment. Existing design-system classes
+   (.page-hero, .section-header, .partner-filters-bar, .partner-dir-card,
+   .policy-badge-pill, .partner-result-count, .partner-dir-empty,
+   .cta-banner-section, .btn*) are reused as-is and are NOT redefined here.
+   Palette: navy / red / white only (R8).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero add-ons — partner types + growing-network note
+   -------------------------------------------------------------------------- */
+.partners-hero-types {
+  list-style: none;
+  margin: 26px auto 0;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 680px;
+}
+
+.partners-hero-type {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1px;
+}
+
+.partners-hero-type svg {
+  flex-shrink: 0;
+  opacity: 0.9;
+}
+
+.partners-hero-note {
+  max-width: 620px;
+  margin: 20px auto 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* --------------------------------------------------------------------------
+   Directory section
+   -------------------------------------------------------------------------- */
+.partners-dir-section {
+  padding: 72px 0 64px;
+  background: var(--bg-page);
+}
+
+/* Tighter than the shared 40px so the result line reads as part of the bar. */
+.partners-filters {
+  margin-bottom: 18px;
+}
+
+.partners-search-wrap {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1 1 280px;
+  min-width: 0;
+}
+
+.partners-search-wrap > svg {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: var(--text-light);
+  pointer-events: none;
+}
+
+.partners-search-wrap .partner-search-field {
+  width: 100%;
+  min-width: 0;
+  padding-left: 44px;
+}
+
+.partners-dir-status {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 8px 18px;
+  margin-bottom: 24px;
+}
+
+.partners-dir-status > * {
+  min-width: 0;
+}
+
+.partners-dir-status .partner-result-count {
+  margin-top: 0;
+}
+
+.partners-dir-order {
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-light);
+}
+
+/* --------------------------------------------------------------------------
+   Directory card add-ons (the card shell itself is .partner-dir-card)
+   -------------------------------------------------------------------------- */
+.partners-card-id {
+  min-width: 0;
+}
+
+.partners-card-note {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+.partners-card-cta {
+  width: 100%;
+  padding: 10px 16px;
+  font-size: 13.5px;
+  white-space: normal;
+  text-align: center;
+}
+
+.partners-card-cta svg {
+  flex-shrink: 0;
+}
+
+/* The shared empty-state block styles an h4; this page uses an h3 so the
+   heading order under the section h2 stays valid. */
+.partners-dir-empty[hidden] {
+  display: none;
+}
+
+.partners-dir-empty h3 {
+  font-family: var(--font-heading);
+  font-size: 16px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.partners-dir-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 28px;
+  padding: 16px 20px;
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--primary-navy);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.partners-dir-note > svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: var(--primary-navy);
+}
+
+.partners-dir-note > span {
+  min-width: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Growing network / HelpDesk band
+   -------------------------------------------------------------------------- */
+.partners-helpdesk-section {
+  padding: 0 0 72px;
+  background: var(--bg-page);
+}
+
+.partners-helpdesk-card {
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 210px minmax(0, 1fr);
+  align-items: end;
+  gap: 28px;
+  padding: 32px 40px 0;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  box-shadow: var(--shadow-lg);
+}
+
+.partners-helpdesk-card > * {
+  min-width: 0;
+}
+
+.partners-helpdesk-art {
+  align-self: end;
+  line-height: 0;
+}
+
+.partners-helpdesk-art img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 210px;
+  filter: drop-shadow(0 18px 26px rgba(5, 26, 51, 0.4));
+}
+
+.partners-helpdesk-body {
+  padding: 8px 0 40px;
+}
+
+.partners-helpdesk-tag {
+  display: inline-block;
+  margin-bottom: 12px;
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  font-family: var(--font-heading);
+  font-size: 11.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.partners-helpdesk-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.partners-helpdesk-text {
+  font-size: 15px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+  max-width: 620px;
+  margin-bottom: 22px;
+}
+
+.partners-helpdesk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   Who does what — role clarity
+   -------------------------------------------------------------------------- */
+.partners-roles-section {
+  padding: 0 0 76px;
+  background: var(--bg-page);
+}
+
+.partners-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.partners-roles-grid > * {
+  min-width: 0;
+}
+
+.partners-role-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  box-shadow: var(--shadow-sm);
+}
+
+.partners-role-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  margin-bottom: 16px;
+}
+
+.partners-role-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.partners-role-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+.partners-roles-note {
+  margin-top: 24px;
+  padding: 16px 20px;
+  border-radius: var(--radius-md);
+  background: var(--accent-red-soft);
+  border: 1px solid rgba(204, 30, 65, 0.18);
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   Compact "Follow Mr. Moovon" strip (R10)
+   -------------------------------------------------------------------------- */
+.partners-follow-section {
+  padding: 0 0 76px;
+  background: var(--bg-page);
+}
+
+.partners-follow-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 28px;
+  padding: 24px 28px;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.partners-follow-card > * {
+  min-width: 0;
+}
+
+.partners-follow-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 900;
+  color: var(--primary-navy);
+  margin-bottom: 4px;
+}
+
+.partners-follow-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.partners-follow-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.partners-follow-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  transition: var(--transition-smooth);
+}
+
+.partners-follow-links a:hover,
+.partners-follow-links a:focus-visible {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.partners-follow-links svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .partners-roles-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 820px) {
+  .partners-dir-section {
+    padding: 52px 0 48px;
+  }
+
+  .partners-helpdesk-section,
+  .partners-roles-section,
+  .partners-follow-section {
+    padding-bottom: 52px;
+  }
+
+  .partners-helpdesk-card {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    padding: 28px 24px 0;
+    gap: 4px;
+  }
+
+  /* Character drops below the copy on narrow screens so the message leads. */
+  .partners-helpdesk-art {
+    order: 2;
+  }
+
+  .partners-helpdesk-art img {
+    max-width: 168px;
+  }
+
+  .partners-helpdesk-body {
+    order: 1;
+    padding: 4px 0 8px;
+  }
+
+  .partners-helpdesk-text {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .partners-helpdesk-actions {
+    justify-content: center;
+  }
+
+  .partners-helpdesk-title {
+    font-size: 24px;
+  }
+
+  .partners-roles-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .partners-follow-card {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .partners-follow-links {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .partners-hero-types {
+    gap: 8px;
+  }
+
+  .partners-hero-type {
+    font-size: 12px;
+    padding: 7px 13px;
+  }
+
+  .partners-filters {
+    padding: 16px;
+  }
+
+  .partners-dir-status {
+    margin-bottom: 18px;
+  }
+
+  .partners-helpdesk-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .partners-dir-note {
+    padding: 14px 16px;
+    font-size: 12.5px;
+  }
+
+  .partners-role-card {
+    padding: 22px;
+  }
+}
+
+@media (max-width: 380px) {
+  .partners-hero-type {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .partners-helpdesk-card {
+    padding: 24px 16px 0;
+  }
+
+  .partners-follow-card {
+    padding: 20px 16px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .partners-follow-links a:hover,
+  .partners-follow-links a:focus-visible {
+    transform: none;
+  }
+}
+
+/* ---------- for-partners ---------- */
+/* ==========================================================================
+   MOOVON SpreadPay™ — Partner with Moovon (for-partners.html)
+   Page CSS fragment. Every selector is prefixed .for-partners-* so this file
+   cannot collide with another page fragment. Layout, cards, steppers, tables
+   and buttons all come from styles.css wherever an existing class fits.
+   Tokens only — no hard-coded brand hexes. Navy / red / white (R8).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Hero — "Let's Move Insurance Forward."
+   Extends .page-hero: left-aligned executive layout with Mr. Moovon at right.
+   -------------------------------------------------------------------------- */
+.for-partners-hero {
+  text-align: left;
+  padding: 56px 0 52px;
+}
+
+/* Sits above the .page-hero ::before glow and ::after dot grid, both of which
+   are positioned pseudo-elements and would otherwise paint over static text. */
+.for-partners-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.for-partners-hero-grid > * {
+  min-width: 0;
+}
+
+.for-partners-hero-copy .page-hero-subtitle {
+  margin: 0;
+  max-width: 560px;
+}
+
+.for-partners-hero-cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 26px;
+}
+
+/* White-outline action for dark bands (hero + pre-footer CTA). */
+.for-partners-btn-ghost {
+  background: rgba(255, 255, 255, 0.10);
+  color: #FFFFFF;
+  border: 1.5px solid rgba(255, 255, 255, 0.42);
+  box-shadow: none;
+}
+
+.for-partners-btn-ghost:hover,
+.for-partners-btn-ghost:focus-visible {
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+  color: var(--primary-navy-dark);
+  transform: translateY(-2px);
+}
+
+.for-partners-hero-note {
+  margin-top: 26px;
+  max-width: 620px;
+  padding-left: 14px;
+  border-left: 2px solid rgba(255, 255, 255, 0.28);
+  font-size: 12.5px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.74);
+}
+
+.for-partners-hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.for-partners-hero-art img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 24px 38px rgba(4, 12, 36, 0.45));
+}
+
+/* --------------------------------------------------------------------------
+   2. Shared card rows (proposition, who we work with, benefits)
+   -------------------------------------------------------------------------- */
+.for-partners-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.for-partners-grid-3 > * {
+  min-width: 0;
+}
+
+.for-partners-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.for-partners-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 91, 170, 0.28);
+}
+
+.for-partners-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  margin-bottom: 16px;
+}
+
+.for-partners-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.for-partners-icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.for-partners-card-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.for-partners-card-text {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Regulatory statements read as notes, not as body copy. */
+.for-partners-compliance {
+  margin-top: 28px;
+  line-height: 1.7;
+}
+
+/* --------------------------------------------------------------------------
+   3. Four-party ecosystem strip
+   -------------------------------------------------------------------------- */
+.for-partners-eco {
+  margin-top: 32px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: 30px 26px 26px;
+}
+
+.for-partners-eco-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.for-partners-eco-row {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 20px;
+}
+
+.for-partners-eco-node {
+  position: relative;
+  text-align: center;
+  min-width: 0;
+}
+
+/* Dotted run between nodes; 34px clears the icon radius at both ends. */
+.for-partners-eco-node:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 27px;
+  left: calc(50% + 38px);
+  width: calc(100% - 76px);
+  border-top: 2px dotted var(--border-medium);
+}
+
+.for-partners-eco-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  margin-bottom: 14px;
+}
+
+.for-partners-eco-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.for-partners-eco-icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.for-partners-eco-name {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  margin-bottom: 6px;
+  line-height: 1.35;
+}
+
+.for-partners-eco-text {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.for-partners-eco-note {
+  margin-top: 24px;
+  padding-top: 18px;
+  border-top: 1px solid var(--border-subtle);
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   4. How the partnership works — reuses the .hiw-flow stepper
+   -------------------------------------------------------------------------- */
+.for-partners-steps .hiw-step-icon svg {
+  width: 38px;
+  height: 38px;
+}
+
+.for-partners-steps .hiw-step-desc {
+  max-width: 30ch;
+}
+
+/* Product capability (tier names only — no rates, fees or parameters, R5/R6) */
+.for-partners-capability {
+  margin-top: 44px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-sm);
+  padding: 28px 26px;
+}
+
+.for-partners-capability-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.for-partners-capability-lead {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 20px;
+  max-width: 70ch;
+}
+
+.for-partners-tiers {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 16px;
+}
+
+.for-partners-tier {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  min-width: 0;
+  background: var(--bg-page);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 16px;
+}
+
+.for-partners-tier-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-red);
+  flex-shrink: 0;
+}
+
+.for-partners-tier-mark svg {
+  width: 19px;
+  height: 19px;
+}
+
+.for-partners-tier-copy {
+  min-width: 0;
+}
+
+.for-partners-tier-copy strong {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 3px;
+}
+
+.for-partners-tier-copy span {
+  display: block;
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   5. Partner Portal panel + request-access form
+   -------------------------------------------------------------------------- */
+.for-partners-portal-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 28px;
+  align-items: start;
+}
+
+.for-partners-portal-grid > * {
+  min-width: 0;
+}
+
+.for-partners-portal-card {
+  background: linear-gradient(150deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-lg);
+  padding: 34px 30px;
+}
+
+.for-partners-portal-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  margin-bottom: 10px;
+}
+
+.for-partners-portal-lead {
+  font-size: 14px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.86);
+}
+
+.for-partners-portal-list {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.for-partners-portal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  min-width: 0;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.for-partners-portal-list svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.for-partners-portal-note {
+  margin-top: 22px;
+  padding: 14px 16px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-md);
+  font-size: 13px;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.for-partners-portal-contact {
+  list-style: none;
+  margin: 20px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 12px;
+}
+
+.for-partners-portal-contact li {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+  font-size: 13.5px;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.for-partners-portal-contact svg {
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+}
+
+.for-partners-portal-contact a {
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.35);
+  overflow-wrap: anywhere;
+  transition: var(--transition-smooth);
+}
+
+.for-partners-portal-contact a:hover {
+  border-bottom-color: #FFFFFF;
+}
+
+.for-partners-form-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  padding: 32px 28px;
+}
+
+.for-partners-form-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.for-partners-form-lead {
+  font-size: 13.5px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  margin-bottom: 22px;
+}
+
+.for-partners-form-submit {
+  width: 100%;
+  border-radius: var(--radius-sm);
+  white-space: normal;
+}
+
+.for-partners-form-status {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-top: 12px;
+}
+
+/* --------------------------------------------------------------------------
+   6. Compact "Follow Mr. Moovon" strip (R10)
+   -------------------------------------------------------------------------- */
+.for-partners-follow {
+  padding: 34px 0;
+  background: var(--primary-navy-soft);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.for-partners-follow-inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px 26px;
+  text-align: center;
+}
+
+.for-partners-follow-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 4px;
+}
+
+.for-partners-follow-text {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.for-partners-social {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.for-partners-social a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.for-partners-social a:hover,
+.for-partners-social a:focus-visible {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.for-partners-social svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* --------------------------------------------------------------------------
+   7. Pre-footer CTA — long partnership label must be allowed to wrap
+   -------------------------------------------------------------------------- */
+.for-partners-cta .cta-buttons-group .btn {
+  white-space: normal;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive — nothing may scroll sideways at 390px or 320px
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .for-partners-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+    text-align: center;
+  }
+
+  .for-partners-hero {
+    text-align: center;
+  }
+
+  .for-partners-hero-copy .page-hero-subtitle {
+    margin: 0 auto;
+  }
+
+  .for-partners-hero-cta {
+    justify-content: center;
+  }
+
+  .for-partners-hero-note {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: left;
+  }
+
+  /* Copy stays first at every width so the headline leads the fold. */
+  .for-partners-hero-art img {
+    max-width: 210px;
+  }
+
+  .for-partners-eco-row {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 26px 20px;
+  }
+
+  .for-partners-eco-node:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+@media (max-width: 940px) {
+  .for-partners-grid-3,
+  .for-partners-tiers {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .for-partners-portal-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  .for-partners-hero {
+    padding: 40px 0 36px;
+  }
+
+  .for-partners-hero-cta .btn {
+    flex: 1 1 100%;
+    justify-content: center;
+  }
+
+  .for-partners-grid-3,
+  .for-partners-tiers,
+  .for-partners-eco-row {
+    grid-template-columns: 1fr;
+  }
+
+  /* Stacked: the dotted run turns vertical between one node and the next. */
+  .for-partners-eco-node:not(:last-child)::after,
+  .for-partners-eco-node:nth-child(2n)::after {
+    display: block;
+    top: auto;
+    bottom: -18px;
+    left: 50%;
+    width: 0;
+    height: 12px;
+    border-top: 0;
+    border-left: 2px dotted var(--border-medium);
+  }
+
+  .for-partners-eco {
+    padding: 24px 18px;
+  }
+
+  .for-partners-eco-row {
+    gap: 34px;
+  }
+
+  .for-partners-card,
+  .for-partners-capability,
+  .for-partners-portal-card,
+  .for-partners-form-card {
+    padding: 22px 18px;
+  }
+
+  .for-partners-follow-inner {
+    flex-direction: column;
+    gap: 16px;
+  }
+}
+
+@media (max-width: 380px) {
+  .for-partners-hero-art img {
+    max-width: 170px;
+  }
+
+  .for-partners-tier {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .for-partners-social a {
+    width: 40px;
+    height: 40px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Reduced motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .for-partners-card,
+  .for-partners-social a,
+  .for-partners-btn-ghost,
+  .for-partners-portal-contact a {
+    transition: none;
+  }
+
+  .for-partners-card:hover,
+  .for-partners-social a:hover,
+  .for-partners-social a:focus-visible,
+  .for-partners-btn-ghost:hover,
+  .for-partners-btn-ghost:focus-visible {
+    transform: none;
+  }
+}
+
+/* ---------- faqs ---------- */
+/* ==========================================================================
+   MOOVON SpreadPay™ — FAQs page fragment (faqs.html)
+   Every new class is prefixed .faqs-*. Everything else on the page reuses
+   existing system classes (.page-hero, .section-header, .faq-item,
+   .faq-question, .faq-answer, .faq-cat-link, .faq-tag-btn, .btn*,
+   .cta-banner-section, .form-control, .container).
+   Palette: navy / red / white only (R8).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Assurance strip — white card lifted over the foot of the hero.
+   Carries the R1 / R3 / R4 statements plus the HelpDesk route.
+   -------------------------------------------------------------------------- */
+.faqs-assure-section {
+  position: relative;
+  z-index: 2;
+}
+
+.faqs-assure {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 22px 26px;
+  margin-top: -34px;
+  padding: 26px 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+}
+
+.faqs-assure > * {
+  min-width: 0;
+}
+
+.faqs-assure-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+.faqs-assure-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+}
+
+.faqs-assure-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.faqs-assure-icon.faqs-icon-red {
+  background: var(--accent-red-soft);
+  color: var(--accent-red-hover);
+}
+
+.faqs-assure-copy {
+  min-width: 0;
+}
+
+.faqs-assure-title {
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 3px;
+}
+
+.faqs-assure-text {
+  font-size: 12.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  overflow-wrap: anywhere;
+}
+
+/* --------------------------------------------------------------------------
+   2. Sidebar column — topic filter heading + HelpDesk card
+   -------------------------------------------------------------------------- */
+.faqs-cat-col {
+  position: sticky;
+  top: 100px;
+}
+
+.faqs-cat-heading {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--text-sub);
+  margin-bottom: 12px;
+}
+
+.faqs-side-card {
+  margin-top: 20px;
+  padding: 22px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.faqs-side-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.faqs-side-text {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.faqs-side-card .btn {
+  width: 100%;
+  justify-content: center;
+  font-size: 13.5px;
+}
+
+/* .btn is white-space:nowrap by default; these two sit in narrow containers
+   at 320px, so let their labels wrap rather than push the layout wide. */
+.faqs-side-card .btn,
+.faqs-empty .btn {
+  white-space: normal;
+  text-align: center;
+}
+
+/* --------------------------------------------------------------------------
+   3. Search + keyword pills + empty state
+   -------------------------------------------------------------------------- */
+.faqs-search {
+  position: relative;
+  min-width: 0;
+}
+
+.faqs-search .form-control {
+  height: 50px;
+  padding-left: 46px;
+  min-width: 0;
+}
+
+.faqs-search-icon {
+  position: absolute;
+  left: 16px;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  transform: translateY(-50%);
+  color: var(--text-sub);
+  pointer-events: none;
+}
+
+.faqs-tag-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 14px 0 20px;
+}
+
+/* NOTE: no `display` property here — script.js drives #faqEmptyState via
+   element.style.display, and the [hidden] attribute holds the initial state. */
+.faqs-empty {
+  padding: 46px 24px;
+  text-align: center;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.faqs-empty-icon {
+  width: 44px;
+  height: 44px;
+  margin: 0 auto 14px;
+  color: var(--accent-red);
+}
+
+.faqs-empty-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 6px;
+}
+
+.faqs-empty-text {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  margin-bottom: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   4. Accordion content — the h3 wrapper keeps the button as .faq-question
+   -------------------------------------------------------------------------- */
+.faqs-q {
+  margin: 0;
+  font: inherit;
+}
+
+.faqs-q-text {
+  overflow-wrap: anywhere;
+  padding-right: 14px;
+}
+
+.faqs-answer {
+  overflow-wrap: anywhere;
+}
+
+.faqs-answer p + p,
+.faqs-answer ul + p,
+.faqs-answer p + ul {
+  margin-top: 10px;
+}
+
+.faqs-answer ul {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.faqs-answer li {
+  position: relative;
+  padding-left: 20px;
+}
+
+.faqs-answer li::before {
+  content: '';
+  position: absolute;
+  left: 2px;
+  top: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--accent-red);
+}
+
+.faqs-answer strong {
+  color: var(--primary-navy-dark);
+}
+
+.faqs-answer a {
+  color: var(--accent-red-hover);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.faqs-answer a:hover {
+  color: var(--primary-navy);
+}
+
+.faqs-answer-note {
+  margin-top: 12px;
+  padding: 12px 16px;
+  background: var(--primary-navy-soft);
+  border-left: 3px solid var(--primary-navy);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 13px;
+  color: var(--primary-navy-dark);
+}
+
+/* --------------------------------------------------------------------------
+   5. "Who does what?" role-clarity band (R1 / R2 / R3)
+   -------------------------------------------------------------------------- */
+.faqs-roles-section {
+  padding: 72px 0;
+  background: var(--primary-navy-soft);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.faqs-roles-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.faqs-roles-grid > * {
+  min-width: 0;
+}
+
+.faqs-role-card {
+  padding: 28px 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  min-width: 0;
+}
+
+.faqs-role-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  margin-bottom: 14px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy);
+  color: #FFFFFF;
+}
+
+.faqs-role-icon svg {
+  width: 21px;
+  height: 21px;
+}
+
+.faqs-role-icon.faqs-icon-red {
+  background: var(--accent-red);
+}
+
+.faqs-role-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+  overflow-wrap: anywhere;
+}
+
+.faqs-role-text {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.faqs-role-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 24px;
+  padding: 22px 26px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-red);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.faqs-role-note svg {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  margin-top: 2px;
+  color: var(--accent-red);
+}
+
+.faqs-role-note p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-main);
+  min-width: 0;
+}
+
+.faqs-role-note a {
+  color: var(--accent-red-hover);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   6. "Still need help?" band — sits inside .cta-banner-section
+   -------------------------------------------------------------------------- */
+.faqs-help-band {
+  display: grid;
+  grid-template-columns: 200px minmax(0, 1fr);
+  gap: 36px;
+  align-items: center;
+}
+
+.faqs-help-band > * {
+  min-width: 0;
+}
+
+.faqs-help-figure {
+  margin: 0;
+}
+
+.faqs-help-figure img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+}
+
+.faqs-help-title {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+
+.faqs-help-sub {
+  font-size: 15px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.85);
+  max-width: 620px;
+}
+
+.faqs-help-routes {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+  margin-top: 24px;
+}
+
+.faqs-help-route {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 18px 20px;
+  font: inherit;
+  text-align: left;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-lg);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.faqs-help-route:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-2px);
+}
+
+.faqs-help-route svg {
+  width: 20px;
+  height: 20px;
+  margin-bottom: 10px;
+  color: #FFFFFF;
+}
+
+.faqs-help-route-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  margin-bottom: 3px;
+  overflow-wrap: anywhere;
+}
+
+.faqs-help-route-text {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* --------------------------------------------------------------------------
+   7. Compact "Follow Mr. Moovon" strip (R10)
+   -------------------------------------------------------------------------- */
+.faqs-follow-section {
+  padding: 44px 0;
+  background: var(--bg-page);
+}
+
+.faqs-follow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px 28px;
+  padding: 24px 28px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.faqs-follow-copy {
+  min-width: 0;
+}
+
+.faqs-follow-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 4px;
+}
+
+.faqs-follow-text {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: var(--text-muted);
+  max-width: 520px;
+}
+
+.faqs-follow-links {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 0;
+}
+
+.faqs-follow-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  transition: var(--transition-smooth);
+}
+
+.faqs-follow-links a:hover {
+  background: var(--accent-red);
+  border-color: var(--accent-red);
+  color: #FFFFFF;
+  transform: translateY(-2px);
+}
+
+.faqs-follow-links svg {
+  width: 19px;
+  height: 19px;
+}
+
+/* --------------------------------------------------------------------------
+   8. Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1100px) {
+  .faqs-cat-col {
+    position: static;
+    top: auto;
+  }
+
+  .faqs-assure {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .faqs-roles-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .faqs-help-band {
+    grid-template-columns: 1fr;
+    gap: 24px;
+    text-align: center;
+  }
+
+  .faqs-help-figure img {
+    max-width: 168px;
+  }
+
+  .faqs-help-sub {
+    margin: 0 auto;
+  }
+
+  .faqs-help-routes {
+    grid-template-columns: 1fr;
+    text-align: left;
+  }
+}
+
+@media (max-width: 820px) {
+  .faqs-side-card {
+    margin-top: 18px;
+  }
+
+  .faqs-help-title {
+    font-size: 25px;
+  }
+
+  .faqs-roles-section {
+    padding: 56px 0;
+  }
+}
+
+@media (max-width: 640px) {
+  .faqs-assure {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-top: -24px;
+    padding: 22px 20px;
+  }
+
+  .faqs-follow {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 22px 20px;
+  }
+
+  .faqs-role-card {
+    padding: 24px 20px;
+  }
+
+  .faqs-role-note {
+    padding: 20px;
+  }
+}
+
+@media (max-width: 400px) {
+  .faqs-assure-item {
+    gap: 12px;
+  }
+
+  .faqs-follow-links a {
+    width: 40px;
+    height: 40px;
+  }
+
+  .faqs-help-route {
+    padding: 16px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   9. Reduced motion — kill the lift transforms as well as the durations
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .faqs-help-route:hover,
+  .faqs-follow-links a:hover {
+    transform: none;
+  }
+}
+
+/* ---------- contact ---------- */
+/* ==========================================================================
+   MOOVON SpreadPay™ — Contact / Mr. Moovon's HelpDesk (contact.html)
+   Fragment: appended to styles.css. Every new class is prefixed .contact-*
+   Palette: navy / red / white only (R8). The single green mark is the
+   third-party WhatsApp glyph (.contact-wa-glyph).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Section rhythm
+   -------------------------------------------------------------------------- */
+.contact-section {
+  padding: 76px 0;
+}
+
+.contact-section-alt {
+  background: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Hero action row (inside .page-hero)
+   -------------------------------------------------------------------------- */
+.contact-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px;
+  margin-top: 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* --------------------------------------------------------------------------
+   Four contact routes
+   -------------------------------------------------------------------------- */
+.contact-routes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 22px;
+}
+
+.contact-routes > * {
+  min-width: 0;
+}
+
+.contact-route-card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 28px 24px;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition-smooth);
+}
+
+.contact-route-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(27, 91, 170, 0.28);
+}
+
+.contact-route-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  flex-shrink: 0;
+}
+
+.contact-route-card:nth-child(4) .contact-route-icon {
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.contact-route-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  line-height: 1.3;
+}
+
+.contact-route-desc {
+  font-size: 14px;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.contact-route-dest {
+  font-size: 13px;
+  font-weight: 700;
+  color: var(--primary-navy-dark);
+  margin-top: auto;
+  padding-top: 10px;
+  border-top: 1px dashed var(--border-subtle);
+  overflow-wrap: anywhere;
+}
+
+.contact-route-dest-label {
+  display: block;
+  font-family: var(--font-heading);
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--text-light);
+  margin-bottom: 2px;
+}
+
+.contact-route-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 800;
+  color: var(--accent-red);
+  transition: var(--transition-smooth);
+}
+
+.contact-route-link svg {
+  transition: var(--transition-smooth);
+}
+
+.contact-route-link:hover {
+  color: var(--accent-red-hover);
+}
+
+.contact-route-link:hover svg {
+  transform: translateX(4px);
+}
+
+/* --------------------------------------------------------------------------
+   Mr. Moovon's HelpDesk panel (WhatsApp-first)
+   -------------------------------------------------------------------------- */
+.contact-helpdesk {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(0, 1.35fr) minmax(0, 0.65fr);
+  gap: 28px;
+  align-items: end;
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 44px;
+  box-shadow: var(--shadow-xl);
+  overflow: hidden;
+}
+
+.contact-helpdesk::before {
+  content: '';
+  position: absolute;
+  top: -120px;
+  right: -80px;
+  width: 320px;
+  height: 320px;
+  border-radius: var(--radius-full);
+  background: radial-gradient(circle, rgba(204, 30, 65, 0.30) 0%, rgba(204, 30, 65, 0) 70%);
+  pointer-events: none;
+}
+
+.contact-helpdesk > * {
+  min-width: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.contact-helpdesk-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: var(--radius-full);
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.4px;
+  margin-bottom: 16px;
+}
+
+/* Third-party brand mark — the only green permitted on the page (R8). */
+.contact-wa-glyph {
+  color: var(--whatsapp-green);
+  flex-shrink: 0;
+}
+
+.contact-helpdesk-title {
+  font-family: var(--font-heading);
+  font-size: 30px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  line-height: 1.2;
+  margin-bottom: 10px;
+}
+
+.contact-helpdesk-text {
+  font-size: 15.5px;
+  color: rgba(255, 255, 255, 0.88);
+  line-height: 1.65;
+  max-width: 56ch;
+}
+
+.contact-helpdesk-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 24px;
+}
+
+.contact-helpdesk-note {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.7);
+  margin-top: 12px;
+  max-width: 56ch;
+}
+
+.contact-quicklinks-title {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1.2px;
+  color: rgba(255, 255, 255, 0.75);
+  margin: 30px 0 12px;
+}
+
+.contact-quicklinks {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-quicklinks > li {
+  min-width: 0;
+}
+
+.contact-quicklink {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  min-height: 48px;
+  padding: 12px 14px;
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 13.5px;
+  font-weight: 700;
+  text-align: left;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.contact-quicklink svg {
+  flex-shrink: 0;
+}
+
+.contact-quicklink:hover {
+  background: rgba(255, 255, 255, 0.2);
+  border-color: rgba(255, 255, 255, 0.42);
+  transform: translateY(-2px);
+}
+
+.contact-helpdesk-figure {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  align-self: end;
+  margin-bottom: -44px;
+}
+
+.contact-helpdesk-figure img {
+  width: 100%;
+  max-width: 250px;
+  height: auto;
+  filter: drop-shadow(0 18px 30px rgba(5, 26, 51, 0.45));
+}
+
+/* --------------------------------------------------------------------------
+   Contact details card additions (inside the existing .contact-info-card)
+   -------------------------------------------------------------------------- */
+.contact-info-lead {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.6;
+}
+
+.contact-detail-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.contact-detail-text {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+  margin-top: 2px;
+}
+
+.contact-detail-link {
+  display: inline-block;
+  font-size: 14px;
+  font-weight: 600;
+  color: #FFFFFF;
+  margin-top: 3px;
+  text-decoration: underline;
+  text-decoration-color: rgba(255, 255, 255, 0.45);
+  text-underline-offset: 3px;
+  overflow-wrap: anywhere;
+  transition: var(--transition-smooth);
+}
+
+.contact-detail-link:hover {
+  text-decoration-color: #FFFFFF;
+}
+
+.contact-detail-hint {
+  font-size: 11.5px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.65);
+  white-space: nowrap;
+}
+
+.contact-info-foot {
+  font-size: 12.5px;
+  color: rgba(255, 255, 255, 0.78);
+  line-height: 1.6;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  padding-top: 16px;
+}
+
+/* --------------------------------------------------------------------------
+   Enquiry form card additions
+   -------------------------------------------------------------------------- */
+.contact-form-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+}
+
+.contact-form-intro {
+  font-size: 13.5px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.contact-form-submit {
+  width: 100%;
+  border-radius: var(--radius-md);
+  padding: 13px 22px;
+}
+
+.contact-form-note {
+  font-size: 12px;
+  color: var(--text-sub);
+  line-height: 1.55;
+  margin-top: 14px;
+}
+
+/* --------------------------------------------------------------------------
+   Follow Mr. Moovon (compact, R10)
+   -------------------------------------------------------------------------- */
+.contact-follow {
+  background: var(--primary-navy-dark);
+  color: #FFFFFF;
+  padding: 34px 0;
+}
+
+.contact-follow-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.contact-follow-copy {
+  min-width: 0;
+}
+
+.contact-follow-title {
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  margin-bottom: 4px;
+}
+
+.contact-follow-text {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.55;
+}
+
+.contact-follow .contact-follow-social {
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* Keep the closing CTA copy shrinkable next to its button group. */
+.contact-cta-copy {
+  min-width: 0;
+}
+
+.contact-follow :focus-visible,
+.contact-helpdesk :focus-visible {
+  outline: 3px solid rgba(255, 255, 255, 0.9);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 900px) {
+  .contact-helpdesk {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 34px 28px;
+    align-items: start;
+  }
+
+  .contact-helpdesk-figure {
+    justify-content: flex-start;
+    margin-bottom: -34px;
+  }
+
+  .contact-helpdesk-figure img {
+    max-width: 190px;
+  }
+}
+
+@media (max-width: 600px) {
+  .contact-section {
+    padding: 52px 0;
+  }
+
+  .contact-hero-actions .btn,
+  .contact-helpdesk-actions .btn {
+    width: 100%;
+  }
+
+  .contact-route-card {
+    padding: 24px 20px;
+  }
+
+  .contact-helpdesk {
+    padding: 28px 20px;
+  }
+
+  .contact-helpdesk-title {
+    font-size: 24px;
+  }
+
+  .contact-helpdesk-figure {
+    align-self: center;
+    justify-content: center;
+    margin-bottom: -28px;
+  }
+
+  .contact-helpdesk-figure img {
+    max-width: 160px;
+  }
+
+  .contact-follow-inner {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 380px) {
+  .contact-quicklinks {
+    grid-template-columns: 1fr;
+  }
+
+  .contact-detail-hint {
+    white-space: normal;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .contact-route-card,
+  .contact-route-card:hover,
+  .contact-route-link svg,
+  .contact-route-link:hover svg,
+  .contact-quicklink,
+  .contact-quicklink:hover {
+    transform: none;
+    transition: none;
+  }
+}
+
+/* ---------- about ---------- */
+/* ==========================================================================
+   About Moovon (about.html)
+   Page-scoped fragment. Every selector is prefixed .about- so it cannot
+   collide with another page fragment. Tokens only — no raw brand hexes.
+   ========================================================================== */
+
+/* The light-red accent already used by .page-hero-title span, reused on the
+   two navy grounds of this page so red-on-navy stays legible. */
+.about-hero,
+.about-growth,
+.about-cta {
+  --about-accent-on-dark: #FF6B89;
+}
+
+/* ==========================================================================
+   Hero — Moving Ghana Forward
+   ========================================================================== */
+.page-hero.about-hero {
+  text-align: left;
+  padding: 62px 0 0;
+}
+
+.about-hero-grid {
+  position: relative;
+  z-index: 1; /* clears the .page-hero::after dot overlay */
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, 0.88fr);
+  gap: 32px;
+  align-items: end;
+}
+
+.about-hero-grid > * {
+  min-width: 0;
+}
+
+.about-hero-copy {
+  padding-bottom: 62px;
+}
+
+.about-hero .page-hero-badge {
+  margin-bottom: 18px;
+}
+
+.about-hero .page-hero-title {
+  font-size: clamp(34px, 5.2vw, 52px);
+  margin-bottom: 12px;
+}
+
+.about-hero-lead {
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2.2vw, 22px);
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  line-height: 1.35;
+  margin-bottom: 16px;
+}
+
+.about-hero-lead em {
+  font-style: normal;
+  color: var(--about-accent-on-dark);
+}
+
+.about-hero .about-hero-subtitle {
+  max-width: 54ch;
+  margin: 0 0 22px;
+}
+
+.about-hero-kicker {
+  position: relative;
+  padding-top: 18px;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+  color: #FFFFFF;
+}
+
+.about-hero-kicker::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 56px;
+  height: 3px;
+  border-radius: var(--radius-full);
+  background: var(--accent-red);
+}
+
+.about-hero-figure img {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: 0 0 0 auto;
+  filter: drop-shadow(0 22px 38px rgba(4, 12, 36, 0.45));
+}
+
+/* ==========================================================================
+   Shared section shells
+   ========================================================================== */
+.about-section {
+  padding: 76px 0;
+}
+
+.about-section--plain {
+  background: var(--bg-surface);
+}
+
+.about-section--tint {
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.about-body {
+  font-size: 16px;
+  line-height: 1.75;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+  max-width: 68ch;
+}
+
+/* ==========================================================================
+   Why We Exist
+   ========================================================================== */
+.about-why-grid {
+  display: grid;
+  grid-template-columns: 148px minmax(0, 1fr);
+  gap: 44px;
+  align-items: start;
+}
+
+.about-why-mark {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 148px;
+  height: 148px;
+  border-radius: 50%;
+  background: var(--primary-navy-soft);
+  border: 1px solid var(--border-subtle);
+  color: var(--accent-red);
+}
+
+.about-why-mark svg {
+  width: 64px;
+  height: 64px;
+}
+
+.about-why-copy {
+  min-width: 0;
+}
+
+.about-why-copy .section-title {
+  max-width: 20ch;
+}
+
+.about-pull {
+  margin-top: 24px;
+  padding: 12px 0 12px 18px;
+  border-left: 3px solid var(--accent-red);
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 1.45;
+  color: var(--primary-navy-dark);
+}
+
+/* ==========================================================================
+   What Moovon Does — four roles
+   ========================================================================== */
+.about-role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(232px, 100%), 1fr));
+  gap: 20px;
+}
+
+.about-role-grid > * {
+  min-width: 0;
+}
+
+.about-role-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.about-role-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: var(--border-medium);
+}
+
+.about-role-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+}
+
+.about-role-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.about-role-card--accent .about-role-icon {
+  background: var(--accent-red-soft);
+  color: var(--accent-red-hover);
+}
+
+.about-role-title {
+  font-family: var(--font-heading);
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1.3;
+  color: var(--primary-navy-dark);
+  margin-bottom: 8px;
+}
+
+.about-role-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+}
+
+/* Regulatory footnote strip */
+.about-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 26px;
+  padding: 18px 20px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-left: 4px solid var(--accent-red);
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-muted);
+}
+
+.about-note svg {
+  width: 20px;
+  height: 20px;
+  margin-top: 3px;
+  flex-shrink: 0;
+  color: var(--accent-red);
+}
+
+.about-note span {
+  min-width: 0;
+}
+
+/* ==========================================================================
+   Mission & Vision
+   ========================================================================== */
+.about-mv-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: 24px;
+}
+
+.about-mv-grid > * {
+  min-width: 0;
+}
+
+.about-mv-card {
+  background: linear-gradient(160deg, var(--primary-navy-soft) 0%, var(--bg-surface) 62%);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  padding: 34px 30px;
+  box-shadow: var(--shadow-sm);
+}
+
+.about-mv-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  margin-bottom: 18px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-xs);
+}
+
+.about-mv-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.about-mv-title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  color: var(--primary-navy);
+  margin-bottom: 10px;
+}
+
+.about-mv-text {
+  font-size: 15.5px;
+  line-height: 1.72;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   Growth — Ghana today, West Africa next, Africa ahead
+   ========================================================================== */
+.about-growth {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0;
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+}
+
+.about-growth::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+  background-size: 26px 26px;
+}
+
+.about-growth-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+  gap: 52px;
+  align-items: center;
+}
+
+.about-growth-grid > * {
+  min-width: 0;
+}
+
+.about-growth-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #FFFFFF;
+  background: rgba(255, 255, 255, 0.14);
+  border: 1px solid rgba(255, 255, 255, 0.24);
+  padding: 5px 14px;
+  border-radius: var(--radius-full);
+  margin-bottom: 14px;
+}
+
+.about-growth-title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.4vw, 36px);
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  line-height: 1.18;
+  margin-bottom: 12px;
+}
+
+.about-growth-title em {
+  font-style: normal;
+  color: var(--about-accent-on-dark);
+}
+
+.about-growth-lead {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 700;
+  margin-bottom: 12px;
+}
+
+.about-growth-text {
+  font-size: 15px;
+  line-height: 1.75;
+  color: rgba(255, 255, 255, 0.82);
+  max-width: 60ch;
+}
+
+.about-stage-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.about-stage {
+  position: relative;
+  display: flex;
+  gap: 18px;
+  padding-bottom: 26px;
+}
+
+.about-stage:last-child {
+  padding-bottom: 0;
+}
+
+/* Vertical run joining one stage marker to the next. */
+.about-stage:not(:last-child)::before {
+  content: '';
+  position: absolute;
+  left: 8px;
+  top: 26px;
+  bottom: -8px; /* runs under the next marker so the chain reads unbroken */
+  width: 2px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.32) 0%, rgba(255, 255, 255, 0.06) 100%);
+}
+
+.about-stage-dot {
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  margin-top: 5px;
+  border-radius: 50%;
+  background: var(--accent-red);
+  border: 3px solid rgba(255, 255, 255, 0.92);
+}
+
+.about-stage-body {
+  min-width: 0;
+}
+
+.about-stage-name {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.about-stage-sub {
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+/* ==========================================================================
+   Ecosystem diagram
+   ========================================================================== */
+.about-eco-figure {
+  margin: 0;
+}
+
+.about-eco-flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 12px;
+}
+
+.about-eco-node {
+  flex: 1 1 200px;
+  min-width: 0;
+  max-width: 290px;
+  text-align: center;
+  padding: 26px 18px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+}
+
+.about-eco-node--core {
+  border-color: var(--accent-red);
+  box-shadow: var(--shadow-md);
+}
+
+.about-eco-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 58px;
+  height: 58px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+}
+
+.about-eco-node--core .about-eco-icon {
+  background: var(--accent-red-soft);
+  color: var(--accent-red-hover);
+}
+
+.about-eco-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.about-eco-name {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--primary-navy-dark);
+  margin-bottom: 6px;
+}
+
+.about-eco-role {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+.about-eco-arrow {
+  flex: 0 0 auto;
+  align-self: center;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--border-medium);
+}
+
+.about-eco-arrow svg {
+  width: 24px;
+  height: 24px;
+}
+
+.about-eco-caption {
+  margin-top: 26px;
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+  font-weight: 700;
+  color: var(--primary-navy);
+}
+
+/* ==========================================================================
+   Values
+   ========================================================================== */
+.about-values-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(170px, 100%), 1fr));
+  gap: 24px 20px;
+}
+
+.about-values-grid > * {
+  min-width: 0;
+}
+
+.about-value {
+  text-align: center;
+}
+
+.about-value-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 66px;
+  height: 66px;
+  margin: 0 auto 14px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-xs);
+}
+
+.about-value-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.about-value-title {
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  margin-bottom: 6px;
+}
+
+.about-value-desc {
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  max-width: 25ch;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Move with Moovon — dual CTA + compact Follow Mr. Moovon strip
+   ========================================================================== */
+.about-cta {
+  position: relative;
+  overflow: hidden;
+  padding: 70px 0;
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+}
+
+.about-cta::before {
+  content: '';
+  position: absolute;
+  top: -180px;
+  right: -120px;
+  width: 520px;
+  height: 520px;
+  pointer-events: none;
+  opacity: 0.22;
+  background: radial-gradient(circle, var(--accent-red) 0%, transparent 70%);
+}
+
+.about-cta-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 230px);
+  gap: 44px;
+  align-items: center;
+}
+
+.about-cta-grid > * {
+  min-width: 0;
+}
+
+.about-cta-title {
+  font-family: var(--font-heading);
+  font-size: clamp(26px, 3.4vw, 34px);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin-bottom: 6px;
+}
+
+.about-cta-sub {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 26px;
+}
+
+.about-cta-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(238px, 100%), 1fr));
+  gap: 18px;
+}
+
+.about-cta-cards > * {
+  min-width: 0;
+}
+
+.about-cta-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 22px 20px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  border-radius: var(--radius-lg);
+}
+
+.about-cta-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.about-cta-text {
+  flex: 1;
+  font-size: 14px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.about-cta-protected {
+  margin-top: 28px;
+  font-family: var(--font-heading);
+  font-size: clamp(20px, 2.6vw, 26px);
+  font-weight: 900;
+  letter-spacing: -0.4px;
+}
+
+.about-cta-protected em {
+  font-style: normal;
+  color: var(--about-accent-on-dark);
+}
+
+.about-cta-figure img {
+  width: 100%;
+  max-width: 200px;
+  height: auto;
+  margin: 0 auto;
+  background: #FFFFFF;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+}
+
+.about-follow {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px 24px;
+  margin-top: 46px;
+  padding-top: 26px;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.about-follow-copy {
+  min-width: 0;
+}
+
+.about-follow-title {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  margin-bottom: 4px;
+}
+
+.about-follow-sub {
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+/* Reuses the .footer-social chip styling, which is already tuned for a dark
+   ground; only the footer-specific top margin needs resetting. */
+.about-follow .about-follow-links {
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* ==========================================================================
+   Responsive
+   ========================================================================== */
+@media (max-width: 1024px) {
+  .about-hero-grid {
+    gap: 22px;
+  }
+
+  .about-why-grid {
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 30px;
+  }
+
+  .about-why-mark {
+    width: 112px;
+    height: 112px;
+  }
+
+  .about-why-mark svg {
+    width: 50px;
+    height: 50px;
+  }
+
+  .about-growth-grid {
+    grid-template-columns: 1fr;
+    gap: 36px;
+  }
+
+  .about-cta-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .about-cta-figure img {
+    max-width: 170px;
+  }
+
+  /* Below ~1024px a 4-node row wraps mid-flow and strands an arrow at the
+     head of the second line, so the whole run turns vertical instead. */
+  .about-eco-flow {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .about-eco-node {
+    flex: 0 0 auto;
+    width: 100%;
+    max-width: 440px;
+  }
+
+  .about-eco-arrow {
+    transform: rotate(90deg);
+  }
+}
+
+@media (max-width: 900px) {
+  .page-hero.about-hero {
+    padding: 48px 0 0;
+    text-align: center;
+  }
+
+  .about-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 10px;
+  }
+
+  .about-hero-copy {
+    padding-bottom: 6px;
+  }
+
+  .about-hero .about-hero-subtitle {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .about-hero-kicker::before {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .about-hero-figure img {
+    max-width: 250px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 760px) {
+  .about-section {
+    padding: 56px 0;
+  }
+
+  .about-why-grid {
+    grid-template-columns: 1fr;
+    gap: 22px;
+  }
+
+  .about-why-mark {
+    width: 92px;
+    height: 92px;
+  }
+
+  .about-why-mark svg {
+    width: 42px;
+    height: 42px;
+  }
+
+  .about-why-copy .section-title {
+    max-width: none;
+  }
+
+  .about-mv-card {
+    padding: 28px 22px;
+  }
+
+  .about-growth {
+    padding: 58px 0;
+  }
+
+  .about-cta {
+    padding: 56px 0;
+  }
+
+  .about-follow {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 520px) {
+  .about-hero .page-hero-title {
+    font-size: 32px;
+  }
+
+  .about-body,
+  .about-role-desc,
+  .about-mv-text {
+    font-size: 14.5px;
+  }
+
+  .about-value-desc {
+    max-width: none;
+  }
+
+  .about-cta-card .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .about-note {
+    padding: 16px;
+  }
+}
+
+/* The global reduced-motion rule zeroes durations; these also drop the
+   transform so nothing shifts under the pointer. */
+@media (prefers-reduced-motion: reduce) {
+  .about-role-card,
+  .about-role-card:hover {
+    transition: none;
+    transform: none;
+  }
+}
+
+/* ---------- news ---------- */
+/* ==========================================================================
+   MOOVON SpreadPay™ — What's Mooving? (news.html)
+   Page-scoped fragment. Every class is prefixed .news-* so it cannot collide
+   with other page fragments. Palette: navy / red / white only (R8).
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero — extends .page-hero. Split layout: copy left, Mr. Moovon right.
+   Deliberately clean: no floating logos, no news cards.
+   -------------------------------------------------------------------------- */
+/* Qualified with .page-hero so the override wins regardless of where this
+   fragment lands relative to the shared hero rules. */
+.page-hero.news-hero {
+  text-align: left;
+  padding: 56px 0 0;
+}
+
+.news-hero-inner {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 24px;
+  align-items: end;
+}
+
+.news-hero-copy {
+  min-width: 0;
+  padding-bottom: 58px;
+}
+
+.news-hero .page-hero-subtitle {
+  margin: 0;
+  max-width: 30ch;
+}
+
+.news-hero-strapline {
+  margin-top: 18px;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+  max-width: 34ch;
+}
+
+.news-hero-figure {
+  position: relative;
+  min-width: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Soft navy/red halo so the cut-out reads as intentional against the gradient */
+.news-hero-figure::before {
+  content: '';
+  position: absolute;
+  bottom: -10%;
+  left: 50%;
+  width: 110%;
+  aspect-ratio: 1 / 1;
+  transform: translateX(-50%);
+  background: radial-gradient(circle, rgba(204, 30, 65, 0.22) 0%, rgba(27, 91, 170, 0) 68%);
+  pointer-events: none;
+}
+
+.news-hero-img {
+  position: relative;
+  width: auto;
+  height: auto;
+  max-width: 340px;
+  max-height: 420px;
+  margin-bottom: -2px;
+  filter: drop-shadow(0 18px 34px rgba(4, 12, 36, 0.42));
+}
+
+@media (max-width: 900px) {
+  .page-hero.news-hero {
+    padding: 44px 0 0;
+  }
+
+  .news-hero-inner {
+    grid-template-columns: 1fr;
+    justify-items: center;
+    text-align: center;
+    gap: 8px;
+  }
+
+  .news-hero-copy {
+    padding-bottom: 8px;
+  }
+
+  .news-hero .page-hero-subtitle,
+  .news-hero-strapline {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 46ch;
+  }
+
+  .news-hero-img {
+    max-width: 240px;
+    max-height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero.news-hero {
+    padding-top: 36px;
+  }
+
+  .news-hero-img {
+    max-width: 190px;
+    max-height: 240px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Section rhythm
+   -------------------------------------------------------------------------- */
+.news-section {
+  padding: 72px 0;
+}
+
+.news-featured-section,
+.news-industry-section {
+  background: #FFFFFF;
+}
+
+.news-latest-section,
+.news-video-section {
+  background: var(--bg-page);
+}
+
+.news-section-header {
+  margin-bottom: 34px;
+}
+
+@media (max-width: 600px) {
+  .news-section {
+    padding: 52px 0;
+  }
+}
+
+/* Placeholder disclosure — this page ships as a content template */
+.news-template-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  max-width: 760px;
+  margin: 0 auto 30px;
+  padding: 11px 16px;
+  border: 1px dashed var(--border-medium);
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  font-size: 13px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+.news-template-note svg {
+  flex: 0 0 auto;
+  margin-top: 2px;
+  color: var(--primary-navy);
+}
+
+/* --------------------------------------------------------------------------
+   Featured story
+   -------------------------------------------------------------------------- */
+.news-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-md);
+  overflow: hidden;
+}
+
+.news-featured-media {
+  position: relative;
+  min-width: 0;
+  min-height: 240px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 78% 18%, rgba(204, 30, 65, 0.36) 0%, rgba(204, 30, 65, 0) 58%),
+    linear-gradient(140deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.news-featured-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 22px 22px;
+  pointer-events: none;
+}
+
+.news-media-glyph {
+  width: 84px;
+  height: 84px;
+  opacity: 0.92;
+}
+
+.news-featured-body {
+  min-width: 0;
+  padding: 34px 36px;
+}
+
+.news-eyebrow {
+  font-family: var(--font-heading);
+  font-size: 12px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent-red-hover);
+  margin-bottom: 10px;
+}
+
+.news-featured-title {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 900;
+  line-height: 1.22;
+  letter-spacing: -0.5px;
+  color: var(--primary-navy);
+  margin-bottom: 12px;
+  overflow-wrap: break-word;
+}
+
+.news-featured-dek {
+  font-size: 15px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  overflow-wrap: break-word;
+}
+
+.news-meta {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px 10px;
+  margin: 16px 0 22px;
+  padding: 0;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.news-meta li + li::before {
+  content: '\00B7';
+  margin-right: 10px;
+  color: var(--border-medium);
+}
+
+.news-featured-cta svg {
+  transition: var(--transition-smooth);
+}
+
+.news-featured-cta:hover svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 860px) {
+  .news-featured {
+    grid-template-columns: 1fr;
+  }
+
+  .news-featured-media {
+    min-height: 170px;
+  }
+
+  .news-media-glyph {
+    width: 62px;
+    height: 62px;
+  }
+
+  .news-featured-body {
+    padding: 26px 22px;
+  }
+
+  .news-featured-title {
+    font-size: 23px;
+  }
+}
+
+@media (max-width: 380px) {
+  .news-featured-body {
+    padding: 22px 18px;
+  }
+
+  .news-featured-cta {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Category badges
+   -------------------------------------------------------------------------- */
+.news-badge {
+  position: absolute;
+  top: 14px;
+  left: 14px;
+  z-index: 1;
+  max-width: calc(100% - 28px);
+  font-family: var(--font-heading);
+  font-size: 10.5px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.7px;
+  padding: 5px 11px;
+  border-radius: var(--radius-full);
+  color: #FFFFFF;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.news-badge-red {
+  background: var(--accent-red);
+  box-shadow: 0 4px 12px rgba(204, 30, 65, 0.35);
+}
+
+.news-badge-navy {
+  background: rgba(255, 255, 255, 0.16);
+  border: 1px solid rgba(255, 255, 255, 0.32);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+/* --------------------------------------------------------------------------
+   Latest from Moovon & Our Partners — CSS-only category filter
+   The radios live next to the chips and the grid so plain sibling selectors
+   can do the filtering; the page needs no extra JavaScript.
+   -------------------------------------------------------------------------- */
+.news-stream {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  min-width: 0;   /* fieldsets default to min-content and would force overflow */
+}
+
+.news-cat-input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.news-chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 30px;
+}
+
+.news-chip {
+  display: inline-flex;
+  align-items: center;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-full);
+  padding: 8px 16px;
+  font-family: var(--font-heading);
+  font-size: 12.5px;
+  font-weight: 700;
+  color: var(--text-muted);
+  cursor: pointer;
+  transition: var(--transition-smooth);
+  user-select: none;
+}
+
+.news-chip:hover {
+  border-color: var(--primary-navy);
+  color: var(--primary-navy);
+  background: var(--primary-navy-soft);
+}
+
+/* Selected chip */
+#news-cat-all:checked ~ .news-chips [for="news-cat-all"],
+#news-cat-moovon:checked ~ .news-chips [for="news-cat-moovon"],
+#news-cat-partner:checked ~ .news-chips [for="news-cat-partner"],
+#news-cat-industry:checked ~ .news-chips [for="news-cat-industry"],
+#news-cat-motoring:checked ~ .news-chips [for="news-cat-motoring"] {
+  background: var(--primary-navy);
+  border-color: var(--primary-navy);
+  color: #FFFFFF;
+}
+
+/* Keyboard focus lands on the visually hidden radio, so paint its chip */
+#news-cat-all:focus-visible ~ .news-chips [for="news-cat-all"],
+#news-cat-moovon:focus-visible ~ .news-chips [for="news-cat-moovon"],
+#news-cat-partner:focus-visible ~ .news-chips [for="news-cat-partner"],
+#news-cat-industry:focus-visible ~ .news-chips [for="news-cat-industry"],
+#news-cat-motoring:focus-visible ~ .news-chips [for="news-cat-motoring"] {
+  outline: 3px solid rgba(17, 59, 110, 0.55);
+  outline-offset: 2px;
+}
+
+/* The filter itself */
+#news-cat-moovon:checked ~ .news-grid > .news-card:not([data-cat="moovon"]),
+#news-cat-partner:checked ~ .news-grid > .news-card:not([data-cat="partner"]),
+#news-cat-industry:checked ~ .news-grid > .news-card:not([data-cat="industry"]),
+#news-cat-motoring:checked ~ .news-grid > .news-card:not([data-cat="motoring"]) {
+  display: none;
+}
+
+.news-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 262px), 1fr));
+  gap: 22px;
+}
+
+.news-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-spring);
+}
+
+.news-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(17, 59, 110, 0.2);
+}
+
+.news-card-media {
+  position: relative;
+  aspect-ratio: 16 / 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background:
+    radial-gradient(circle at 80% 20%, rgba(204, 30, 65, 0.3) 0%, rgba(204, 30, 65, 0) 60%),
+    linear-gradient(145deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.news-card-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.news-card-media .news-media-glyph {
+  width: 48px;
+  height: 48px;
+}
+
+.news-card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 0;
+  padding: 18px 20px 20px;
+}
+
+.news-card-date {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  color: var(--text-sub);
+  margin-bottom: 8px;
+}
+
+.news-card-title {
+  font-family: var(--font-heading);
+  font-size: 16.5px;
+  font-weight: 800;
+  line-height: 1.32;
+  color: var(--primary-navy);
+  margin-bottom: 8px;
+  overflow-wrap: break-word;
+}
+
+.news-card-excerpt {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin-bottom: 16px;
+}
+
+.news-card-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin-top: auto;
+  font-family: var(--font-heading);
+  font-size: 13px;
+  font-weight: 800;
+  color: var(--accent-red-hover);
+  transition: var(--transition-smooth);
+}
+
+.news-card-link svg {
+  transition: var(--transition-smooth);
+}
+
+.news-card:hover .news-card-link svg,
+.news-card-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Around the Industry — source + date, links out to the publisher
+   -------------------------------------------------------------------------- */
+.news-industry-list {
+  list-style: none;
+  display: grid;
+  gap: 12px;
+  margin: 0;
+  padding: 0;
+}
+
+.news-industry-item {
+  min-width: 0;
+}
+
+.news-industry-link {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  min-width: 0;
+  padding: 16px 20px;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.news-industry-link:hover {
+  border-color: var(--primary-navy);
+  background: var(--primary-navy-soft);
+  transform: translateX(3px);
+}
+
+.news-industry-icon {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  border: 1px solid rgba(27, 91, 170, 0.16);
+  color: var(--primary-navy);
+}
+
+.news-industry-icon svg {
+  width: 20px;
+  height: 20px;
+}
+
+.news-industry-body {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  flex: 1;
+  min-width: 0;
+}
+
+.news-industry-meta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.news-industry-source {
+  font-family: var(--font-heading);
+  font-weight: 800;
+  color: var(--accent-red-hover);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  font-size: 11px;
+}
+
+.news-industry-title {
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 700;
+  line-height: 1.4;
+  color: var(--primary-navy);
+  overflow-wrap: break-word;
+}
+
+.news-industry-ext {
+  flex: 0 0 auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-sub);
+  transition: var(--transition-smooth);
+}
+
+.news-industry-ext svg {
+  width: 17px;
+  height: 17px;
+}
+
+.news-industry-link:hover .news-industry-ext {
+  color: var(--primary-navy);
+}
+
+.news-industry-disclaimer {
+  margin-top: 20px;
+  font-size: 12.5px;
+  line-height: 1.6;
+  color: var(--text-sub);
+  text-align: center;
+}
+
+@media (max-width: 560px) {
+  .news-industry-link {
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 16px;
+  }
+
+  .news-industry-icon {
+    width: 36px;
+    height: 36px;
+  }
+
+  .news-industry-title {
+    font-size: 14.5px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Latest from Mr. Moovon — short video cards
+   -------------------------------------------------------------------------- */
+.news-video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 230px), 1fr));
+  gap: 20px;
+}
+
+.news-video-card {
+  min-width: 0;
+}
+
+.news-video-link {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  min-width: 0;
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-spring);
+}
+
+.news-video-link:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-lg);
+  border-color: rgba(17, 59, 110, 0.2);
+}
+
+.news-video-thumb {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background:
+    radial-gradient(circle at 50% 45%, rgba(255, 255, 255, 0.12) 0%, rgba(255, 255, 255, 0) 60%),
+    linear-gradient(150deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+}
+
+.news-video-play {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-full);
+  background: var(--accent-red);
+  color: #FFFFFF;
+  box-shadow: 0 6px 18px rgba(204, 30, 65, 0.4);
+  transition: var(--transition-spring);
+}
+
+.news-video-play svg {
+  width: 20px;
+  height: 20px;
+  margin-left: 2px;
+}
+
+.news-video-link:hover .news-video-play {
+  transform: scale(1.08);
+}
+
+.news-video-duration {
+  position: absolute;
+  right: 10px;
+  bottom: 10px;
+  padding: 3px 8px;
+  border-radius: var(--radius-sm);
+  background: rgba(4, 12, 36, 0.72);
+  color: #FFFFFF;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+}
+
+.news-video-body {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  min-width: 0;
+  padding: 16px 18px 18px;
+}
+
+.news-video-title {
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  line-height: 1.35;
+  color: var(--primary-navy);
+  overflow-wrap: break-word;
+}
+
+.news-video-desc {
+  font-size: 13px;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.news-video-more {
+  margin-top: 26px;
+  text-align: center;
+}
+
+.news-inline-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  transition: var(--transition-smooth);
+}
+
+.news-inline-link:hover {
+  color: var(--accent-red-hover);
+}
+
+.news-inline-link svg {
+  transition: var(--transition-smooth);
+}
+
+.news-inline-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Follow Mr. Moovon (compact social strip — R10)
+   Reuses the shared .footer-social icon buttons on a navy surface.
+   -------------------------------------------------------------------------- */
+.news-follow-section {
+  background: var(--bg-page);
+  padding-top: 0;
+}
+
+.news-follow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 20px 26px;
+  padding: 24px 30px;
+  border-radius: var(--radius-xl);
+  background: linear-gradient(135deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  box-shadow: var(--shadow-md);
+  color: #FFFFFF;
+}
+
+.news-follow-img {
+  flex: 0 0 auto;
+  width: 82px;
+  height: 82px;
+  border-radius: var(--radius-full);
+  object-fit: cover;
+  object-position: 50% 22%;
+  background: #FFFFFF;
+  border: 2px solid rgba(255, 255, 255, 0.4);
+}
+
+.news-follow-copy {
+  flex: 1 1 260px;
+  min-width: 0;
+}
+
+.news-follow-title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  margin-bottom: 5px;
+}
+
+.news-follow-text {
+  font-size: 14px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.news-follow-social {
+  margin: 0;
+  flex-wrap: wrap;
+}
+
+/* The shared focus ring is navy; on this navy panel it needs to be white */
+.news-follow :focus-visible {
+  outline-color: rgba(255, 255, 255, 0.9);
+}
+
+@media (max-width: 700px) {
+  .news-follow {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 26px 20px;
+  }
+
+  .news-follow-copy {
+    flex: 1 1 auto;
+  }
+
+  .news-follow-social {
+    justify-content: center;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Pre-footer CTA tweak (shared .cta-banner-section)
+   -------------------------------------------------------------------------- */
+/* Ghost variant of .btn-signin for the navy CTA band (matches the other pages,
+   which do this with an inline style). */
+.news-cta-secondary {
+  color: #FFFFFF;
+  border-color: rgba(255, 255, 255, 0.3);
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.news-cta-secondary:hover {
+  color: var(--primary-navy);
+  background: #FFFFFF;
+  border-color: #FFFFFF;
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .news-card:hover,
+  .news-video-link:hover,
+  .news-industry-link:hover {
+    transform: none;
+  }
+
+  .news-card:hover .news-card-link svg,
+  .news-card-link:hover svg,
+  .news-featured-cta:hover svg,
+  .news-inline-link:hover svg,
+  .news-video-link:hover .news-video-play {
+    transform: none;
+  }
+}
+
+/* ---------- developers ---------- */
+/* ==========================================================================
+   Developers & Integrations (developers.html) — page fragment
+   Every new class is prefixed .dev- so this fragment cannot collide with
+   another page's fragment. Everything else on the page reuses the existing
+   design system (.page-hero, .section-header, .btn, .alert-box-info,
+   .hiw-flow stepper, .cta-banner-section).
+   Palette: navy / red / white only.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Hero — left-aligned two-column variant of .page-hero
+   -------------------------------------------------------------------------- */
+.page-hero.dev-hero {
+  text-align: left;
+  padding: 64px 0 60px;
+}
+
+/* .page-hero::after paints a dot overlay above static children; z-index lifts
+   the hero content back on top of it. */
+.dev-hero-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 40px;
+  align-items: center;
+}
+
+.dev-hero-grid > * {
+  min-width: 0;
+}
+
+.dev-hero .page-hero-subtitle {
+  margin: 0;
+  max-width: 58ch;
+}
+
+.dev-hero-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 26px;
+}
+
+.dev-hero-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  max-width: 54ch;
+  margin-top: 22px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  color: rgba(255, 255, 255, 0.78);
+}
+
+.dev-hero-note svg {
+  flex-shrink: 0;
+  margin-top: 1px;
+  opacity: 0.85;
+}
+
+.dev-hero-art {
+  display: flex;
+  justify-content: center;
+}
+
+.dev-hero-art img {
+  width: 100%;
+  max-width: 320px;
+  height: auto;
+  filter: drop-shadow(0 24px 40px rgba(5, 26, 51, 0.45));
+}
+
+/* --------------------------------------------------------------------------
+   Section shells
+   -------------------------------------------------------------------------- */
+.dev-section {
+  padding: 78px 0;
+  background: var(--bg-surface);
+}
+
+.dev-section-alt {
+  background: var(--bg-page);
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+/* --------------------------------------------------------------------------
+   "What you can build with" — capability grid
+   -------------------------------------------------------------------------- */
+.dev-cap-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 20px;
+}
+
+.dev-cap-grid > * {
+  min-width: 0;
+}
+
+.dev-cap-card {
+  display: flex;
+  flex-direction: column;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 26px 22px;
+  box-shadow: var(--shadow-xs);
+  transition: var(--transition-smooth);
+}
+
+.dev-cap-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-md);
+  border-color: rgba(27, 91, 170, 0.28);
+}
+
+.dev-cap-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  margin-bottom: 18px;
+  border-radius: var(--radius-md);
+  background: var(--primary-navy-soft);
+  color: var(--primary-navy);
+  transition: var(--transition-smooth);
+}
+
+.dev-cap-icon svg {
+  width: 26px;
+  height: 26px;
+}
+
+.dev-cap-card:hover .dev-cap-icon {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+}
+
+.dev-cap-title {
+  font-family: var(--font-heading);
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.2px;
+  color: var(--primary-navy-dark);
+  margin-bottom: 9px;
+}
+
+.dev-cap-desc {
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+.dev-note-wrap {
+  max-width: 940px;
+  margin: 34px auto 0;
+}
+
+/* --------------------------------------------------------------------------
+   "Who can integrate"
+   -------------------------------------------------------------------------- */
+.dev-who-grid {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 18px;
+}
+
+.dev-who-grid > * {
+  min-width: 0;
+}
+
+.dev-who-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: 22px 20px;
+  box-shadow: var(--shadow-xs);
+}
+
+.dev-who-icon {
+  flex-shrink: 0;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--accent-red-soft);
+  color: var(--accent-red);
+}
+
+.dev-who-icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.dev-who-body {
+  min-width: 0;
+}
+
+.dev-who-title {
+  font-family: var(--font-heading);
+  font-size: 15.5px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  margin-bottom: 6px;
+}
+
+.dev-who-desc {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  margin: 0;
+}
+
+/* --------------------------------------------------------------------------
+   Secure / reliable + what stays behind Developer Sign In
+   -------------------------------------------------------------------------- */
+.dev-secure-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  gap: 32px;
+  align-items: start;
+}
+
+.dev-secure-grid > * {
+  min-width: 0;
+}
+
+.dev-subhead {
+  font-family: var(--font-heading);
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--primary-navy);
+  margin-bottom: 18px;
+}
+
+.dev-check-list {
+  list-style: none;
+  margin: 0 0 26px;
+  padding: 0;
+  display: grid;
+  gap: 14px;
+}
+
+.dev-check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  font-size: 14.5px;
+  line-height: 1.6;
+  color: var(--text-muted);
+  min-width: 0;
+}
+
+.dev-check-item svg {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  margin-top: 1px;
+  color: var(--primary-navy);
+}
+
+/* R7 — the page shows no code at all; this states the rule in plain sight. */
+.dev-placeholder-note {
+  background: var(--accent-red-soft);
+  border: 1px dashed var(--accent-red);
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+}
+
+.dev-placeholder-tag {
+  display: inline-block;
+  margin-bottom: 10px;
+  padding: 4px 12px;
+  border-radius: var(--radius-full);
+  background: var(--accent-red);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 11px;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.dev-placeholder-note p {
+  margin: 0;
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: #7E1329;
+}
+
+.dev-locked-card {
+  background: linear-gradient(155deg, var(--primary-navy-dark) 0%, var(--primary-navy) 100%);
+  color: #FFFFFF;
+  border-radius: var(--radius-xl);
+  padding: 30px 28px;
+  box-shadow: var(--shadow-lg);
+}
+
+.dev-locked-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 46px;
+  height: 46px;
+  margin-bottom: 16px;
+  border-radius: var(--radius-md);
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  color: #FFFFFF;
+}
+
+.dev-locked-icon svg {
+  width: 24px;
+  height: 24px;
+}
+
+.dev-locked-title {
+  font-family: var(--font-heading);
+  font-size: 19px;
+  font-weight: 900;
+  letter-spacing: -0.3px;
+  margin-bottom: 8px;
+}
+
+.dev-locked-lead {
+  font-size: 13.5px;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.82);
+  margin-bottom: 16px;
+}
+
+.dev-locked-list {
+  list-style: none;
+  margin: 0 0 22px;
+  padding: 0;
+  display: grid;
+  gap: 9px;
+}
+
+.dev-locked-list li {
+  position: relative;
+  padding-left: 22px;
+  font-size: 13.5px;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.dev-locked-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.42em;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent-red);
+}
+
+.dev-locked-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding-bottom: 2px;
+  font-family: var(--font-heading);
+  font-size: 14px;
+  font-weight: 800;
+  color: #FFFFFF;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+  transition: var(--transition-smooth);
+}
+
+.dev-locked-link svg {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.25s ease;
+}
+
+.dev-locked-link:hover {
+  color: #FF6B89;
+  border-bottom-color: currentColor;
+}
+
+.dev-locked-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* --------------------------------------------------------------------------
+   Responsive
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  .dev-hero-grid {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .dev-hero-art img {
+    max-width: 240px;
+  }
+
+  .dev-secure-grid {
+    grid-template-columns: 1fr;
+    gap: 26px;
+  }
+}
+
+@media (max-width: 700px) {
+  .page-hero.dev-hero {
+    padding: 46px 0 44px;
+  }
+
+  .dev-section {
+    padding: 58px 0;
+  }
+
+  .dev-hero-art img {
+    max-width: 190px;
+  }
+
+  .dev-cap-card {
+    padding: 22px 18px;
+  }
+
+  .dev-locked-card {
+    padding: 26px 22px;
+  }
+
+  .dev-note-wrap {
+    margin-top: 26px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dev-hero-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .dev-hero-actions .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .dev-who-card {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .dev-check-item,
+  .dev-cap-desc,
+  .dev-who-desc {
+    font-size: 13.5px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   Reduced motion — scoped to this page so no other page is affected
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  .dev-hero .page-hero-badge {
+    animation: none;
+  }
+
+  .dev-cap-card,
+  .dev-cap-icon,
+  .dev-locked-link,
+  .dev-locked-link svg {
+    transition: none;
+  }
+
+  .dev-cap-card:hover {
+    transform: none;
+  }
+
+  .dev-locked-link:hover svg {
+    transform: none;
+  }
+}
+
+/* ==== END PAGE FRAGMENTS ==== */
