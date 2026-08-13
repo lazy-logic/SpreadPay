@@ -8893,6 +8893,30 @@ body.mobile-drawer-open {
   opacity: 0.92;
 }
 
+/* Real editorial artwork fills the media block; the navy gradient behind it
+   only shows while the image loads. */
+.news-media-img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.news-featured-media,
+.news-card-media {
+  overflow: hidden;
+}
+
+/* The badge and the top scrim must sit above the artwork. */
+.news-featured-media .news-badge,
+.news-card-media .news-badge,
+.news-featured-media::after,
+.news-card-media::after {
+  z-index: 2;
+}
+
 .news-featured-body {
   min-width: 0;
   padding: 34px 36px;
@@ -9013,11 +9037,12 @@ body.mobile-drawer-open {
   box-shadow: 0 4px 12px rgba(204, 30, 65, 0.35);
 }
 
+/* Solid, not translucent: over light artwork a white-on-glass badge lost all
+   contrast. */
 .news-badge-navy {
-  background: rgba(255, 255, 255, 0.16);
-  border: 1px solid rgba(255, 255, 255, 0.32);
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
+  background: var(--primary-navy-dark);
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  box-shadow: 0 4px 12px rgba(17, 59, 110, 0.4);
 }
 
 /* --------------------------------------------------------------------------
