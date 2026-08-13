@@ -1085,9 +1085,12 @@ button, input, select, textarea {
   background: #FFFFFF;
 }
 
+/* Reflows on its own rather than holding 5-across down to 1024px, where the
+   cards fell to ~180px wide with barely 140px of text. 200px is the narrowest
+   a card reads comfortably, so columns drop out before that point. */
 .hiw-grid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   position: relative;
 }
@@ -2916,7 +2919,10 @@ body.mobile-drawer-open {
 /* ==========================================================================
    Responsive Breakpoints Engine
    ========================================================================== */
-@media (max-width: 1024px) {
+/* Was 1024px, which left the full nav (larger logo + two action buttons) with
+   under 40px of slack -- enough that a slightly wider font render pushed the
+   "Find a Partner" button off the right edge. */
+@media (max-width: 1100px) {
   .nav-menu, .nav-actions {
     display: none;
   }
@@ -2937,10 +2943,7 @@ body.mobile-drawer-open {
     gap: 24px;
   }
 
-  .hiw-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-  }
+  /* .hiw-grid intentionally omitted - auto-fit governs it at every width. */
 
   .footer-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -3035,7 +3038,7 @@ body.mobile-drawer-open {
     text-align: center;
   }
 
-  .products-grid-3, .partners-directory-grid, .hiw-grid {
+  .products-grid-3, .partners-directory-grid {
     grid-template-columns: 1fr;
     gap: 20px;
   }
