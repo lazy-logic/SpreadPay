@@ -3160,6 +3160,13 @@ body.mobile-drawer-open {
 /* ==========================================================================
    Customer Journey Stepper (homepage "How It Works", per the flyer)
    ========================================================================== */
+/* On how-it-works.html the journey leads and the operational grid follows,
+   so the two read as distinct chapters rather than one long white run. */
+.hiw-journey-section {
+  background: var(--bg-page);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
 .hiw-flow-heading {
   display: flex;
   align-items: center;
