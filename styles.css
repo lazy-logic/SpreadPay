@@ -3158,6 +3158,208 @@ body.mobile-drawer-open {
 }
 
 /* ==========================================================================
+   Customer Journey Stepper (homepage "How It Works", per the flyer)
+   ========================================================================== */
+.hiw-flow-heading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 18px;
+  margin-bottom: 46px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 800;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  color: var(--primary-navy-dark);
+}
+
+/* The short red rules either side of the title on the flyer. */
+.hiw-flow-heading::before,
+.hiw-flow-heading::after {
+  content: '';
+  width: 46px;
+  height: 2px;
+  background: var(--accent-red);
+  flex-shrink: 0;
+}
+
+.hiw-flow {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.hiw-step {
+  position: relative;
+  text-align: center;
+}
+
+/* Dotted run with an arrowhead, sitting between one icon and the next.
+   56px clears the icon radius; 88px is that clearance at both ends. */
+.hiw-step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 45px;
+  left: calc(50% + 56px);
+  width: calc(100% - 88px);
+  height: 8px;
+  background-image:
+    radial-gradient(circle, var(--border-medium) 1.1px, transparent 1.2px),
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='7' height='8' viewBox='0 0 7 8'%3E%3Cpath d='M0 0l7 4-7 4z' fill='%23CBD5E1'/%3E%3C/svg%3E");
+  background-position: left center, right center;
+  background-repeat: repeat-x, no-repeat;
+  background-size: 8px 8px, 7px 8px;
+}
+
+.hiw-step-mark {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 22px;
+}
+
+.hiw-step-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  box-shadow: var(--shadow-xs);
+}
+
+.hiw-step-icon svg {
+  width: 46px;
+  height: 46px;
+}
+
+/* Numbered token, overlapping the icon's leading edge as on the flyer. */
+.hiw-step-num {
+  position: absolute;
+  top: 50%;
+  left: -18px;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  font-family: var(--font-heading);
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 2px 8px rgba(17, 59, 110, 0.28);
+}
+
+.hiw-step-title {
+  font-family: var(--font-heading);
+  font-size: 16.5px;
+  font-weight: 800;
+  color: var(--primary-navy-dark);
+  margin-bottom: 10px;
+  letter-spacing: -0.2px;
+}
+
+.hiw-step-desc {
+  font-size: 14px;
+  line-height: 1.65;
+  color: var(--text-muted);
+  max-width: 25ch;
+  margin: 0 auto;
+}
+
+.hiw-flow-cta {
+  text-align: center;
+  margin-top: 46px;
+}
+
+.hiw-flow-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  font-weight: 600;
+  font-size: 14.5px;
+  color: var(--primary-navy);
+  border-bottom: 1px solid transparent;
+  transition: var(--transition-smooth);
+}
+
+.hiw-flow-link svg {
+  width: 17px;
+  height: 17px;
+  transition: transform 0.25s ease;
+}
+
+.hiw-flow-link:hover {
+  color: var(--accent-red);
+  border-bottom-color: currentColor;
+}
+
+.hiw-flow-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Two-up at tablet: the connector only runs between columns in a row. */
+@media (max-width: 1024px) {
+  .hiw-flow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px 24px;
+  }
+
+  .hiw-step:nth-child(2n)::after {
+    display: none;
+  }
+}
+
+/* Stacked: the run turns vertical, joining each step to the next. */
+@media (max-width: 700px) {
+  .hiw-flow {
+    grid-template-columns: 1fr;
+    gap: 34px;
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  .hiw-flow-heading {
+    font-size: 17px;
+    gap: 12px;
+    margin-bottom: 34px;
+  }
+
+  .hiw-flow-heading::before,
+  .hiw-flow-heading::after {
+    width: 28px;
+  }
+
+  .hiw-step:not(:last-child)::after,
+  .hiw-step:nth-child(2n)::after {
+    display: block;
+    top: auto;
+    bottom: -30px;
+    left: 50%;
+    width: 8px;
+    height: 22px;
+    background-image:
+      radial-gradient(circle, var(--border-medium) 1.1px, transparent 1.2px),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='7' viewBox='0 0 8 7'%3E%3Cpath d='M0 0l4 7 4-7z' fill='%23CBD5E1'/%3E%3C/svg%3E");
+    background-position: top center, bottom center;
+    background-repeat: repeat-y, no-repeat;
+    background-size: 8px 8px, 8px 7px;
+  }
+}
+
+/* ==========================================================================
    Legal Documents (terms.html, privacy.html)
    ========================================================================== */
 .legal-section {
