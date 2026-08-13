@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 428" role="img" aria-label="A rising bar chart with a trend line climbing to a highlighted final column.">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C2E58"/>
+      <stop offset="1" stop-color="#1B5BAA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#CC1E41" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#CC1E41" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5B9BE8" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#5B9BE8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#FFFFFF" fill-opacity="0.12"/>
+    </pattern>
+    <clipPath id="frame"><rect width="760" height="428" rx="0"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+  <rect width="760" height="428" fill="url(#g)"/>
+  <rect width="760" height="428" fill="url(#dots)"/>
+  <circle cx="640" cy="70" r="230" fill="url(#glow)"/>
+  <circle cx="110" cy="380" r="210" fill="url(#glow2)"/>
+  <g>
+    <path d="M206 362 L570 362" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3" stroke-opacity="0.45"/>
+    <rect x="250" y="300" width="52" height="62" rx="10" fill="#FFFFFF" fill-opacity="0.20"/>
+    <rect x="330" y="250" width="52" height="112" rx="10" fill="#FFFFFF" fill-opacity="0.20"/>
+    <rect x="410" y="274" width="52" height="88" rx="10" fill="#FFFFFF" fill-opacity="0.20"/>
+    <rect x="490" y="206" width="52" height="156" rx="10" fill="#CC1E41" fill-opacity="1"/>
+    <path d="M240 292 L318 244 L400 266 L516 176" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="5"/>
+    <circle cx="240" cy="292" r="9" fill="#FFFFFF"/>
+    <circle cx="318" cy="244" r="9" fill="#FFFFFF"/>
+    <circle cx="400" cy="266" r="9" fill="#FFFFFF"/>
+    <circle cx="516" cy="176" r="13" fill="#FFFFFF"/>
+    <path d="M492 152 L540 152 L540 200" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4" stroke-opacity="0.55"/>
+  </g>
+  <g opacity="0.5" transform="translate(688 372)">
+    <path d="M-26 -16 L0 12 L26 -16" fill="none" stroke="#FFFFFF" stroke-opacity="0.65" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-16 6 L0 24 L16 6" fill="none" stroke="#CC1E41" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  </g>
+</svg>

@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 428" role="img" aria-label="A central Moovon mark connected outward to eight participating partner nodes.">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0C2E58"/>
+      <stop offset="1" stop-color="#1B5BAA"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#CC1E41" stop-opacity="0.55"/>
+      <stop offset="1" stop-color="#CC1E41" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glow2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#5B9BE8" stop-opacity="0.42"/>
+      <stop offset="1" stop-color="#5B9BE8" stop-opacity="0"/>
+    </radialGradient>
+    <pattern id="dots" width="22" height="22" patternUnits="userSpaceOnUse">
+      <circle cx="2" cy="2" r="1.5" fill="#FFFFFF" fill-opacity="0.12"/>
+    </pattern>
+    <clipPath id="frame"><rect width="760" height="428" rx="0"/></clipPath>
+  </defs>
+  <g clip-path="url(#frame)">
+  <rect width="760" height="428" fill="url(#g)"/>
+  <rect width="760" height="428" fill="url(#dots)"/>
+  <circle cx="640" cy="70" r="230" fill="url(#glow)"/>
+  <circle cx="110" cy="380" r="210" fill="url(#glow2)"/>
+  <g>
+    <path d="M380 214 L150 130" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L300 88" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L450 132" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L596 104" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L150 316" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L300 350" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L452 312" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <path d="M380 214 L600 336" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.4"/>
+    <circle cx="150" cy="130" r="30" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="150" cy="130" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <path d="M142 126 l8 9 l8 -9" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="300" cy="88" r="30" fill="#FFFFFF" fill-opacity="0.2"/>
+    <circle cx="300" cy="88" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <circle cx="300" cy="88" r="11" fill="#CC1E41"/>
+    <circle cx="450" cy="132" r="30" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="450" cy="132" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <path d="M442 128 l8 9 l8 -9" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="596" cy="104" r="30" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="596" cy="104" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <path d="M588 100 l8 9 l8 -9" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="150" cy="316" r="30" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="150" cy="316" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <path d="M142 312 l8 9 l8 -9" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="300" cy="350" r="30" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="300" cy="350" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <path d="M292 346 l8 9 l8 -9" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="452" cy="312" r="30" fill="#FFFFFF" fill-opacity="0.2"/>
+    <circle cx="452" cy="312" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <circle cx="452" cy="312" r="11" fill="#CC1E41"/>
+    <circle cx="600" cy="336" r="30" fill="#FFFFFF" fill-opacity="0.1"/>
+    <circle cx="600" cy="336" r="30" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" stroke-opacity="0.6"/>
+    <path d="M592 332 l8 9 l8 -9" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="4"/>
+    <circle cx="380" cy="214" r="62" fill="#FFFFFF" fill-opacity="0.16"/>
+    <circle cx="380" cy="214" r="62" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="3.5" stroke-opacity="0.85"/>
+    <path d="M356 198 L380 224 L404 198" stroke="#FFFFFF" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+    <path d="M366 216 L380 232 L394 216" stroke="#CC1E41" fill="none" stroke-linecap="round" stroke-linejoin="round" stroke-width="8"/>
+  </g>
+  <g opacity="0.5" transform="translate(688 372)">
+    <path d="M-26 -16 L0 12 L26 -16" fill="none" stroke="#FFFFFF" stroke-opacity="0.65" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M-16 6 L0 24 L16 6" fill="none" stroke="#CC1E41" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+  </g>
+  </g>
+</svg>
