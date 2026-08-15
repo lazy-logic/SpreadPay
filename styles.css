@@ -3866,6 +3866,12 @@ body.mobile-drawer-open {
   margin-top: 6px;
 }
 
+.for-partners-portal-signin {
+  align-self: flex-start;
+  gap: 9px;
+  margin: 4px 0 4px;
+}
+
 /* ==== PAGE FRAGMENTS (generated - do not hand-edit above this line) ==== */
 
 /* ---------- index ---------- */

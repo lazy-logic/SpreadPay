@@ -179,7 +179,7 @@ function initUniformMobileDrawer() {
                   <strong>Developers &amp; Integrations</strong>
                   <span>Secure partner APIs</span>
                 </a>
-                <a href="/for-partners#portal" class="mobile-sublink">
+                <a href="https://console.moovon.insure/login" class="mobile-sublink">
                   <strong>Partner Portal Sign In</strong>
                   <span>Approved partner access</span>
                 </a>
@@ -210,7 +210,7 @@ function initUniformMobileDrawer() {
 
         <div class="mobile-drawer-footer">
           <button onclick="openPartnerModal(); closeMobileNavDrawer();" class="btn btn-find-partner" style="width:100%; justify-content:center; padding:12px; margin-bottom:10px;">Find a Partner</button>
-          <a href="/for-partners#portal" class="btn btn-signin" style="width:100%; text-align:center; justify-content:center; padding:12px; margin-bottom:14px;">Partner Sign In</a>
+          <a href="https://console.moovon.insure/login" class="btn btn-signin" style="width:100%; text-align:center; justify-content:center; padding:12px; margin-bottom:14px;">Partner Sign In</a>
           
           <a href="https://wa.me/233593293040" target="_blank" class="mobile-drawer-wa" rel="noopener">
             <svg class="wa-green-icon" viewBox="0 0 24 24" width="20" height="20" fill="none">
