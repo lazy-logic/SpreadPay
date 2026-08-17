@@ -313,44 +313,52 @@ function initFAQAccordion() {
 }
 
 function initFAQSearch() {
-  const searchInput = document.getElementById('faqSearchInput');
+  const searchInputs = document.querySelectorAll('#faqSearchInput, .faq-search-input, .faq-hero-input');
   const faqItems = document.querySelectorAll('.faq-item');
   const catTabs = document.querySelectorAll('.faq-cat-link');
   const emptyState = document.getElementById('faqEmptyState');
-  if (!searchInput) return;
+  if (!searchInputs.length) return;
 
-  searchInput.addEventListener('input', (e) => {
-    const query = e.target.value.toLowerCase().trim();
-    let visibleCount = 0;
+  searchInputs.forEach(input => {
+    input.addEventListener('input', (e) => {
+      const query = e.target.value.toLowerCase().trim();
+      let visibleCount = 0;
 
-    if (query.length > 0) {
-      catTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === 'all'));
-    }
+      searchInputs.forEach(other => {
+        if (other !== input && other.value !== e.target.value) {
+          other.value = e.target.value;
+        }
+      });
 
-    faqItems.forEach((item, index) => {
-      const text = item.textContent.toLowerCase();
-      const matches = text.includes(query);
-      item.style.display = matches ? '' : 'none';
-      if (matches) {
-        visibleCount++;
-        // Auto-expand matches while searching; collapse back to a single open
-        // item once the query is cleared instead of leaving a wall of text.
-        item.classList.toggle('active', query.length >= 2 || (query.length === 0 && index === 0));
+      if (query.length > 0) {
+        catTabs.forEach(t => t.classList.toggle('active', t.getAttribute('data-category') === 'all'));
+      }
+
+      faqItems.forEach((item, index) => {
+        const text = item.textContent.toLowerCase();
+        const matches = text.includes(query);
+        item.style.display = matches ? '' : 'none';
+        if (matches) {
+          visibleCount++;
+          item.classList.toggle('active', query.length >= 2 || (query.length === 0 && index === 0));
+        }
+      });
+
+      if (emptyState) {
+        emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
       }
     });
-
-    if (emptyState) {
-      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
-    }
   });
 }
 
 function setFAQSearch(keyword) {
-  const searchInput = document.getElementById('faqSearchInput');
-  if (searchInput) {
-    searchInput.value = keyword;
-    searchInput.dispatchEvent(new Event('input'));
-    searchInput.focus();
+  const searchInputs = document.querySelectorAll('#faqSearchInput, .faq-search-input, .faq-hero-input');
+  if (searchInputs.length) {
+    searchInputs.forEach(input => {
+      input.value = keyword;
+    });
+    searchInputs[0].dispatchEvent(new Event('input'));
+    searchInputs[0].focus();
   }
 }
 window.setFAQSearch = setFAQSearch;

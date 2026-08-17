@@ -161,14 +161,13 @@
 
   <main id="main">
 
-  <!-- ==========================================================================
-       Page Hero - deliberately clean: Mr. Moovon is the only visual.
-       No floating insurer logos and no news cards in the hero.
+  <!-- =======================================================================  <!-- ==========================================================================
+       Page Hero
        ========================================================================== -->
-  <section class="page-hero scene-hero news-hero">
+  <section class="page-hero scene-hero scene-hero--cutout news-hero">
     <div class="scene-hero-figure">
-      <img src="assets/graphics/hero/news.webp" width="1500" height="1020" fetchpriority="high"
-           alt="Mr. Moovon holding a laptop in front of the Accra skyline.">
+      <img src="assets/graphics/hero/news.webp" width="1200" height="1075" fetchpriority="high"
+           alt="Mr. Moovon holding a tablet in front of the Accra skyline.">
     </div>
     <div class="container">
       <div class="scene-hero-copy news-hero-copy">
@@ -177,62 +176,51 @@
           News &amp; Insights
         </span>
         <h1 class="page-hero-title">What's <span>Mooving?</span></h1>
-        <p class="page-hero-subtitle">The latest from Moovon, our participating partners and Ghana's motor insurance ecosystem.</p>
+        <p class="page-hero-subtitle">The latest from Moovon, our partners and Ghana's motor insurance ecosystem.</p>
         <p class="news-hero-strapline">Partnerships. Progress. Industry updates. Mr. Moovon stories.</p>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       Featured Story
-       TEMPLATE: one featured article. Swap the copy, date and link only.
+       Featured Story (Flyer 08)
        ========================================================================== -->
   <section class="news-section news-featured-section" aria-labelledby="news-featured-heading">
     <div class="container">
-      <p class="news-template-note">
-        <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
-        Layout preview. The stories, sources and dates on this page are sample entries and are replaced with approved published content.
-      </p>
-
-      <article class="news-featured">
-        <div class="news-featured-media">
-          <span class="news-badge news-badge-red">Featured Story</span>
-              <img class="news-media-img" src="assets/graphics/news/featured-spreadpay.svg" width="760" height="428" decoding="async" alt="Illustration: a shield marked with a tick standing over a city skyline, beneath a protective arc above the road.">
+      <div class="news-featured-card-wrapper">
+        <article class="news-featured-3col">
+          <div class="news-featured-media-col">
+            <span class="news-badge news-badge-red">Featured Story</span>
+            <img src="assets/graphics/news/gen_featured_star.png" width="680" height="480" decoding="async" alt="Star Insurance partnership handshake over tablet">
+          </div>
+          <div class="news-featured-content-col">
+            <p class="news-tag-partner">PARTNER UPDATE</p>
+            <h2 class="news-featured-title-main" id="news-featured-heading">Star Insurance Ghana joins Moovon SpreadPay™</h2>
+            <p class="news-featured-desc">Star Insurance Ghana is the latest insurer to join the Moovon SpreadPay™ network, giving more Ghanaians the flexibility to spread their annual motor insurance premium.</p>
+            <a href="#" class="news-featured-btn">
+              Read Full Story &rarr;
+            </a>
+          </div>
+          <div class="news-featured-partner-col">
+            <img src="assets/graphics/news/star_insurance_featured_logo.png" width="180" height="130" class="news-featured-partner-logo" alt="Star Insurance ...your solid partner">
+          </div>
+        </article>
+        <div class="news-carousel-dots" aria-hidden="true">
+          <span class="news-dot active"></span>
+          <span class="news-dot"></span>
+          <span class="news-dot"></span>
         </div>
-        <div class="news-featured-body">
-          <p class="news-eyebrow">Moovon Update</p>
-          <h2 class="news-featured-title" id="news-featured-heading">One annual premium. Flexible ways to pay - what's next for SpreadPay&trade;</h2>
-          <p class="news-featured-dek">A look at how Moovon SpreadPay&trade; connects customers, participating insurance companies and licensed, regulated financial institutions - and where the participating network is heading next. Insurance is provided and underwritten by participating insurance companies licensed by the National Insurance Commission of Ghana.</p>
-          <ul class="news-meta">
-            <li>Moovon Newsroom</li>
-            <li><time datetime="2026-08-06">6 August 2026</time></li>
-            <li>3 min read</li>
-          </ul>
-          <!-- Replace href with the published article URL -->
-          <a href="#" class="btn btn-primary news-featured-cta">
-            Read full story
-            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </a>
-        </div>
-      </article>
+      </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       Latest from Moovon & Our Partners
-       Category filtering is CSS-only (radio inputs + sibling selectors), so the
-       page needs no extra JavaScript. Add a card by copying one <article> and
-       setting its data-cat to moovon | partner | industry | motoring.
+       Latest from Moovon & Our Partners (Flyer 08)
        ========================================================================== -->
   <section class="news-section news-latest-section" aria-labelledby="news-latest-heading">
     <div class="container">
       <div class="section-header news-section-header">
-        <span class="section-tag">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
-          Fresh Off The Road
-        </span>
         <h2 class="section-title" id="news-latest-heading">Latest from Moovon &amp; Our Partners</h2>
-        <p class="section-subtitle">Product updates, participating partner announcements and stories from across the SpreadPay&trade; journey.</p>
       </div>
 
       <fieldset class="news-stream">
@@ -252,101 +240,88 @@
           <label class="news-chip" for="news-cat-motoring">Motoring</label>
         </div>
 
-        <div class="news-grid">
+        <div class="news-grid news-grid-5">
 
-          <!-- TEMPLATE CARD - duplicate this block for each article -->
+          <!-- Card 1 -->
           <article class="news-card" data-cat="moovon">
             <div class="news-card-media">
-              <span class="news-badge news-badge-navy">Moovon News</span>
-              <img class="news-media-img" src="assets/graphics/news/network-growth.svg" width="760" height="428" loading="lazy" decoding="async" alt="Illustration: a central Moovon chevron linked outward to eight participating partner nodes.">
+              <span class="news-badge news-badge-red">Moovon News</span>
+              <img class="news-media-img" src="assets/graphics/news/gen_50k_customers.png" width="760" height="428" loading="lazy" decoding="async" alt="50,000+ Customers and Counting in Ghana">
             </div>
             <div class="news-card-body">
-              <p class="news-card-date"><time datetime="2026-08-04">4 August 2026</time></p>
-              <h3 class="news-card-title">SpreadPay&trade; keeps growing across Ghana's motor insurance market</h3>
-              <p class="news-card-excerpt">Our participating network continues to grow as more insurance companies, brokers and authorised agents offer Moovon SpreadPay&trade;.</p>
+              <p class="news-card-date"><time datetime="2025-05-10">10 May 2025</time></p>
+              <h3 class="news-card-title">50,000+ Customers and Growing</h3>
+              <p class="news-card-excerpt">A huge thank you to our customers and partners for your trust as we keep moving together.</p>
               <a href="#" class="news-card-link">
-                Read more
+                Read More
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
             </div>
           </article>
-          <!-- /TEMPLATE CARD -->
 
+          <!-- Card 2 -->
           <article class="news-card" data-cat="partner">
             <div class="news-card-media">
-              <span class="news-badge news-badge-red">Partner News</span>
-              <img class="news-media-img" src="assets/graphics/news/partner-announcement.svg" width="760" height="428" loading="lazy" decoding="async" alt="Illustration: two overlapping circles joined by the Moovon chevron, marking a new participating partner.">
+              <span class="news-badge news-badge-navy">Partner News</span>
+              <img class="news-media-img" src="assets/graphics/news/gen_enterprise.png" width="760" height="428" loading="lazy" decoding="async" alt="Enterprise Insurance joins SpreadPay">
             </div>
             <div class="news-card-body">
-              <p class="news-card-date"><time datetime="2026-07-30">30 July 2026</time></p>
-              <h3 class="news-card-title">Partner announcement: a participating insurer joins SpreadPay&trade;</h3>
-              <p class="news-card-excerpt">Approved partner announcements appear here. Insurance is provided and underwritten by the participating insurance company.</p>
+              <p class="news-card-date"><time datetime="2025-05-06">06 May 2025</time></p>
+              <h3 class="news-card-title">Enterprise Insurance joins SpreadPay™</h3>
+              <p class="news-card-excerpt">Enterprise Insurance is now a participating insurer on the Moovon SpreadPay network.</p>
               <a href="#" class="news-card-link">
-                Read more
+                Read More
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
             </div>
           </article>
 
+          <!-- Card 3 -->
           <article class="news-card" data-cat="moovon">
             <div class="news-card-media">
-              <span class="news-badge news-badge-navy">Moovon News</span>
-              <img class="news-media-img" src="assets/graphics/news/know-before-you-agree.svg" width="760" height="428" loading="lazy" decoding="async" alt="Illustration: a statement of agreed items with each line ticked, and a confirmation check.">
+              <span class="news-badge news-badge-red">Moovon News</span>
+              <img class="news-media-img" src="assets/graphics/news/gen_faster_payments.png" width="760" height="428" loading="lazy" decoding="async" alt="Faster Payments mobile app screen">
             </div>
             <div class="news-card-body">
-              <p class="news-card-date"><time datetime="2026-07-24">24 July 2026</time></p>
-              <h3 class="news-card-title">Know before you agree: what customers see at sign-up</h3>
-              <p class="news-card-excerpt">Your applicable deposit, fees, payment schedule and total amount payable are presented before you complete a SpreadPay&trade; agreement.</p>
+              <p class="news-card-date"><time datetime="2025-05-02">02 May 2025</time></p>
+              <h3 class="news-card-title">New: Faster Payments on SpreadPay</h3>
+              <p class="news-card-excerpt">We've improved payment processing for an even smoother experience.</p>
               <a href="#" class="news-card-link">
-                Read more
+                Read More
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
             </div>
           </article>
 
+          <!-- Card 4 -->
+          <article class="news-card" data-cat="partner">
+            <div class="news-card-media">
+              <span class="news-badge news-badge-navy">Partner News</span>
+              <img class="news-media-img" src="assets/graphics/news/gen_priority.png" width="760" height="428" loading="lazy" decoding="async" alt="Priority Insurance headquarters building">
+            </div>
+            <div class="news-card-body">
+              <p class="news-card-date"><time datetime="2025-04-29">29 Apr 2025</time></p>
+              <h3 class="news-card-title">Priority Insurance Now Live</h3>
+              <p class="news-card-excerpt">Priority Insurance is now live on SpreadPay for eligible motor insurance policies.</p>
+              <a href="#" class="news-card-link">
+                Read More
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
           <article class="news-card" data-cat="industry">
             <div class="news-card-media">
               <span class="news-badge news-badge-navy">Industry Update</span>
-              <img class="news-media-img" src="assets/graphics/news/industry-update.svg" width="760" height="428" loading="lazy" decoding="async" alt="Illustration: a bar chart with a trend line rising to a highlighted final column.">
+              <img class="news-media-img" src="assets/graphics/news/gen_nic_update.png" width="760" height="428" loading="lazy" decoding="async" alt="NIC Digital Transformation shield">
             </div>
             <div class="news-card-body">
-              <p class="news-card-date"><time datetime="2026-07-17">17 July 2026</time></p>
-              <h3 class="news-card-title">Industry update: developments across Ghana's motor insurance market</h3>
-              <p class="news-card-excerpt">Short, factual summaries of wider market developments, always credited and linked to the original publisher.</p>
+              <p class="news-card-date"><time datetime="2025-04-24">24 Apr 2025</time></p>
+              <h3 class="news-card-title">NIC Digital Transformation Update</h3>
+              <p class="news-card-excerpt">NIC shares update on digital initiatives to strengthen the insurance industry.</p>
               <a href="#" class="news-card-link">
-                Read more
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="news-card" data-cat="motoring">
-            <div class="news-card-media">
-              <span class="news-badge news-badge-navy">Motoring</span>
-              <img class="news-media-img" src="assets/graphics/news/motoring-renewal.svg" width="760" height="428" loading="lazy" decoding="async" alt="Illustration: a calendar with one date highlighted, encircled by a renewal arrow.">
-            </div>
-            <div class="news-card-body">
-              <p class="news-card-date"><time datetime="2026-07-09">9 July 2026</time></p>
-              <h3 class="news-card-title">Renewing your annual cover without the last-minute rush</h3>
-              <p class="news-card-excerpt">Practical motoring guidance from Mr. Moovon on keeping your cover, your documents and your payments on track.</p>
-              <a href="#" class="news-card-link">
-                Read more
-                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-              </a>
-            </div>
-          </article>
-
-          <article class="news-card" data-cat="partner">
-            <div class="news-card-media">
-              <span class="news-badge news-badge-red">Partner News</span>
-              <img class="news-media-img" src="assets/graphics/news/network-growth.svg" width="760" height="428" loading="lazy" decoding="async" alt="Illustration: a central Moovon chevron linked outward to eight participating partner nodes.">
-            </div>
-            <div class="news-card-body">
-              <p class="news-card-date"><time datetime="2026-07-02">2 July 2026</time></p>
-              <h3 class="news-card-title">Broker and authorised agent network update</h3>
-              <p class="news-card-excerpt">Where eligible customers can ask for Moovon SpreadPay&trade; when they choose their preferred participating insurer.</p>
-              <a href="#" class="news-card-link">
-                Read more
+                Read More
                 <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
               </a>
             </div>
@@ -358,248 +333,199 @@
   </section>
 
   <!-- ==========================================================================
-       Around the Industry
-       Each item shows the source and publication date and links out to the
-       original publisher. Real entries must use:
-         href="https://publisher.example/article" target="_blank" rel="noopener noreferrer"
-       and keep the "opens in a new tab" note in the accessible name.
+       Around the Industry (Flyer 08)
        ========================================================================== -->
   <section class="news-section news-industry-section" aria-labelledby="news-industry-heading">
     <div class="container">
-      <div class="section-header news-section-header">
-        <span class="section-tag">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-          Around The Industry
-        </span>
-        <h2 class="section-title" id="news-industry-heading">Around the Industry</h2>
-        <p class="section-subtitle">Selected news from Ghana's insurance and motoring ecosystem. We show the source and the date and link you to the original publisher rather than reproduce the article.</p>
+      <div class="news-header-with-action">
+        <div>
+          <h2 class="section-title" id="news-industry-heading" style="margin-bottom:4px;">Around the Industry</h2>
+          <p class="section-subtitle" style="margin-bottom:0;">Selected news and developments from Ghana's insurance and motoring ecosystem.</p>
+        </div>
+        <a href="#" class="news-header-action-link">
+          View All Industry News
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <ul class="news-industry-list">
+      <div class="news-industry-cards-grid">
 
-        <!-- TEMPLATE ITEM - duplicate this <li> for each industry link -->
-        <li class="news-industry-item">
-          <a href="#" class="news-industry-link">
-            <span class="news-industry-icon" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 22h14a2 2 0 0 0 2-2V4H8v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2V9h4"/><path d="M12 8h4"/><path d="M12 12h4"/><path d="M12 16h2"/></svg>
+        <!-- Pub 1: Citi Business News -->
+        <a href="#" class="news-industry-card">
+          <div class="news-industry-card-head">
+            <span class="news-pub-avatar" style="background:#1B5BAA;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 22h16a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2H8a2 2 0 0 0-2 2v16a2 2 0 0 1-2 2Zm0 0a2 2 0 0 1-2-2v-9h4"/><path d="M10 6h8"/><path d="M10 10h8"/><path d="M10 14h5"/></svg>
             </span>
-            <span class="news-industry-body">
-              <span class="news-industry-meta">
-                <span class="news-industry-source">Industry publication</span>
-                <span aria-hidden="true">&middot;</span>
-                <time datetime="2026-08-05">5 August 2026</time>
-              </span>
-              <span class="news-industry-title">Industry update: what is changing across motor insurance distribution</span>
-            </span>
-            <span class="news-industry-ext" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </a>
-        </li>
-        <!-- /TEMPLATE ITEM -->
+            <div class="news-pub-meta">
+              <span class="news-pub-name">Citi Business News</span>
+              <span class="news-pub-date">10 May 2025</span>
+            </div>
+          </div>
+          <h3 class="news-industry-card-title">Ghana's non-life insurance industry records 17% growth in 2024 - NIC</h3>
+          <span class="news-industry-card-link">
+            Read Article &rarr;
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </a>
 
-        <li class="news-industry-item">
-          <a href="#" class="news-industry-link">
-            <span class="news-industry-icon" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+        <!-- Pub 2: Business & Financial Times -->
+        <a href="#" class="news-industry-card">
+          <div class="news-industry-card-head">
+            <span class="news-pub-avatar" style="background:#8A1538;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
             </span>
-            <span class="news-industry-body">
-              <span class="news-industry-meta">
-                <span class="news-industry-source">Regulatory publication</span>
-                <span aria-hidden="true">&middot;</span>
-                <time datetime="2026-07-29">29 July 2026</time>
-              </span>
-              <span class="news-industry-title">Guidance published for insurers licensed by the National Insurance Commission</span>
-            </span>
-            <span class="news-industry-ext" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </a>
-        </li>
+            <div class="news-pub-meta">
+              <span class="news-pub-name">Business &amp; Financial Times</span>
+              <span class="news-pub-date">08 May 2025</span>
+            </div>
+          </div>
+          <h3 class="news-industry-card-title">Motor insurance: What drivers should know before renewing</h3>
+          <span class="news-industry-card-link">
+            Read Article &rarr;
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </a>
 
-        <li class="news-industry-item">
-          <a href="#" class="news-industry-link">
-            <span class="news-industry-icon" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M4 16h16"/><path d="M4 16v-4l2-5h12l2 5v4"/><path d="M5 16v2"/><path d="M19 16v2"/><circle cx="8" cy="13" r="1"/><circle cx="16" cy="13" r="1"/></svg>
+        <!-- Pub 3: NIC Ghana -->
+        <a href="#" class="news-industry-card">
+          <div class="news-industry-card-head">
+            <span class="news-pub-avatar" style="background:#0E8A56;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
             </span>
-            <span class="news-industry-body">
-              <span class="news-industry-meta">
-                <span class="news-industry-source">Motoring publication</span>
-                <span aria-hidden="true">&middot;</span>
-                <time datetime="2026-07-21">21 July 2026</time>
-              </span>
-              <span class="news-industry-title">Road safety campaign returns for drivers and commercial fleets</span>
-            </span>
-            <span class="news-industry-ext" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </a>
-        </li>
+            <div class="news-pub-meta">
+              <span class="news-pub-name">NIC Ghana</span>
+              <span class="news-pub-date">06 May 2025</span>
+            </div>
+          </div>
+          <h3 class="news-industry-card-title">NIC issues guidance on claims settlement timelines</h3>
+          <span class="news-industry-card-link">
+            Read Article &rarr;
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </a>
 
-        <li class="news-industry-item">
-          <a href="#" class="news-industry-link">
-            <span class="news-industry-icon" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><rect x="2" y="5" width="20" height="14" rx="2.5"/><path d="M2 10h20"/><path d="M6 15h4"/></svg>
+        <!-- Pub 4: Graphic Online -->
+        <a href="#" class="news-industry-card">
+          <div class="news-industry-card-head">
+            <span class="news-pub-avatar" style="background:#D92D20;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M12 8h4v4h-4v4h-2a4 4 0 0 1-4-4v-2a4 4 0 0 1 4-4h2z"/></svg>
             </span>
-            <span class="news-industry-body">
-              <span class="news-industry-meta">
-                <span class="news-industry-source">Business publication</span>
-                <span aria-hidden="true">&middot;</span>
-                <time datetime="2026-07-14">14 July 2026</time>
-              </span>
-              <span class="news-industry-title">Digital payment adoption continues to rise among Ghanaian consumers</span>
-            </span>
-            <span class="news-industry-ext" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </a>
-        </li>
+            <div class="news-pub-meta">
+              <span class="news-pub-name">Graphic Online</span>
+              <span class="news-pub-date">03 May 2025</span>
+            </div>
+          </div>
+          <h3 class="news-industry-card-title">Road safety: NRSA launches 2025 campaign for drivers</h3>
+          <span class="news-industry-card-link">
+            Read Article &rarr;
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </a>
 
-        <li class="news-industry-item">
-          <a href="#" class="news-industry-link">
-            <span class="news-industry-icon" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M3 3v18h18"/><polyline points="7 15 11 10 14 13 20 6"/></svg>
+        <!-- Pub 5: Joy Business -->
+        <a href="#" class="news-industry-card">
+          <div class="news-industry-card-head">
+            <span class="news-pub-avatar" style="background:#0B2265;">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4.9 19.1C1 15.2 1 8.8 4.9 4.9"/><path d="M7.8 16.2c-2.3-2.3-2.3-6.1 0-8.5"/><circle cx="12" cy="12" r="2"/><path d="M16.2 7.8c2.3 2.3 2.3 6.1 0 8.5"/><path d="M19.1 4.9C23 8.8 23 15.2 19.1 19.1"/></svg>
             </span>
-            <span class="news-industry-body">
-              <span class="news-industry-meta">
-                <span class="news-industry-source">Trade publication</span>
-                <span aria-hidden="true">&middot;</span>
-                <time datetime="2026-07-07">7 July 2026</time>
-              </span>
-              <span class="news-industry-title">Market report: motor insurance uptake across West Africa</span>
-            </span>
-            <span class="news-industry-ext" aria-hidden="true">
-              <svg aria-hidden="true" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" focusable="false"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            </span>
-          </a>
-        </li>
+            <div class="news-pub-meta">
+              <span class="news-pub-name">Joy Business</span>
+              <span class="news-pub-date">01 May 2025</span>
+            </div>
+          </div>
+          <h3 class="news-industry-card-title">Digital payment adoption rising in Ghana's insurance sector</h3>
+          <span class="news-industry-card-link">
+            Read Article &rarr;
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          </span>
+        </a>
 
-      </ul>
-
-      <p class="news-industry-disclaimer">External links are provided for information only. Linked publications are independent of Moovon, and Moovon is not responsible for third-party content.</p>
+      </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       Latest from Mr. Moovon - short video / explainer cards
-       TEMPLATE: duplicate one <article> per video and set the real href.
+       The Latest from Mr. Moovon (Flyer 08)
        ========================================================================== -->
   <section class="news-section news-video-section" aria-labelledby="news-video-heading">
     <div class="container">
-      <div class="section-header news-section-header">
-        <span class="section-tag">
-          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><polygon points="10 8 16 12 10 16 10 8"/><circle cx="12" cy="12" r="10"/></svg>
-          Watch &amp; Learn
-        </span>
-        <h2 class="section-title" id="news-video-heading">Latest from Mr. Moovon</h2>
-        <p class="section-subtitle">Short explainers on how SpreadPay&trade; works, plus motoring tips from Mr. Moovon.</p>
+      <div class="news-header-with-action">
+        <div>
+          <h2 class="section-title" id="news-video-heading" style="margin-bottom:0;">The Latest from Mr. Moovon</h2>
+        </div>
+        <a href="#" class="news-header-action-link">
+          More Videos on Our Channels
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
       </div>
 
-      <div class="news-video-grid">
+      <div class="news-video-grid-5">
 
-        <!-- TEMPLATE VIDEO CARD -->
+        <!-- Video 1 -->
         <article class="news-video-card">
           <a href="#" class="news-video-link">
             <span class="news-video-thumb">
-              <span class="news-video-play">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
-              </span>
-              <span class="news-video-duration">0:58</span>
+              <img src="assets/graphics/news/video_upfront.png" class="news-video-card-thumb-img" alt="Why pay more upfront?">
             </span>
             <span class="news-video-body">
               <span class="news-video-title">Why pay more upfront?</span>
-              <span class="news-video-desc">The more you pay upfront, the less you have left to spread.</span>
+              <span class="news-video-desc">Mr. Moovon explains how SpreadPay gives you the flexibility you need.</span>
             </span>
           </a>
         </article>
-        <!-- /TEMPLATE VIDEO CARD -->
 
+        <!-- Video 2 -->
         <article class="news-video-card">
           <a href="#" class="news-video-link">
             <span class="news-video-thumb">
-              <span class="news-video-play">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
-              </span>
-              <span class="news-video-duration">1:12</span>
+              <img src="assets/graphics/news/video_protected.png" class="news-video-card-thumb-img" alt="What does SpreadPay Protected™ mean?">
             </span>
             <span class="news-video-body">
-              <span class="news-video-title">What does SpreadPay Protected&trade; mean?</span>
-              <span class="news-video-desc">Your insurer provides and underwrites the policy. Mr. Moovon explains who does what.</span>
+              <span class="news-video-title">What does SpreadPay Protected™ mean?</span>
+              <span class="news-video-desc">Here's how we help protect your journey, every step of the way.</span>
             </span>
           </a>
         </article>
 
+        <!-- Video 3 -->
         <article class="news-video-card">
           <a href="#" class="news-video-link">
             <span class="news-video-thumb">
-              <span class="news-video-play">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
-              </span>
-              <span class="news-video-duration">0:52</span>
+              <img src="assets/graphics/news/video_4weeks.png" class="news-video-card-thumb-img" alt="Clear your balance within 4 weeks">
             </span>
             <span class="news-video-body">
-              <span class="news-video-title">Clearing your balance within the 4-week period</span>
-              <span class="news-video-desc">Clear the applicable outstanding balance within the relevant 4-week payment period and no late-payment penalty applies.</span>
+              <span class="news-video-title">Clear your balance within 4 weeks</span>
+              <span class="news-video-desc">Pay off your balance on time and avoid any late-payment penalties.</span>
             </span>
           </a>
         </article>
 
+        <!-- Video 4 -->
         <article class="news-video-card">
           <a href="#" class="news-video-link">
             <span class="news-video-thumb">
-              <span class="news-video-play">
-                <svg aria-hidden="true" viewBox="0 0 24 24" fill="currentColor" focusable="false"><path d="M8 5.5v13l11-6.5-11-6.5z"/></svg>
-              </span>
-              <span class="news-video-duration">1:08</span>
+              <img src="assets/graphics/news/video_tiers.png" class="news-video-card-thumb-img" alt="Essential, Flex or Fixed?">
             </span>
             <span class="news-video-body">
               <span class="news-video-title">Essential, Flex or Fixed?</span>
-              <span class="news-video-desc">A quick tour of the SpreadPay&trade; options and who each one is designed for.</span>
+              <span class="news-video-desc">Choose the SpreadPay option that works for you.</span>
             </span>
           </a>
         </article>
 
-      </div>
+        <!-- Video 5 -->
+        <article class="news-video-card">
+          <a href="#" class="news-video-link">
+            <span class="news-video-thumb">
+              <img src="assets/graphics/news/video_partner.png" class="news-video-card-thumb-img" alt="Meet our newest participating partner">
+            </span>
+            <span class="news-video-body">
+              <span class="news-video-title">Meet our newest participating partner</span>
+              <span class="news-video-desc">We're excited to welcome another insurer to the SpreadPay network.</span>
+            </span>
+          </a>
+        </article>
 
-      <p class="news-video-more">
-        <a href="#follow-mr-moovon" class="news-inline-link">
-          More videos on Mr. Moovon's channels
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-        </a>
-      </p>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Follow Mr. Moovon (compact social section - R10)
-       ========================================================================== -->
-  <section class="news-section news-follow-section" id="follow-mr-moovon" aria-labelledby="news-follow-heading">
-    <div class="container">
-      <div class="news-follow">
-        <img src="assets/graphics/standing_mr_moovon_section.png?v=2.5"
-             alt="Mr. Moovon with his arms folded"
-             width="197" height="192" class="news-follow-img" loading="lazy" decoding="async">
-        <div class="news-follow-copy">
-          <h2 class="news-follow-title" id="news-follow-heading">Follow Mr. Moovon</h2>
-          <p class="news-follow-text">Product updates, partner stories, motoring education and SpreadPay&trade; explainers.</p>
-        </div>
-        <ul class="footer-social news-follow-social" aria-label="Moovon on social media">
-          <li><a href="https://web.facebook.com/profile.php?id=61592832895204" target="_blank" rel="noopener" aria-label="Moovon on Facebook (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg>
-          </a></li>
-          <li><a href="https://www.instagram.com/moovon.insure/" target="_blank" rel="noopener" aria-label="Moovon on Instagram (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-          </a></li>
-          <li><a href="https://www.tiktok.com/@moovon.insure" target="_blank" rel="noopener" aria-label="Moovon on TikTok (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.6 2h-3.05v13.2a2.4 2.4 0 1 1-2.4-2.4c.16 0 .32.02.47.05v-3.1a5.6 5.6 0 0 0-.47-.02 5.5 5.5 0 1 0 5.5 5.5V8.9a7.06 7.06 0 0 0 4.1 1.32V7.13a4.05 4.05 0 0 1-2.9-1.35A4.1 4.1 0 0 1 16.6 2z"/></svg>
-          </a></li>
-          <li><a href="https://www.linkedin.com/company/135594834" target="_blank" rel="noopener" aria-label="Moovon on LinkedIn (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.03-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg>
-          </a></li>
-          <li><a href="https://wa.me/233593293040" target="_blank" rel="noopener" aria-label="Chat with Mr. Moovon's HelpDesk on WhatsApp (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2C6.6 2 2.2 6.4 2.2 11.84c0 1.74.46 3.44 1.32 4.94L2.1 22l5.36-1.4a9.8 9.8 0 0 0 4.58 1.16h.01c5.43 0 9.84-4.4 9.84-9.84S17.47 2 12.04 2zm0 17.96h-.01a8.2 8.2 0 0 1-4.16-1.14l-.3-.18-3.18.83.85-3.1-.2-.32a8.16 8.16 0 0 1-1.25-4.36c0-4.51 3.68-8.18 8.2-8.18a8.18 8.18 0 0 1 0 16.35zm4.5-6.12c-.25-.13-1.46-.72-1.69-.8-.22-.08-.39-.12-.55.12-.16.25-.63.8-.77.96-.14.17-.28.19-.53.06-.24-.12-1.04-.38-1.98-1.22-.73-.65-1.22-1.46-1.37-1.7-.14-.25-.01-.38.11-.5.11-.11.25-.29.37-.43.12-.15.16-.25.25-.41.08-.17.04-.31-.02-.44-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47c-.16 0-.43.06-.65.31-.22.25-.85.83-.85 2.03s.87 2.35.99 2.51c.12.17 1.71 2.62 4.15 3.67.58.25 1.03.4 1.39.51.58.19 1.11.16 1.53.1.47-.07 1.46-.6 1.66-1.18.21-.58.21-1.07.15-1.18-.06-.11-.22-.17-.47-.29z"/></svg>
-          </a></li>
-        </ul>
       </div>
     </div>
   </section>
@@ -614,8 +540,11 @@
         <p class="cta-sub">Choose your preferred participating insurer and ask for Moovon SpreadPay&trade;.</p>
       </div>
       <div class="cta-buttons-group">
-        <button type="button" onclick="openPartnerModal()" class="btn btn-find-partner">Get SpreadPay</button>
-        <a href="/how-it-works" class="btn btn-signin news-cta-secondary">How SpreadPay Works</a>
+        <button type="button" onclick="openPartnerModal()" class="btn btn-find-partner">Find a Participating Partner</button>
+        <a href="https://wa.me/233593293040" target="_blank" rel="noopener" class="btn btn-signin news-cta-secondary" aria-label="Chat with Mr. Moovon's HelpDesk on WhatsApp (opens in a new tab)">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false" style="margin-right:6px; flex-shrink:0;"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-.01 0-.01 0 0 0-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.02.79.81-2.95-.19-.3a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.53 11.53c-.25-.13-1.47-.73-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.38-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.68 4.24 3.76.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
+          Chat on WhatsApp
+        </a>
       </div>
     </div>
   </section>

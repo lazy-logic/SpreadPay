@@ -162,69 +162,70 @@
   <main id="main">
 
   <!-- ==========================================================================
-       Page Hero — spec 06
+       Page Hero — Frequently Asked Questions (spec 06)
        ========================================================================== -->
-  <section class="page-hero scene-hero">
+  <section class="page-hero scene-hero scene-hero--cutout">
     <div class="scene-hero-figure">
-      <img src="assets/graphics/hero/faqs.webp" width="1500" height="783" fetchpriority="high"
+      <img src="assets/graphics/hero/faqs.webp" width="1200" height="837" fetchpriority="high"
            alt="Mr. Moovon raising a finger beside a customer checking her phone, a car and the city skyline behind them.">
     </div>
     <div class="container">
       <div class="scene-hero-copy">
+        <h1 class="page-hero-title">Frequently Asked<br><span>Questions</span></h1>
+        <p class="page-hero-subtitle">Everything you need to know about Moovon SpreadPay™ and how we make annual motor insurance more accessible for everyone.</p>
 
-      <div class="page-hero-badge">
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
-        Frequently Asked Questions
-      </div>
-      <h1 class="page-hero-title">Questions? <span>Mr. Moovon Can Help.</span></h1>
-      <p class="page-hero-subtitle">Everything you need to understand your SpreadPay™ journey — from choosing your insurer to making your agreed payments.</p>
+        <div class="faq-hero-search-box">
+          <svg class="faqs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          <label class="sr-only" for="faqSearchInput">Search a question</label>
+          <input type="search" id="faqSearchInput" class="form-control faq-hero-input" placeholder="Search a question..." autocomplete="off">
+        </div>
       </div>
     </div>
   </section>
 
   <!-- ==========================================================================
-       Assurance Strip — carries the role distinctions up front (R1, R3, R4)
+       Assurance Strip — 4 cards matching flyer (06-faqs.jpeg)
        ========================================================================== -->
   <section class="faqs-assure-section" aria-label="How SpreadPay is structured">
     <div class="container">
       <div class="faqs-assure">
         <div class="faqs-assure-item">
           <span class="faqs-assure-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
           </span>
           <div class="faqs-assure-copy">
-            <p class="faqs-assure-title">Licensed insurers</p>
-            <p class="faqs-assure-text">Your policy is provided and underwritten by a participating insurance company licensed by the National Insurance Commission of Ghana.</p>
-          </div>
-        </div>
-
-        <div class="faqs-assure-item">
-          <span class="faqs-assure-icon faqs-icon-red">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 21h18"/><path d="M5 21V10l7-5 7 5v11"/><path d="M10 21v-6h4v6"/></svg>
-          </span>
-          <div class="faqs-assure-copy">
-            <p class="faqs-assure-title">Regulated financing partners</p>
-            <p class="faqs-assure-text">Premium financing is provided in partnership with licensed and regulated financial institutions.</p>
+            <p class="faqs-assure-title">Regulated &amp; Compliant</p>
+            <p class="faqs-assure-text">We operate under the regulation of the National Insurance Commission (NIC).</p>
           </div>
         </div>
 
         <div class="faqs-assure-item">
           <span class="faqs-assure-icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><polyline points="16 11 18 13 22 9"/></svg>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/><circle cx="12" cy="16" r="1"/></svg>
           </span>
           <div class="faqs-assure-copy">
-            <p class="faqs-assure-title">Your choice, always</p>
-            <p class="faqs-assure-text">You choose your insurer. Moovon does not choose, rank or recommend an insurance company for you.</p>
+            <p class="faqs-assure-title">Secure &amp; Trusted</p>
+            <p class="faqs-assure-text">Your data and payments are protected with industry-leading security.</p>
           </div>
         </div>
 
         <div class="faqs-assure-item">
-          <span class="faqs-assure-icon faqs-icon-red">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+          <span class="faqs-assure-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18v-6a9 9 0 0 1 18 0v6"/><path d="M21 19a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3z"/><path d="M3 19a2 2 0 0 0 2 2h1a2 2 0 0 0 2-2v-3a2 2 0 0 0-2-2H3z"/></svg>
           </span>
           <div class="faqs-assure-copy">
-            <p class="faqs-assure-title">Real help</p>
-            <p class="faqs-assure-text">Mr. Moovon's HelpDesk answers SpreadPay account and payment questions on WhatsApp.</p>
+            <p class="faqs-assure-title">Customer First</p>
+            <p class="faqs-assure-text">We&rsquo;re here to make your insurance payment journey simple and stress-free.</p>
+          </div>
+        </div>
+
+        <div class="faqs-assure-item">
+          <span class="faqs-assure-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          </span>
+          <div class="faqs-assure-copy">
+            <p class="faqs-assure-title">Need Help?</p>
+            <p class="faqs-assure-text">Chat with Mr. Moovon's HelpDesk on WhatsApp anytime.</p>
           </div>
         </div>
       </div>
@@ -298,7 +299,7 @@
             <p class="faqs-side-title">Still stuck?</p>
             <p class="faqs-side-text">Mr. Moovon's HelpDesk can help with your SpreadPay journey, account and payments.</p>
             <a href="https://wa.me/233593293040" target="_blank" rel="noopener" class="btn btn-primary">
-              <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+              <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-.01 0-.01 0 0 0-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.02.79.81-2.95-.19-.3a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.53 11.53c-.25-.13-1.47-.73-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.38-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.68 4.24 3.76.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
               Chat on WhatsApp
             </a>
           </div>
@@ -307,9 +308,9 @@
         <!-- Search + accordion column -->
         <div class="faq-accordion-group">
           <div class="faqs-search">
-            <label class="sr-only" for="faqSearchInput">Search frequently asked questions</label>
+            <label class="sr-only" for="faqSearchInputBody">Search frequently asked questions</label>
             <svg class="faqs-search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-            <input type="search" id="faqSearchInput" class="form-control" placeholder="Search by keyword — deposit, insurer, claims…" autocomplete="off">
+            <input type="search" id="faqSearchInputBody" class="form-control faq-search-input" placeholder="Search by keyword — deposit, insurer, claims…" autocomplete="off">
           </div>
 
           <div class="faqs-tag-row">
@@ -437,9 +438,8 @@
               </button>
             </h3>
             <div class="faq-answer faqs-answer">
-              <p>You pay an agreed deposit — the applicable upfront amount presented as part of your SpreadPay™ arrangement.</p>
-              <p>For <strong>SpreadPay Essential™</strong> the minimum upfront payment starts <strong>from GH₵125</strong>, and you are welcome to pay a larger deposit. The more you pay upfront, the less you have left to spread.</p>
-              <p class="faqs-answer-note">Your applicable deposit, fees, payment schedule and total amount payable should be presented to you before you complete the relevant SpreadPay™ agreement.</p>
+              <p>You pay an agreed deposit &mdash; the applicable upfront amount presented as part of your SpreadPay&trade; arrangement. The more you pay upfront, the less you have left to spread.</p>
+              <p class="faqs-answer-note">Your applicable deposit, fees, payment schedule and total amount payable will be clearly presented to you before you complete your SpreadPay&trade; agreement.</p>
             </div>
           </div>
 
@@ -452,14 +452,8 @@
               </button>
             </h3>
             <div class="faq-answer faqs-answer">
-              <p>Your payments depend on your eligible annual premium, the deposit you pay and the arrangement you agree:</p>
-              <ul>
-                <li><strong>SpreadPay Essential™</strong> — annual premiums of GH₵330–GH₵1,500: pay your agreed deposit and spread the remaining balance over up to 3 months.</li>
-                <li><strong>SpreadPay Flex™</strong> — annual premiums of GH₵1,501–GH₵15,000: eligible customers can spread payments over up to 6 months, subject to applicable terms.</li>
-                <li><strong>SpreadPay Fixed™</strong> — eligible larger premiums: structured payment arrangements are available for eligible customers, subject to applicable terms.</li>
-              </ul>
-              <p>The figures that apply to you are calculated on your own arrangement and set out in your SpreadPay™ agreement, so you can see the full picture before you commit.</p>
-              <p><a href="/products">See the flexible ways to pay</a></p>
+              <p>Your payments depend on your eligible annual premium, the deposit you pay and the arrangement agreed with your participating insurer and partner financial institution.</p>
+              <p>The exact figures, schedule and terms that apply to you are calculated transparently and presented in your SpreadPay&trade; agreement, so you have complete clarity before you agree.</p>
             </div>
           </div>
 
@@ -600,7 +594,7 @@
 
           <div class="faqs-help-routes">
             <a href="https://wa.me/233593293040" target="_blank" rel="noopener" class="faqs-help-route">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8v.5z"/></svg>
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><path d="M12.04 2c-5.46 0-9.91 4.45-9.91 9.91 0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38c1.45.79 3.08 1.21 4.74 1.21h.01c5.46 0 9.91-4.45 9.91-9.91 0-2.65-1.03-5.14-2.9-7.01A9.816 9.816 0 0 0 12.04 2m.01 1.67c2.2 0 4.26.86 5.82 2.42a8.225 8.225 0 0 1 2.41 5.83c0 4.54-3.7 8.24-8.24 8.24-.01 0-.01 0 0 0-1.42 0-2.82-.37-4.06-1.08l-.29-.17-3.02.79.81-2.95-.19-.3a8.19 8.19 0 0 1-1.26-4.36c0-4.54 3.7-8.24 8.24-8.24m4.53 11.53c-.25-.13-1.47-.73-1.7-.81-.23-.08-.39-.13-.56.13-.17.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.13-1.05-.39-2-1.23-.74-.66-1.24-1.48-1.38-1.73-.15-.25-.02-.38.11-.51.11-.11.25-.29.37-.44.13-.14.17-.25.25-.42.08-.17.04-.31-.02-.44-.06-.13-.56-1.35-.77-1.85-.2-.49-.41-.42-.56-.43h-.48c-.17 0-.44.06-.66.31-.23.25-.87.85-.87 2.07 0 1.22.89 2.4 1.01 2.57.13.17 1.75 2.68 4.24 3.76.59.26 1.05.41 1.41.53.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.08.15-1.18-.07-.1-.23-.17-.48-.29z"/></svg>
               <h3 class="faqs-help-route-title">Chat on WhatsApp</h3>
               <p class="faqs-help-route-text">Mr. Moovon's HelpDesk, our primary support channel.</p>
             </a>
@@ -618,34 +612,6 @@
             </a>
           </div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ==========================================================================
-       Follow Mr. Moovon (R10)
-       ========================================================================== -->
-  <section class="faqs-follow-section">
-    <div class="container">
-      <div class="faqs-follow">
-        <div class="faqs-follow-copy">
-          <h2 class="faqs-follow-title">Follow Mr. Moovon</h2>
-          <p class="faqs-follow-text">Motoring tips, SpreadPay™ explainers, new participating partners and product updates that keep you moving.</p>
-        </div>
-        <ul class="faqs-follow-links" aria-label="Moovon on social media">
-          <li><a href="https://web.facebook.com/profile.php?id=61592832895204" target="_blank" rel="noopener" aria-label="Moovon on Facebook (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M22 12.06C22 6.5 17.52 2 12 2S2 6.5 2 12.06c0 5 3.66 9.15 8.44 9.94v-7.03H7.9v-2.9h2.54V9.85c0-2.51 1.49-3.9 3.77-3.9 1.09 0 2.24.2 2.24.2v2.46h-1.26c-1.24 0-1.63.78-1.63 1.57v1.88h2.78l-.45 2.9h-2.33V22c4.78-.79 8.44-4.93 8.44-9.94z"/></svg>
-          </a></li>
-          <li><a href="https://www.linkedin.com/company/135594834" target="_blank" rel="noopener" aria-label="Moovon on LinkedIn (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9h4v12H3zM9 9h3.8v1.7h.05c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.78 2.65 4.78 6.1V21h-4v-5.5c0-1.31-.03-3-1.83-3-1.83 0-2.11 1.43-2.11 2.9V21H9z"/></svg>
-          </a></li>
-          <li><a href="https://www.instagram.com/moovon.insure/" target="_blank" rel="noopener" aria-label="Moovon on Instagram (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="2.5" y="2.5" width="19" height="19" rx="5.5"/><circle cx="12" cy="12" r="4.2"/><circle cx="17.6" cy="6.4" r="1.1" fill="currentColor" stroke="none"/></svg>
-          </a></li>
-          <li><a href="https://www.tiktok.com/@moovon.insure" target="_blank" rel="noopener" aria-label="Moovon on TikTok (opens in a new tab)">
-            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" focusable="false"><path d="M16.6 2h-3.05v13.2a2.4 2.4 0 1 1-2.4-2.4c.16 0 .32.02.47.05v-3.1a5.6 5.6 0 0 0-.47-.02 5.5 5.5 0 1 0 5.5 5.5V8.9a7.06 7.06 0 0 0 4.1 1.32V7.13a4.05 4.05 0 0 1-2.9-1.35A4.1 4.1 0 0 1 16.6 2z"/></svg>
-          </a></li>
-        </ul>
       </div>
     </div>
   </section>
