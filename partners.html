@@ -23,6 +23,24 @@
   <link rel="icon" type="image/png" href="assets/brand/icon-trans.png">
   <link rel="canonical" href="https://moovon.insure/partners">
   <link rel="stylesheet" href="styles.css?v=2.5">
+  <!-- Meta Pixel Code -->
+  <script>
+  !function(f,b,e,v,n,t,s)
+  {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+  n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+  if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+  n.queue=[];t=b.createElement(e);t.async=!0;
+  t.src=v;s=b.getElementsByTagName(e)[0];
+  s.parentNode.insertBefore(t,s)}(window,document,'script',
+  'https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '1037910072177909'); 
+  fbq('track', 'PageView');
+  </script>
+  <noscript>
+  <img height="1" width="1" 
+  src="https://www.facebook.com/tr?id=1037910072177909&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to main content</a>
@@ -216,13 +234,6 @@
           <label class="sr-only" for="partnerSearchInput">Search participating insurance partners by name</label>
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><line x1="20" y1="20" x2="16.65" y2="16.65"/></svg>
           <input type="search" id="partnerSearchInput" class="partner-search-field" placeholder="Search participating insurance partners...">
-        </div>
-
-        <div class="partner-category-tabs" role="group" aria-label="Filter partners by motor insurance category">
-          <button type="button" class="partner-cat-tab active" data-category="all" aria-pressed="true">All</button>
-          <button type="button" class="partner-cat-tab" data-category="private" aria-pressed="false">Private Motor</button>
-          <button type="button" class="partner-cat-tab" data-category="commercial" aria-pressed="false">Commercial Motor</button>
-          <button type="button" class="partner-cat-tab" data-category="fleet" aria-pressed="false">Fleet</button>
         </div>
       </div>
 
