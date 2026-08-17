@@ -15,5 +15,6 @@ Thumbs.db
 # Scratch & Temporary files
 *.tmp
 .tempmediaStorage/
+*.zip
 
 .vercel
