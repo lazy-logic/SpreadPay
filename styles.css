@@ -10104,3 +10104,131 @@ body.mobile-drawer-open {
 }
 
 /* ==== END PAGE FRAGMENTS ==== */
+
+/* ==========================================================================
+   Scene Hero — light hero with the page's own upscaled illustration bleeding
+   in from the right and live HTML copy on the left (the homepage treatment,
+   applied per page).
+   ========================================================================== */
+.page-hero.scene-hero {
+  background: linear-gradient(180deg, #FFFFFF 0%, var(--primary-navy-soft) 100%);
+  color: var(--primary-navy-dark);
+  text-align: left;
+  padding: 0;
+  overflow: hidden;
+}
+
+.page-hero.scene-hero::before { display: none; }
+
+.page-hero.scene-hero .container {
+  position: relative;
+  z-index: 2;
+  min-height: 468px;
+  display: flex;
+  align-items: center;
+}
+
+.scene-hero-copy {
+  max-width: 560px;
+  padding: 50px 0;
+}
+
+/* The artwork is anchored to the section (not the container) so it bleeds to
+   the viewport's right edge. Its own left edge is feathered to transparent. */
+.scene-hero-figure {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(64%, 1040px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+.scene-hero-figure img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left 18%;
+  display: block;
+}
+
+.page-hero.scene-hero .page-hero-title {
+  color: var(--primary-navy-dark);
+}
+
+.page-hero.scene-hero .page-hero-title span {
+  color: var(--accent-red);
+}
+
+.page-hero.scene-hero .page-hero-subtitle {
+  color: var(--text-muted);
+}
+
+/* Any per-page lead line that was white for the dark hero. */
+.page-hero.scene-hero .products-hero-lead,
+.page-hero.scene-hero .about-hero-lead,
+.page-hero.scene-hero .hiw-hero-lead {
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+.page-hero.scene-hero .page-hero-badge {
+  background: var(--primary-navy-soft);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+  animation: none;
+}
+
+@media (max-width: 900px) {
+  .page-hero.scene-hero .container {
+    flex-direction: column-reverse;
+    align-items: stretch;
+    min-height: 0;
+  }
+
+  /* On narrow screens the artwork becomes a banner above the copy. */
+  .scene-hero-figure {
+    position: relative;
+    width: 100%;
+    margin: 0;
+    height: 210px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+  }
+
+  .scene-hero-figure img {
+    object-position: center right;
+  }
+
+  .scene-hero-copy {
+    max-width: none;
+    padding: 26px 0 8px;
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-hero-figure {
+    height: 168px;
+  }
+}
+
+/* Per-page hero copy that was white for the old dark hero must darken on the
+   light scene hero. */
+.page-hero.scene-hero .partners-hero-note,
+.page-hero.scene-hero .for-partners-hero-note,
+.page-hero.scene-hero .news-hero-strapline,
+.page-hero.scene-hero .contact-hero-note {
+  color: var(--text-muted);
+}
+
+.page-hero.scene-hero .about-hero-kicker {
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+.page-hero.scene-hero .partners-hero-type {
+  background: var(--primary-navy-soft);
+  border: 1px solid var(--border-subtle);
+  color: var(--primary-navy);
+}
