@@ -4333,7 +4333,8 @@ body.mobile-drawer-open {
 .hiw-keyline-section {
   position: relative;
   z-index: 2;
-  margin-top: -34px;
+  margin-top: 36px;
+  margin-bottom: 24px;
 }
 
 .hiw-keyline {
@@ -4390,11 +4391,10 @@ body.mobile-drawer-open {
   max-width: 84ch;
 }
 
-/* Matches the 820px breakpoint where .page-hero drops to 32px of bottom
-   padding, so the card never rides up over the hero CTAs. */
 @media (max-width: 860px) {
   .hiw-keyline-section {
-    margin-top: -24px;
+    margin-top: 32px;
+    margin-bottom: 20px;
   }
 }
 
@@ -10809,7 +10809,7 @@ body.mobile-drawer-open {
 
   .scene-hero-copy {
     max-width: none;
-    padding: 26px 0 8px;
+    padding: 26px 0 36px;
   }
 }
 
@@ -10863,28 +10863,11 @@ body.mobile-drawer-open {
 @media (max-width: 900px) {
   .scene-hero.scene-hero--cutout .scene-hero-figure {
     width: 100%;
-    height: 260px;
-    background: transparent;
-    border-radius: 0;
-    overflow: visible;
-    display: flex;
-    align-items: flex-end;
-    justify-content: center;
-    margin: 0 auto;
+    height: 240px;
+    background: var(--primary-navy-soft);
   }
 
   .scene-hero.scene-hero--cutout .scene-hero-figure img {
-    width: auto;
-    max-width: 100%;
-    height: 100%;
-    max-height: 100%;
-    object-fit: contain;
     object-position: center bottom;
-  }
-}
-
-@media (max-width: 600px) {
-  .scene-hero.scene-hero--cutout .scene-hero-figure {
-    height: 240px;
   }
 }
