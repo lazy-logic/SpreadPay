@@ -10863,11 +10863,28 @@ body.mobile-drawer-open {
 @media (max-width: 900px) {
   .scene-hero.scene-hero--cutout .scene-hero-figure {
     width: 100%;
-    height: 240px;
-    background: var(--primary-navy-soft);
+    height: 260px;
+    background: transparent;
+    border-radius: 0;
+    overflow: visible;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin: 0 auto;
   }
 
   .scene-hero.scene-hero--cutout .scene-hero-figure img {
+    width: auto;
+    max-width: 100%;
+    height: 100%;
+    max-height: 100%;
+    object-fit: contain;
     object-position: center bottom;
+  }
+}
+
+@media (max-width: 600px) {
+  .scene-hero.scene-hero--cutout .scene-hero-figure {
+    height: 240px;
   }
 }
