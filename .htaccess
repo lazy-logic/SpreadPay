@@ -2,35 +2,37 @@
 # MOOVON SpreadPay™ - cPanel Production Apache Configuration (moovon.insure)
 # ==============================================================================
 
-# Enable Rewrite Engine
+# Prevent Directory Listing
+Options -Indexes -MultiViews
+
+# Set Default Index File
+DirectoryIndex index.html index.htm
+
 <IfModule mod_rewrite.c>
   RewriteEngine On
   RewriteBase /
 
   # ----------------------------------------------------------------------------
-  # 1. Force HTTPS
+  # 1. Cloudflare / HTTPS Redirect (Safe with Cloudflare Flexible or Full SSL)
   # ----------------------------------------------------------------------------
   RewriteCond %{HTTPS} !=on
-  RewriteCond %{HTTP_HOST} ^(www\.)?moovon\.insure$ [NC]
-  RewriteRule ^ https://moovon.insure%{REQUEST_URI} [L,R=301]
+  RewriteCond %{HTTP:X-Forwarded-Proto} !https
+  RewriteCond %{HTTP:CF-Visitor} '"scheme":"http"'
+  RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
 
   # ----------------------------------------------------------------------------
-  # 2. Redirect /page.html to clean URL /page (301 Permanent Redirect)
+  # 2. Redirect explicit .html requests to clean URLs (exclude index)
   # ----------------------------------------------------------------------------
-  RewriteCond %{THE_REQUEST} ^[A-Z]{3,}\s/+([^.]+)\.html[\s?] [NC]
-  RewriteRule ^ /%1 [R=301,L]
+  RewriteCond %{THE_REQUEST} \s/+(.+?)\.html[\s?] [NC]
+  RewriteCond %{THE_REQUEST} !/index\.html [NC]
+  RewriteRule ^ %1 [R=301,L]
 
   # ----------------------------------------------------------------------------
-  # 3. Rewrite clean URL /page to /page.html internally (no .html extension in address bar)
+  # 3. Clean URL Routing: Serve .html file if it exists
   # ----------------------------------------------------------------------------
   RewriteCond %{REQUEST_FILENAME} !-d
   RewriteCond %{REQUEST_FILENAME}.html -f
   RewriteRule ^([^/]+)/?$ $1.html [L]
-
-  # Fallback for sub-routes
-  RewriteCond %{REQUEST_FILENAME} !-d
-  RewriteCond %{DOCUMENT_ROOT}/$1.html -f
-  RewriteRule ^(.+)/?$ $1.html [L]
 
 </IfModule>
 
@@ -59,21 +61,21 @@
 </IfModule>
 
 # ------------------------------------------------------------------------------
-# 6. Browser Caching (Expires & Cache-Control)
+# 6. Browser Caching
 # ------------------------------------------------------------------------------
 <IfModule mod_expires.c>
   ExpiresActive On
   ExpiresDefault "access plus 1 month"
 
-  # HTML - short cache for instant updates
+  # HTML - Short cache for instant content updates
   ExpiresByType text/html "access plus 0 seconds"
 
-  # CSS and JavaScript
+  # Stylesheets and Scripts
   ExpiresByType text/css "access plus 1 year"
   ExpiresByType application/javascript "access plus 1 year"
   ExpiresByType text/javascript "access plus 1 year"
 
-  # Media: Images, Icons, Fonts
+  # Media Assets
   ExpiresByType image/webp "access plus 1 year"
   ExpiresByType image/png "access plus 1 year"
   ExpiresByType image/jpeg "access plus 1 year"
@@ -90,8 +92,4 @@
   Header set X-Content-Type-Options "nosniff"
   Header set X-Frame-Options "SAMEORIGIN"
   Header set Referrer-Policy "strict-origin-when-cross-origin"
-  Header set Permissions-Policy "geolocation=(), microphone=(), camera=()"
 </IfModule>
-
-# Disable Directory Browsing
-Options -Indexes
