@@ -408,7 +408,7 @@ function initPortalAccessForm() {
       if (status) {
         status.innerHTML =
           'Request prepared. If WhatsApp did not open, email ' +
-          '<a href="mailto:support@moovon.insure?subject=Partner%20Portal%20Access%20Request">support@moovon.insure</a>.';
+          '<a href="mailto:office@moovon.insure?subject=Partner%20Portal%20Access%20Request">office@moovon.insure</a>.';
       }
       form.reset();
     }, 1200);
