@@ -52,7 +52,7 @@ function injectPartnerModal() {
 
   const rows = MOOVON_PARTNERS.map(p => `
         <div class="partner-modal-item" data-categories="${p.categories}" data-partner="${p.short}">
-          <img src="assets/logos/${p.logo}" alt="" width="48" height="34" loading="lazy" decoding="async">
+          <img src="assets/logos/${p.logo}?v=2" alt="" width="48" height="34" loading="lazy" decoding="async">
           <div><h5>${p.name}</h5><p>${p.desc}</p></div>
           <a href="${partnerWhatsAppLink(p)}" target="_blank" rel="noopener" class="btn btn-primary btn-sm partner-modal-cta"
              aria-label="Ask for SpreadPay with ${p.name} on WhatsApp (opens in a new tab)">
